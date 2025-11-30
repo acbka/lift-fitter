@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import logo from "../assets/logo.svg";
 
-const HeaderWrapper = styled.header`
+const HeaderWrapper = styled.header<{ isScrolled: boolean }>`
   min-height: 65px;
   padding: 16px 24px;
-  border-bottom: 1px solid rgb(246, 246, 246);
-  background: transparent;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16);
+  background-color: ${({ isScrolled }) =>
+    isScrolled ? "var(--color-dark)" : "transparent"};
   width: 100%;
   position: fixed;
   top: 0;
@@ -99,12 +100,23 @@ const navItems: NavItem[] = [
 
 const Header: React.FC = () => {
   const [open, setOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 200);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const isMobile =
     typeof window !== "undefined" ? window.innerWidth < 640 : false;
   console.log("isMobile:", isMobile);
+
   return (
-    <HeaderWrapper>
+    <HeaderWrapper isScrolled={isScrolled}>
       <HeaderContent>
         <Brand href="/" aria-label="Lift Fitter home">
           <img src={logo} alt="logo" />

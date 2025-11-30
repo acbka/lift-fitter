@@ -6,8 +6,9 @@ import Header from "./Header";
 import Slider from "./Slider";
 
 interface LayoutProps {
-  pageName: string;
+  pageTitle: string;
   icon: string;
+  bgImage?: string;
   sliders?: Slide[];
   children: ReactNode;
 }
@@ -24,22 +25,27 @@ const Container = styled.div`
   position: relative;
 `;
 
-const Main = styled.main<{ isSlader?: boolean }>`
-  padding-top: ${(props) => (props.isSlader ? "0" : "120px")};
+const Main = styled.main`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   position: relative;
   width: 100%;
 `;
 
-const Title = styled.div`
+const Title = styled.div<{ bgImage?: string }>`
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 48px 0;
+  padding-top: ${(props) => (props.bgImage ? "144px" : "48px")};
+  background: ${(props) =>
+    props.bgImage
+      ? `linear-gradient(rgba(32, 46, 49, 0.7), rgba(32, 46, 49, 1)),
+    url(${props.bgImage}) no-repeat center center/cover`
+      : "var(--color-dark)"};
 `;
 
 const IconBlock = styled.div`
@@ -69,19 +75,25 @@ const IconBlock = styled.div`
   }
 `;
 
-const Layout = ({ children, icon, pageName, sliders }: LayoutProps) => {
+const Layout = ({
+  children,
+  icon,
+  pageTitle,
+  bgImage,
+  sliders,
+}: LayoutProps) => {
   return (
     <Container>
       <Header />
-      <Main isSlader={sliders ? true : false}>
+      <Main>
         {sliders ? <Slider slides={sliders} /> : null}
-        <Title>
+        <Title bgImage={bgImage}>
           <IconBlock>
-            <img src={icon} alt={pageName} />
+            <img src={icon} alt={pageTitle} />
           </IconBlock>
-          <h1>{pageName}</h1>
-          {children}
+          <h1>{pageTitle}</h1>
         </Title>
+        {children}
       </Main>
       <Footer />
     </Container>

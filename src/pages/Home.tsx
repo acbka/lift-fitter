@@ -39,7 +39,7 @@ const Image = styled.img`
 
 const Home: React.FC = () => {
   return (
-    <Layout pageName="Home" icon={home} sliders={sliders}>
+    <Layout pageTitle="Home" icon={home} sliders={sliders}>
       <Wrapper>
         <MainSection>
           <Paragraph>

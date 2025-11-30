@@ -1,6 +1,7 @@
 :root {
   --color-yellow: rgb(255, 193, 60);
   --color-white: rgb(246, 246, 246);
+  --color-dark: rgb(32, 46, 49);
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;

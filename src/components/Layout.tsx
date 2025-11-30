@@ -40,11 +40,11 @@ const Title = styled.div<{ bgImage?: string }>`
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: ${(props) => (props.bgImage ? "144px" : "48px")};
-  background: ${(props) =>
-    props.bgImage
+  padding-top: ${({ bgImage }) => (bgImage ? "144px" : "48px")};
+  background: ${({ bgImage }) =>
+    bgImage
       ? `linear-gradient(rgba(32, 46, 49, 0.7), rgba(32, 46, 49, 1)),
-    url(${props.bgImage}) no-repeat center center/cover`
+    url(${bgImage}) no-repeat center center/cover`
       : "var(--color-dark)"};
 `;
 

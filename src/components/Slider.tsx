@@ -21,7 +21,7 @@ const SliderWrapper = styled.div<{ height?: string; width?: string }>`
 
 const SlideItem = styled.div<{ bg: string; isActive: boolean }>`
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(${(props) => props.bg}) no-repeat center center/cover;
+    url(${(props) => props.bg}) no-repeat center/cover;
   width: 100%;
   height: 100%;
   display: ${(props) => (props.isActive ? "flex" : "none")};
@@ -49,9 +49,9 @@ const Caption = styled.p`
   line-height: 1.6;
 `;
 
-const Arrow = styled.button<{ direction: "left" | "right" }>`
+const Arrow = styled.img<{ direction: "left" | "right" }>`
   position: absolute;
-  top: 50%;
+  top: 47%;
   ${(props) => (props.direction === "left" ? "left: 20px" : "right: 20px")};
   transform: translateY(-45%);
   transform: rotate(
@@ -60,8 +60,8 @@ const Arrow = styled.button<{ direction: "left" | "right" }>`
   background: transparent;
   border: none;
   cursor: pointer;
-  width: 36px;
-  height: 36px;
+  width: 50px;
+  height: 50px;
 `;
 
 const Slider = ({
@@ -106,12 +106,8 @@ const Slider = ({
           )}
         </SlideItem>
       ))}
-      <Arrow direction="left" onClick={prevSlide}>
-        <img src={arrrow} alt="arrrow" />
-      </Arrow>
-      <Arrow direction="right" onClick={nextSlide}>
-        <img src={arrrow} alt="arrrow" />
-      </Arrow>
+      <Arrow direction="left" onClick={prevSlide} src={arrrow} alt="arrrow" />
+      <Arrow direction="right" onClick={nextSlide} src={arrrow} alt="arrrow" />
     </SliderWrapper>
   );
 };

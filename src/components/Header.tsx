@@ -24,14 +24,19 @@ const HeaderContent = styled.div`
   max-width: 1170px;
 `;
 
-const Brand = styled.a`
+export const Brand = styled.a`
   display: flex;
   align-items: center;
   gap: 12px;
   text-decoration: none;
-  color: #111;
   font-weight: 700;
   font-size: 18px;
+`;
+
+const LogoImage = styled.img<{ isScrolled: boolean }>`
+  width: ${({ isScrolled }) => (isScrolled ? "207px" : "300px")};
+  height: auto;
+  transition: width 0.3s ease;
 `;
 
 const Nav = styled.nav`
@@ -81,9 +86,9 @@ export const MobileMenu = styled.nav<{ open?: boolean }>`
   gap: 8px;
   margin-top: 10px;
 
-  @media (min-width: 640px) {
+  /* @media (min-width: 640px) {
     display: none;
-  }
+  } */
 `;
 type NavItem = {
   label: string;
@@ -119,7 +124,7 @@ const Header: React.FC = () => {
     <HeaderWrapper isScrolled={isScrolled}>
       <HeaderContent>
         <Brand href="/" aria-label="Lift Fitter home">
-          <img src={logo} alt="logo" />
+          <LogoImage src={logo} alt="logo" isScrolled={isScrolled} />
         </Brand>
 
         {isMobile ? (

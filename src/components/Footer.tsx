@@ -10,10 +10,10 @@ const FooterWrapper = styled.footer`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  margin: 0 auto;
   background-color: var(--color-dark);
   color: var(--color-white);
+  width: 100%;
+  margin: 0 auto;
   padding: 64px 24px;
 `;
 
@@ -30,7 +30,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: start;
-  padding: 20px;
 `;
 
 const LogoImage = styled.img`

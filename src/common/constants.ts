@@ -9,6 +9,11 @@ export type Slide = {
   caption?: string;
 };
 
+type MenuItemType = {
+  link: string;
+  label: string;
+};
+
 export const sliders: Slide[] = [
   {
     id: 1,
@@ -28,4 +33,12 @@ export const sliders: Slide[] = [
     title: "Lifting standards above expectations",
     caption: "Reliable. Professional. Proven.",
   },
+];
+
+export const menuItems: MenuItemType[] = [
+  { link: "/", label: "Home" },
+  { link: "/services", label: "Services" },
+  { link: "/projects", label: "Projects" },
+  { link: "/about", label: "About" },
+  { link: "/contacts", label: "Contacts" },
 ];

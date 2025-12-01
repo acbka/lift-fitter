@@ -37,6 +37,7 @@ const LogoImage = styled.img<{ isScrolled: boolean }>`
   width: ${({ isScrolled }) => (isScrolled ? "207px" : "300px")};
   height: auto;
   transition: width 0.3s ease;
+  z-index: 20;
 `;
 
 const Header: React.FC = () => {

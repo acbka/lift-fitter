@@ -44,7 +44,7 @@ const NavBar: React.FC = () => {
   return (
     <NavBarContent>
       <Nav>
-        <StyledLink to="/ end">Home</StyledLink>
+        <StyledLink to="/">Home</StyledLink>
         <StyledLink to="/services">Services</StyledLink>
         <StyledLink to="/projects">Projects</StyledLink>
         <StyledLink to="/about">About</StyledLink>

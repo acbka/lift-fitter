@@ -100,7 +100,7 @@ const navItems: NavItem[] = [
   { label: "Services", href: "/services" },
   { label: "Projects", href: "/projects" },
   { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contacts", href: "/contacts" },
 ];
 
 const Header: React.FC = () => {

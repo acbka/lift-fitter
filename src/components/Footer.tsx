@@ -11,7 +11,6 @@ const FooterWrapper = styled.footer`
   color: var(--color-white);
   width: 100%;
   padding: 64px 24px;
-  margin-bottom: 24px;
 `;
 
 const FooterContent = styled.div`

@@ -13,7 +13,7 @@ const NavBarContent = styled.div<{ isOpen: boolean }>`
   top: 0px;
   left: 0;
   padding: 97px 0 20px 0;
-  width: calc(100vw - 60px);
+  width: calc(100vw - 80px);
   z-index: 10;
   transition: transform 0.3s ease;
   transform: translateX(${({ isOpen }) => (isOpen ? "0" : "-100%")});
@@ -30,8 +30,8 @@ const BurgerButton = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 36px;
-  height: 36px;
+  width: 50px;
+  height: 50px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -58,12 +58,14 @@ const BurgerLine = styled.div<{ isOpen: boolean }>`
 
   &:nth-child(2) {
     opacity: ${(p) => (p.isOpen ? 0 : 1)};
-    transform: ${(p) => (p.isOpen ? "translateX(-20px)" : "translateX(0)")};
+    transform: ${(p) => (p.isOpen ? "translateX(-28px)" : "translateX(0)")};
   }
 
   &:nth-child(3) {
     transform: ${(p) =>
-      p.isOpen ? "translateY(-7px) rotate(-45deg)" : "translateY(0) rotate(0)"};
+      p.isOpen
+        ? "translateY(-16px) rotate(-45deg)"
+        : "translateY(0) rotate(0)"};
   }
 `;
 

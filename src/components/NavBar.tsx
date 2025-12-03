@@ -1,7 +1,7 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import styled from "styled-components";
 import { menuItems } from "../common/constants";
-import { useEffect, useState } from "react";
 import MobileMenu from "./MobileMenu";
 
 const NavBarContent = styled.div`
@@ -19,7 +19,7 @@ const Nav = styled.nav`
 export const StyledLink = styled(Link)`
   text-decoration: none;
   color: var(--color-white);
-  padding: 8px 10px;
+  padding: 8px 12px;
 
   &.active {
     color: var(--color-yellow);
@@ -55,7 +55,7 @@ const NavBar: React.FC = () => {
 
   return (
     <>
-      {windowSize && windowSize > 920 ? (
+      {windowSize && windowSize > 992 ? (
         <NavBarContent>
           <Nav>
             {menuItems.map((item) => (

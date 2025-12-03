@@ -14,10 +14,6 @@ interface LayoutProps {
 }
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
   background: #202e31;
   color: var(--color-white);
   min-height: 100vh;

@@ -1,12 +1,13 @@
 import styled from "styled-components";
-import { StyledLink } from "./NavBar";
 import { menuItems } from "../common/constants";
+import { StyledLink } from "./NavBar";
 
 const Menu = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-auto-flow: column;
+  column-gap: 16px;
 `;
 
 const MenuItem = styled(StyledLink)`

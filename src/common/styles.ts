@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const MainSection = styled.div`
+export const Section = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,6 +8,7 @@ export const MainSection = styled.div`
   max-width: 1170px;
   padding: 0 24px;
   margin: 0 auto;
+  margin-bottom: 48px;
 `;
 
 export const Paragraph = styled.p`

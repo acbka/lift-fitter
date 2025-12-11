@@ -1,14 +1,14 @@
 import React from "react";
 import homeIcon from "../assets/home.png";
 import home from "../assets/home.jpeg";
-import { MainSection, Paragraph, StyledImage } from "../common/styles";
+import { Section, Paragraph, StyledImage } from "../common/styles";
 import Layout from "../components/Layout";
 import { sliders } from "../common/constants";
 
 const Home: React.FC = () => {
   return (
     <Layout pageTitle="Home" icon={homeIcon} sliders={sliders}>
-      <MainSection>
+      <Section>
         <Paragraph>
           LiftFitter is an international team of specialists focused on the
           installation, modernization, servicing, and dismantling of elevator
@@ -26,7 +26,7 @@ const Home: React.FC = () => {
           and service process at the highest level.
         </Paragraph>
         <StyledImage src={home} alt="home" />
-      </MainSection>
+      </Section>
     </Layout>
   );
 };

@@ -17,23 +17,26 @@ interface Errors {
   message?: string;
 }
 
-export const FormContainer = styled.div`
+const FormContainer = styled.div`
   width: 100%;
   max-width: 700px;
   padding: 20px;
-  margin-left: 20px;
   background: #fff;
   border-radius: 20px;
-  flex: 1;
+
+  @media (min-width: 576px) {
+    flex: 1;
+    margin-left: 20px;
+  }
 `;
 
-export const Form = styled.form`
+const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 25px;
 `;
 
-export const Row = styled.div`
+const Row = styled.div`
   display: flex;
   gap: 20px;
 
@@ -42,7 +45,7 @@ export const Row = styled.div`
   }
 `;
 
-export const Input = styled.input`
+const Input = styled.input`
   flex: 1;
   padding: 18px 22px;
   font-size: 18px;
@@ -55,7 +58,7 @@ export const Input = styled.input`
   }
 `;
 
-export const Message = styled.textarea`
+const Message = styled.textarea`
   width: 100%;
   height: 180px;
   padding: 18px 22px;
@@ -70,18 +73,18 @@ export const Message = styled.textarea`
   }
 `;
 
-export const Error = styled.div`
+const Error = styled.div`
   color: red;
   font-size: 14px;
 `;
 
-export const Success = styled.div`
+const Success = styled.div`
   color: green;
   font-size: 16px;
   font-weight: 600;
 `;
 
-export const SubmitButton = styled.button`
+const SubmitButton = styled.button`
   width: 220px;
   padding: 18px;
   font-size: 20px;

@@ -14,7 +14,7 @@ interface LayoutProps {
 }
 
 const Container = styled.div`
-  background: #202e31;
+  background: var(--color-dark);
   color: var(--color-white);
   min-height: 100vh;
   width: 100vw;
@@ -71,6 +71,11 @@ const IconBlock = styled.div`
   }
 `;
 
+const ContentBlock = styled.div`
+  max-width: 1170px;
+  margin: 0 auto;
+`;
+
 const Layout = ({
   children,
   icon,
@@ -89,7 +94,7 @@ const Layout = ({
           </IconBlock>
           <h1>{pageTitle}</h1>
         </Title>
-        {children}
+        <ContentBlock>{children}</ContentBlock>
       </Main>
       <Footer />
     </Container>

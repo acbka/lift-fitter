@@ -1,7 +1,7 @@
 import React from "react";
 import homeIcon from "../assets/home.png";
 import home from "../assets/home.jpeg";
-import { Section, Paragraph, StyledImage } from "../common/styles";
+import { Section, TextBlock, StyledImage } from "../common/styles";
 import Layout from "../components/Layout";
 import { sliders } from "../common/constants";
 
@@ -9,7 +9,7 @@ const Home: React.FC = () => {
   return (
     <Layout pageTitle="Home" icon={homeIcon} sliders={sliders}>
       <Section>
-        <Paragraph>
+        <TextBlock>
           LiftFitter is an international team of specialists focused on the
           installation, modernization, servicing, and dismantling of elevator
           and escalator equipment. We provide a complete turnkey service — from
@@ -24,7 +24,7 @@ const Home: React.FC = () => {
           to the needs of each client. Our mission To deliver safe, reliable and
           durable elevator solutions while providing a professional installation
           and service process at the highest level.
-        </Paragraph>
+        </TextBlock>
         <StyledImage src={home} alt="home" />
       </Section>
     </Layout>

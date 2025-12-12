@@ -3,7 +3,7 @@ import styled from "styled-components";
 import logo from "../assets/logo.svg";
 import NavBar from "./NavBar";
 
-const HeaderWrapper = styled.header<{ isScrolled: boolean }>`
+const HeaderWrapper = styled.header<{ $isScrolled: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
@@ -15,8 +15,8 @@ const HeaderWrapper = styled.header<{ isScrolled: boolean }>`
   z-index: 100;
 
   @media (min-width: 992px) {
-    background-color: ${({ isScrolled }) =>
-      isScrolled ? "rgba(32, 46, 49, 0.9)" : "var(--color-dark)"};
+    background-color: ${({ $isScrolled }) =>
+      $isScrolled ? "rgba(32, 46, 49, 0.9)" : "var(--color-dark)"};
   }
 `;
 
@@ -38,14 +38,14 @@ export const Brand = styled.a`
   z-index: 2;
 `;
 
-const LogoImage = styled.img<{ isScrolled: boolean }>`
+const LogoImage = styled.img<{ $isScrolled: boolean }>`
   width: 207px;
   height: auto;
   transition: width 0.3s ease;
   z-index: 20;
 
   @media (min-width: 992px) {
-    width: ${({ isScrolled }) => (isScrolled ? "207px" : "300px")};
+    width: ${({ $isScrolled }) => ($isScrolled ? "207px" : "300px")};
   }
 `;
 
@@ -62,10 +62,10 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <HeaderWrapper isScrolled={isScrolled}>
+    <HeaderWrapper $isScrolled={isScrolled}>
       <HeaderContent>
         <Brand href="/" aria-label="Lift Fitter home">
-          <LogoImage src={logo} alt="logo" isScrolled={isScrolled} />
+          <LogoImage src={logo} alt="logo" $isScrolled={isScrolled} />
         </Brand>
         <NavBar />
       </HeaderContent>

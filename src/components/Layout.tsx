@@ -29,18 +29,18 @@ const Main = styled.main`
   width: 100%;
 `;
 
-const Title = styled.div<{ bgImage?: string }>`
+const Title = styled.div<{ $bgImage?: string }>`
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: ${({ bgImage }) => (bgImage ? "144px" : "48px")};
-  background: ${({ bgImage }) =>
-    bgImage
+  padding-top: ${({ $bgImage }) => ($bgImage ? "144px" : "48px")};
+  background: ${({ $bgImage }) =>
+    $bgImage
       ? `linear-gradient(rgba(32, 46, 49, 0.7), rgba(32, 46, 49, 1)),
-    url(${bgImage}) no-repeat center center/cover`
+    url(${$bgImage}) no-repeat center center/cover`
       : "var(--color-dark)"};
 `;
 
@@ -88,7 +88,7 @@ const Layout = ({
       <Header />
       <Main>
         {sliders ? <Slider slides={sliders} /> : null}
-        <Title bgImage={bgImage}>
+        <Title $bgImage={bgImage}>
           <IconBlock>
             <img src={icon} alt={pageTitle} />
           </IconBlock>

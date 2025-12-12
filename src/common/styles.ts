@@ -18,11 +18,11 @@ export const Section = styled.div`
 export const TextBlock = styled.div`
   line-height: 2em;
   text-align: justify;
-  padding: 0 24px;
+  padding: 24px;
+  width: 100%;
 
   @media (min-width: 576px) {
     flex: 1;
-    margin-right: 48px;
     text-align: left;
   }
 `;

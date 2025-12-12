@@ -18,15 +18,16 @@ interface Errors {
 }
 
 const FormContainer = styled.div`
+  display: flex;
   width: 100%;
   max-width: 700px;
-  padding: 20px;
+  padding: 24px;
   background: #fff;
   border-radius: 20px;
 
   @media (min-width: 576px) {
     flex: 1;
-    margin-left: 20px;
+    margin-left: 16px;
   }
 `;
 
@@ -47,7 +48,7 @@ const Row = styled.div`
 
 const Input = styled.input`
   flex: 1;
-  padding: 18px 22px;
+  padding: 16px 24px;
   font-size: 18px;
   border: 2px solid var(--color-yellow);
   border-radius: 20px;

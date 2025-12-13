@@ -17,7 +17,7 @@ const Container = styled.div`
   background: var(--color-dark);
   color: var(--color-white);
   min-height: 100vh;
-  width: 100vw;
+  /* width: 100vw; */
   position: relative;
 `;
 
@@ -27,6 +27,7 @@ const Main = styled.main`
   justify-content: space-between;
   position: relative;
   width: 100%;
+  margin: 0 auto;
 `;
 
 const Title = styled.div<{ $bgImage?: string }>`

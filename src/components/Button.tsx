@@ -3,35 +3,36 @@ import styled from "styled-components";
 
 type ButtonPropsType = {
   children?: React.ReactNode;
-  disabled?: boolean;
-  title?: string;
-  handleClick: () => void;
+  title: string;
+  type?: "button" | "submit" | "reset";
+  handleClick?: () => void;
+  className?: string;
 };
 
 const StyledButton = styled.button`
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: var(--color-yellow);
+  width: 100%;
+  padding: 12px 0;
+  font-size: 20px;
+  background: var(--color-yellow);
+  color: var(--color-dark);
+  border: none;
+  border-radius: 20px;
   cursor: pointer;
-  transition: border-color 0.25s;
 
   &:hover {
-    border-color: var(--color-yellow);
+    background: #dca435;
   }
 `;
 
 const Button = ({
   children,
-  disabled,
+  className,
   title,
+  type = "button",
   handleClick,
 }: ButtonPropsType) => {
   return (
-    <StyledButton onClick={handleClick} disabled={disabled}>
+    <StyledButton className={className} type={type} onClick={handleClick}>
       {title || children}
     </StyledButton>
   );

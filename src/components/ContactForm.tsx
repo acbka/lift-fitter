@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import emailjs from "@emailjs/browser";
+import Button from "./Button";
 
 interface FormState {
   name: string;
@@ -85,19 +86,8 @@ const Success = styled.div`
   font-weight: 600;
 `;
 
-const SubmitButton = styled.button`
+const SubmitButton = styled(Button)`
   width: 220px;
-  padding: 18px;
-  font-size: 20px;
-  background: var(--color-yellow);
-  color: var(--color-dark);
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-
-  &:hover {
-    background: #dca435;
-  }
 `;
 
 const ContactForm: React.FC = () => {
@@ -210,7 +200,7 @@ const ContactForm: React.FC = () => {
 
         {success && <Success>{success}</Success>}
 
-        <SubmitButton type="submit">Submit</SubmitButton>
+        <SubmitButton type="submit" title="Submit" />
       </Form>
     </FormContainer>
   );

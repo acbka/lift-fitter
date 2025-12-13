@@ -5,20 +5,20 @@ import Footer from "./Footer";
 import Header from "./Header";
 import Slider from "./Slider";
 
-interface LayoutProps {
+type LayoutProps = {
   pageTitle: string;
   icon: string;
   bgImage?: string;
   sliders?: Slide[];
   children: ReactNode;
-}
+};
 
 const Container = styled.div`
   background: var(--color-dark);
-  color: var(--color-white);
-  min-height: 100vh;
-  /* width: 100vw; */
   position: relative;
+  margin: 0 auto;
+  min-height: 100vh;
+  width: 100vw;
 `;
 
 const Main = styled.main`

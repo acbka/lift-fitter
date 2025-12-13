@@ -38,3 +38,14 @@ export const StyledImage = styled.img`
     margin: 0 0 20px 20px;
   }
 `;
+
+export const CardsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 24px 0;
+  width: 100%;
+  margin-bottom: 48px;
+`;

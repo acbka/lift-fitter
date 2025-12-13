@@ -3,20 +3,20 @@ import styled from "styled-components";
 import emailjs from "@emailjs/browser";
 import Button from "./Button";
 
-interface FormState {
+type FormState = {
   name: string;
   email: string;
   phone: string;
   city: string;
   message: string;
-}
+};
 
-interface Errors {
+type Errors = {
   name?: string;
   email?: string;
   phone?: string;
   message?: string;
-}
+};
 
 const FormContainer = styled.div`
   display: flex;
@@ -36,14 +36,16 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 25px;
+  width: 100%;
 `;
 
 const Row = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 20px;
 
-  @media (max-width: 600px) {
-    flex-direction: column;
+  @media (min-width: 992px) {
+    flex-direction: row;
   }
 `;
 
@@ -87,7 +89,11 @@ const Success = styled.div`
 `;
 
 const SubmitButton = styled(Button)`
-  width: 220px;
+  width: 100%;
+
+  @media (min-width: 992px) {
+    width: 220px;
+  }
 `;
 
 const ContactForm: React.FC = () => {

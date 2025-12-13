@@ -24,6 +24,7 @@ const SlideItem = styled.div<{ bg: string; isActive: boolean }>`
     url(${(props) => props.bg}) no-repeat center/cover;
   width: 100%;
   height: 100%;
+  padding: 0 48px;
   display: ${(props) => (props.isActive ? "flex" : "none")};
 `;
 
@@ -40,13 +41,23 @@ const Content = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 60px;
+  font-size: 40px;
   font-weight: 700;
+
+  @media (min-width: 768px) {
+    font-size: 60px;
+    font-weight: 700;
+  }
 `;
 
 const Caption = styled.p`
+  font-size: 0.8em;
   letter-spacing: 5px;
   line-height: 1.6;
+
+  @media (min-width: 768px) {
+    font-size: 1em;
+  }
 `;
 
 const Arrow = styled.img<{ direction: "left" | "right" }>`

@@ -9,7 +9,7 @@ import lift5 from "../assets/lift5.jpg";
 
 import modernization from "../assets/modernization.jpg";
 import montaznik from "../assets/montaznik.jpg";
-import technik from "../assets/tehnik-remontiruet-dver-lifta-v-kommerceskom-zdanii-scaled.jpg";
+import technik from "../assets/tehnik.jpg";
 
 export type Slide = {
   id: number;
@@ -107,15 +107,15 @@ export const projects: ProjectAndServiceType[] = [
     image: lift3,
   },
   {
-    id: 1,
-    title: "Project One",
+    id: 4,
+    title: "Project Four",
     shortDescription: "Brief description",
     description: "Description for your first project.",
     image: lift4,
   },
   {
-    id: 1,
-    title: "Project One",
+    id: 5,
+    title: "Project Five",
     shortDescription: "Brief description",
     description: "Description for your first project.",
     image: lift5,

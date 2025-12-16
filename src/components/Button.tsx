@@ -1,12 +1,10 @@
-import React from "react";
 import styled from "styled-components";
 
 type ButtonPropsType = {
-  children?: React.ReactNode;
+  className?: string;
+  handleClick?: () => void;
   title: string;
   type?: "button" | "submit" | "reset";
-  handleClick?: () => void;
-  className?: string;
 };
 
 const StyledButton = styled.button`
@@ -25,7 +23,6 @@ const StyledButton = styled.button`
 `;
 
 const Button = ({
-  children,
   className,
   title,
   type = "button",
@@ -33,7 +30,7 @@ const Button = ({
 }: ButtonPropsType) => {
   return (
     <StyledButton className={className} type={type} onClick={handleClick}>
-      {title || children}
+      {title}
     </StyledButton>
   );
 };

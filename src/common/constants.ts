@@ -6,7 +6,6 @@ import lift2 from "../assets/lift2.jpg";
 import lift3 from "../assets/lift3.jpg";
 import lift4 from "../assets/lift4.jpg";
 import lift5 from "../assets/lift5.jpg";
-
 import modernization from "../assets/modernization.jpg";
 import montaznik from "../assets/montaznik.jpg";
 import technik from "../assets/tehnik.jpg";
@@ -24,7 +23,7 @@ type MenuItemType = {
 };
 
 export type ProjectAndServiceType = {
-  id?: number;
+  id?: string;
   title: string;
   shortDescription: string;
   description?: string;
@@ -62,59 +61,59 @@ export const menuItems: MenuItemType[] = [
 
 export const services: ProjectAndServiceType[] = [
   {
-    id: 1,
-    title: "Sevice One",
+    id: "service1",
+    title: "Service One",
     shortDescription: "Brief description",
-    description: "Description for your first project.",
+    description: "Description for your first service.",
     image: technik,
   },
   {
-    id: 2,
-    title: "Sevice Two",
+    id: "service2",
+    title: "Service Two",
     shortDescription: "Brief description",
-    description: "Description for your second project.",
+    description: "Description for your second service.",
     image: montaznik,
   },
   {
-    id: 3,
-    title: "Sevice Three",
+    id: "service3",
+    title: "Service Three",
     shortDescription: "Brief description",
-    description: "Description for your third project.",
+    description: "Description for your third service.",
     image: modernization,
   },
 ];
 
 export const projects: ProjectAndServiceType[] = [
   {
-    id: 1,
+    id: "project1",
     title: "Project One",
     shortDescription: "Brief description",
     description: "Description for your first project.",
     image: lift1,
   },
   {
-    id: 2,
+    id: "project2",
     title: "Project Two",
     shortDescription: "Brief description",
     description: "Description for your second project.",
     image: lift2,
   },
   {
-    id: 3,
+    id: "project3",
     title: "Project Three",
     shortDescription: "Brief description",
     description: "Description for your third project.",
     image: lift3,
   },
   {
-    id: 4,
+    id: "project4",
     title: "Project Four",
     shortDescription: "Brief description",
     description: "Description for your first project.",
     image: lift4,
   },
   {
-    id: 5,
+    id: "project5",
     title: "Project Five",
     shortDescription: "Brief description",
     description: "Description for your first project.",

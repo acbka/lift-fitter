@@ -4,6 +4,7 @@ import Button from "./Button";
 
 type CardPropsType = {
   item: ProjectAndServiceType;
+  handleClick: () => void;
 };
 
 const StyledCard = styled.div`
@@ -43,14 +44,14 @@ const ShortDescription = styled.p`
   margin-bottom: 20px;
 `;
 
-const Card = ({ item }: CardPropsType) => {
+const Card = ({ item, handleClick }: CardPropsType) => {
   return (
     <StyledCard>
       <Image src={item.image} alt="Project" />
       <CardBody>
         <Title>{item.title}</Title>
         <ShortDescription>{item.shortDescription}</ShortDescription>
-        <Button title="Details" />
+        <Button title="Details" handleClick={handleClick} />
       </CardBody>
     </StyledCard>
   );

@@ -6,11 +6,11 @@ import Header from "./Header";
 import Slider from "./Slider";
 
 type LayoutProps = {
-  pageTitle: string;
-  icon: string;
   bgImage?: string;
-  sliders?: Slide[];
   children: ReactNode;
+  icon?: string;
+  pageTitle: string;
+  sliders?: Slide[];
 };
 
 const Container = styled.div`
@@ -30,14 +30,14 @@ const Main = styled.main`
   margin: 0 auto;
 `;
 
-const Title = styled.div<{ $bgImage?: string }>`
+const Title = styled.div<{ $bgImage?: string; $slider: boolean }>`
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: ${({ $bgImage }) => ($bgImage ? "144px" : "48px")};
+  padding-top: ${({ $slider }) => ($slider ? "48px" : "144px")};
   background: ${({ $bgImage }) =>
     $bgImage
       ? `linear-gradient(rgba(32, 46, 49, 0.7), rgba(32, 46, 49, 1)),
@@ -78,10 +78,10 @@ const ContentBlock = styled.div`
 `;
 
 const Layout = ({
+  bgImage,
   children,
   icon,
   pageTitle,
-  bgImage,
   sliders,
 }: LayoutProps) => {
   return (
@@ -89,10 +89,12 @@ const Layout = ({
       <Header />
       <Main>
         {sliders ? <Slider slides={sliders} /> : null}
-        <Title $bgImage={bgImage}>
-          <IconBlock>
-            <img src={icon} alt={pageTitle} />
-          </IconBlock>
+        <Title $bgImage={bgImage} $slider={Boolean(sliders)}>
+          {icon ? (
+            <IconBlock>
+              <img src={icon} alt={pageTitle} />
+            </IconBlock>
+          ) : null}
           <h1>{pageTitle}</h1>
         </Title>
         <ContentBlock>{children}</ContentBlock>

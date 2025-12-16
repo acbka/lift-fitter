@@ -4,7 +4,7 @@ import Button from "./Button";
 
 type CardPropsType = {
   item: ProjectAndServiceType;
-  handleClick: () => void;
+  handleClick?: () => void;
 };
 
 const StyledCard = styled.div`

@@ -1,3 +1,4 @@
+import parse from "html-react-parser";
 import { useParams } from "react-router";
 import styled from "styled-components";
 import { services } from "../common/constants";
@@ -14,6 +15,9 @@ const StyledImage = styled.img`
 
 const Paragraph = styled.div`
   padding: 24px;
+  & > p {
+    padding-bottom: 16px;
+  }
 `;
 
 const ServiceInfo = () => {
@@ -24,9 +28,9 @@ const ServiceInfo = () => {
   return (
     <>
       {service && (
-        <Layout pageTitle={service?.title}>
+        <Layout pageTitle={service.title}>
           <StyledImage src={service.image} />
-          <Paragraph>{service.description}</Paragraph>
+          <Paragraph>{parse(service.description || "")}</Paragraph>
         </Layout>
       )}
     </>

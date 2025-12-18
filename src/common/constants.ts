@@ -63,8 +63,11 @@ export const services: ProjectAndServiceType[] = [
   {
     id: "service1",
     title: "Service One",
-    shortDescription: "Brief description",
-    description: "Description for your first service.",
+    shortDescription:
+      "Pogotowie dźwigowe LiftFitter Dla wygody naszych klientów pracujemy w trybie pogotowia dźwigowego 24/7",
+    description: `<p>Pogotowie dźwigowe LiftFitter</p>
+    <p>Dla wygody naszych klientów pracujemy w trybie pogotowia dźwigowego 24/7. Doskonale wiemy, że awarie zdarzają się nagle i w najmniej odpowiednim momencie, dlatego reagujemy szybko i skutecznie.</p>
+    <p>W przypadku jakichkolwiek problemów technicznych z Państwa windą prosimy o natychmiastowy kontakt. Nasz zespół fachowców możliwie szybko pojawi się na miejscu, zdiagnozuje usterkę i bezpiecznie przywróci urządzenie do pełnej sprawności.</p>`,
     image: technik,
   },
   {

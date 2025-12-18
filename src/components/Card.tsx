@@ -8,7 +8,10 @@ type CardPropsType = {
 };
 
 const StyledCard = styled.div`
-  min-width: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 360px;
   background: var(--color-white);
   border-radius: 20px;
   margin: 16px 8px;
@@ -29,6 +32,10 @@ const Image = styled.img`
 `;
 
 const CardBody = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 20px;
 `;
 
@@ -49,8 +56,10 @@ const Card = ({ item, handleClick }: CardPropsType) => {
     <StyledCard>
       <Image src={item.image} alt="Project" />
       <CardBody>
-        <Title>{item.title}</Title>
-        <ShortDescription>{item.shortDescription}</ShortDescription>
+        <div>
+          <Title>{item.title}</Title>
+          <ShortDescription>{item.shortDescription}</ShortDescription>
+        </div>
         <Button title="Details" handleClick={handleClick} />
       </CardBody>
     </StyledCard>

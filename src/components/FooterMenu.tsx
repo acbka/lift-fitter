@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { menuItems } from "../common/constants";
 import { StyledLink } from "./NavBar";
@@ -30,11 +31,13 @@ const MenuItem = styled(StyledLink)`
 `;
 
 const FooterMenu: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <Menu>
       {menuItems.map((item) => (
-        <MenuItem key={item.label} to={item.link}>
-          {item.label}
+        <MenuItem key={item.link} to={item.link}>
+          {t(item.labelKey)}
         </MenuItem>
       ))}
     </Menu>

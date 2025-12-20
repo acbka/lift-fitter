@@ -1,7 +1,9 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { menuItems } from "../common/constants";
-import { CTA, StyledLink } from "./NavBar";
+import { StyledLink } from "./NavBar";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const NavBarContent = styled.div<{ $isOpen: boolean }>`
   display: flex;
@@ -10,13 +12,13 @@ const NavBarContent = styled.div<{ $isOpen: boolean }>`
   background-color: var(--color-dark);
   align-items: center;
   position: absolute;
-  top: 0px;
+  top: 80px;
   left: 0;
-  padding: 97px 0 20px 0;
+  padding: 16px 0 20px 0;
   width: calc(100vw - 80px);
   z-index: 10;
   transition: transform 0.3s ease;
-  transform: translateX(${({ $isOpen }) => ($isOpen ? "0" : "-100%")});
+  transform: translateX(${({ $isOpen }) => ($isOpen ? "80" : "-100%")});
 `;
 
 const Nav = styled.nav<{ $isOpen: boolean }>`
@@ -36,6 +38,7 @@ const BurgerButton = styled.button`
   border: none;
   cursor: pointer;
   padding: 8px;
+  margin-left: 8px;
   z-index: 10;
 
   &:focus {
@@ -71,9 +74,11 @@ const BurgerLine = styled.div<{ $isOpen: boolean }>`
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <>
+      <LanguageSwitcher />
       <BurgerButton onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
         <BurgerLine $isOpen={isOpen} />
         <BurgerLine $isOpen={isOpen} />
@@ -82,11 +87,10 @@ const MobileMenu = () => {
       <NavBarContent $isOpen={isOpen}>
         <Nav $isOpen={isOpen}>
           {menuItems.map((item) => (
-            <StyledLink key={item.label} to={item.link}>
-              {item.label}
+            <StyledLink key={item.link} to={item.link}>
+              {t(item.labelKey)}
             </StyledLink>
           ))}
-          <CTA to="/contacts">Request</CTA>
         </Nav>
       </NavBarContent>
     </>

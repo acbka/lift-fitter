@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { menuItems } from "../common/constants";
 import MobileMenu from "./MobileMenu";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const NavBarContent = styled.div`
   display: flex;
@@ -31,17 +33,9 @@ export const StyledLink = styled(Link)`
   }
 `;
 
-export const CTA = styled(Link)`
-  padding: 8px 16px;
-  background: var(--color-white);
-  color: var(--color-dark);
-  border-radius: 2px;
-  text-decoration: none;
-  margin-left: 8px;
-`;
-
 const NavBar: React.FC = () => {
   const [windowSize, setWindowSize] = useState<number | undefined>(undefined);
+  const { t } = useTranslation();
 
   useEffect(() => {
     function handleResize() {
@@ -59,11 +53,11 @@ const NavBar: React.FC = () => {
         <NavBarContent>
           <Nav>
             {menuItems.map((item) => (
-              <StyledLink key={item.label} to={item.link}>
-                {item.label}
+              <StyledLink key={item.link} to={item.link}>
+                {t(item.labelKey)}
               </StyledLink>
             ))}
-            <CTA to="/contacts">Request</CTA>
+            <LanguageSwitcher />
           </Nav>
         </NavBarContent>
       ) : (

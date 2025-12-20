@@ -58,7 +58,7 @@ const Input = styled.input`
   outline: none;
 
   &:focus {
-    border-color: #d19a1e;
+    border-color: var(--color-orange);
   }
 `;
 
@@ -73,7 +73,7 @@ const Message = styled.textarea`
   outline: none;
 
   &:focus {
-    border-color: #d19a1e;
+    border-color: var(--color-orange);
   }
 `;
 
@@ -168,12 +168,14 @@ const ContactForm: React.FC = () => {
             name="name"
             placeholder="Name"
             value={form.name}
+            autoComplete="given name"
             onChange={handleChange}
           />
           <Input
             name="email"
             placeholder="Email"
             value={form.email}
+            autoComplete="off"
             onChange={handleChange}
           />
         </Row>
@@ -183,6 +185,7 @@ const ContactForm: React.FC = () => {
             name="phone"
             placeholder="Phone"
             value={form.phone}
+            autoComplete="tel"
             onChange={handleChange}
           />
           <Input

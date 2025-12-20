@@ -4,7 +4,6 @@ import type { Slide } from "../common/constants";
 import Footer from "./Footer";
 import Header from "./Header";
 import Slider from "./Slider";
-import { Section } from "../common/styles";
 
 type LayoutProps = {
   bgImage?: string;
@@ -13,6 +12,12 @@ type LayoutProps = {
   pageTitle: string;
   sliders?: Slide[];
 };
+
+export const Section = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 48px;
+`;
 
 const Container = styled.div`
   background: var(--color-dark);

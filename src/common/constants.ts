@@ -159,7 +159,7 @@ export const partners: PartnerType[] = [
     url: "https://www.kone.com/",
   },
   {
-    name: "Schmitt + Sohn Elevators",
+    name: "Schmitt + Sohn",
     logo: schmitt,
     url: "https://www.schmitt-elevators.com/",
   },

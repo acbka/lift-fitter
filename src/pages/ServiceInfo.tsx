@@ -3,9 +3,10 @@ import { useParams } from "react-router";
 import styled from "styled-components";
 import { services } from "../common/constants";
 import Layout from "../components/Layout";
+import { Content } from "../common/styles";
 
 const StyledImage = styled.img`
-  padding: 24px;
+  padding: 24px 0;
   width: 100%;
 
   @media (min-width: 576px) {
@@ -14,7 +15,7 @@ const StyledImage = styled.img`
 `;
 
 const Paragraph = styled.div`
-  padding: 24px;
+  padding: 24px 0;
   & > p {
     padding-bottom: 16px;
   }
@@ -29,8 +30,10 @@ const ServiceInfo = () => {
     <>
       {service && (
         <Layout pageTitle={service.title}>
-          <StyledImage src={service.image} />
-          <Paragraph>{parse(service.description || "")}</Paragraph>
+          <Content>
+            <StyledImage src={service.image} />
+            <Paragraph>{parse(service.description || "")}</Paragraph>
+          </Content>
         </Layout>
       )}
     </>

@@ -1,15 +1,5 @@
 import styled from "styled-components";
 
-export const Section = styled.div`
-  width: 100%;
-  margin: 0 auto;
-  margin-bottom: 48px;
-
-  @media (min-width: 576px) {
-    flex-direction: row;
-  }
-`;
-
 export const Content = styled.div`
   max-width: 1170px;
   margin: 0 auto;
@@ -55,5 +45,7 @@ export const CardsContainer = styled.div`
   gap: 16px;
   padding: 24px 0;
   width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
   margin-bottom: 48px;
 `;

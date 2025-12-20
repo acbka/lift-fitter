@@ -72,11 +72,6 @@ const IconBlock = styled.div`
   }
 `;
 
-const ContentBlock = styled.div`
-  max-width: 1170px;
-  margin: 0 auto;
-`;
-
 const Layout = ({
   bgImage,
   children,
@@ -97,7 +92,7 @@ const Layout = ({
           ) : null}
           <h1>{pageTitle}</h1>
         </Title>
-        <ContentBlock>{children}</ContentBlock>
+        <div>{children}</div>
       </Main>
       <Footer />
     </Container>

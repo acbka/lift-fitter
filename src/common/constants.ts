@@ -9,6 +9,13 @@ import lift5 from "../assets/lift5.jpg";
 import modernization from "../assets/modernization.jpg";
 import montaznik from "../assets/montaznik.jpg";
 import technik from "../assets/tehnik.jpg";
+import kleemann from "../assets/kleemann.png";
+import schindler from "../assets/schindler.png";
+import otis from "../assets/otis.png";
+import kone from "../assets/kone.png";
+import schmitt from "../assets/schmitt.png";
+import tke from "../assets/tke.png";
+import mp from "../assets/mp.png";
 
 export type Slide = {
   id: number;
@@ -28,6 +35,12 @@ export type ProjectAndServiceType = {
   shortDescription: string;
   description?: string;
   image?: string;
+};
+
+export type PartnerType = {
+  name: string;
+  logo: string;
+  url: string;
 };
 
 export const sliders: Slide[] = [
@@ -121,5 +134,43 @@ export const projects: ProjectAndServiceType[] = [
     shortDescription: "Brief description",
     description: "Description for your first project.",
     image: lift5,
+  },
+];
+
+export const partners: PartnerType[] = [
+  {
+    name: "KLEEMANN",
+    logo: kleemann,
+    url: "https://kleemannlifts.com/",
+  },
+  {
+    name: "Schindler",
+    logo: schindler,
+    url: "https://group.schindler.com/",
+  },
+  {
+    name: "Otis",
+    logo: otis,
+    url: "https://kleemannlifts.com/",
+  },
+  {
+    name: "KONE",
+    logo: kone,
+    url: "https://www.kone.com/",
+  },
+  {
+    name: "Schmitt + Sohn Elevators",
+    logo: schmitt,
+    url: "https://www.schmitt-elevators.com/",
+  },
+  {
+    name: "TKE",
+    logo: tke,
+    url: "https://www.tkelevator.com/",
+  },
+  {
+    name: "MP",
+    logo: mp,
+    url: "https://www.mplifts.com/",
   },
 ];

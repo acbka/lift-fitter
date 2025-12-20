@@ -11,6 +11,7 @@ export const Section = styled.div`
   margin-bottom: 48px;
 
   @media (min-width: 576px) {
+    max-width: 1170px;
     flex-direction: row;
   }
 `;
@@ -23,6 +24,17 @@ export const TextBlock = styled.div`
 
   @media (min-width: 576px) {
     flex: 1;
+    text-align: left;
+  }
+`;
+
+export const StyledTitle = styled.h2`
+  font-size: 30px;
+  line-height: 39px;
+  font-weight: 600;
+  text-align: center;
+
+  @media (min-width: 576px) {
     text-align: left;
   }
 `;

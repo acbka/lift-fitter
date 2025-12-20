@@ -1,17 +1,6 @@
 import styled from "styled-components";
-import { Section, TextBlock } from "../common/styles";
+import { Section, StyledTitle, TextBlock } from "../common/styles";
 import ContactForm from "./ContactForm";
-
-const StyledTitle = styled.h2`
-  font-size: 30px;
-  line-height: 39px;
-  font-weight: 600;
-  text-align: center;
-
-  @media (min-width: 576px) {
-    text-align: left;
-  }
-`;
 
 const Paragraph = styled.p`
   padding: 24px 0;

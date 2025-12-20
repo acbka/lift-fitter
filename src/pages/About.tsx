@@ -1,9 +1,39 @@
+import styled from "styled-components";
 import homeIcon from "../assets/home.png";
 import team from "../assets/team.jpeg";
 import about from "../assets/about-bg.jpeg";
 import Layout from "../components/Layout";
-import { Section, TextBlock, StyledImage } from "../common/styles";
+import {
+  Section,
+  TextBlock,
+  StyledImage,
+  StyledTitle,
+  CardsContainer,
+} from "../common/styles";
 import ContactSection from "../components/ContactSection";
+import { partners } from "../common/constants";
+import PartnerCard from "../components/PartnerCard";
+
+const PartnersSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 24px 0;
+  padding: 24px;
+  background-color: #fff;
+
+  & > h2 {
+    color: #2e3d41;
+    padding: 48px 0 24px 0;
+  }
+`;
+
+const PartnersContainer = styled(CardsContainer)`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1170px;
+`;
 
 const About = () => {
   return (
@@ -27,6 +57,14 @@ const About = () => {
         </TextBlock>
         <StyledImage src={team} alt="team" />
       </Section>
+      <PartnersSection>
+        <StyledTitle>Our Partners</StyledTitle>
+        <PartnersContainer>
+          {partners.map((partner) => (
+            <PartnerCard key={partner.name} partner={partner} />
+          ))}
+        </PartnersContainer>
+      </PartnersSection>
       <ContactSection />
     </Layout>
   );

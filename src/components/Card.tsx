@@ -1,3 +1,4 @@
+import parse from "html-react-parser";
 import styled from "styled-components";
 import type { ProjectAndServiceType } from "../common/constants";
 import Button from "./Button";
@@ -58,7 +59,7 @@ const Card = ({ item, handleClick }: CardPropsType) => {
       <CardBody>
         <div>
           <Title>{item.title}</Title>
-          <ShortDescription>{item.shortDescription}</ShortDescription>
+          <ShortDescription>{parse(item.shortDescription)}</ShortDescription>
         </div>
         <Button title="Details" handleClick={handleClick} />
       </CardBody>

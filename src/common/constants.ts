@@ -26,7 +26,7 @@ export type Slide = {
 
 type MenuItemType = {
   link: string;
-  label: string;
+  labelKey: string;
 };
 
 export type ProjectAndServiceType = {
@@ -41,6 +41,11 @@ export type PartnerType = {
   name: string;
   logo: string;
   url: string;
+};
+
+export type LanguageType = {
+  code: string;
+  label: string;
 };
 
 export const sliders: Slide[] = [
@@ -64,12 +69,18 @@ export const sliders: Slide[] = [
   },
 ];
 
+export const LANGUAGES: LanguageType[] = [
+  { code: "en", label: "EN" },
+  { code: "pl", label: "PL" },
+  { code: "de", label: "DE" },
+];
+
 export const menuItems: MenuItemType[] = [
-  { link: "/", label: "Home" },
-  { link: "/services", label: "Services" },
-  { link: "/projects", label: "Projects" },
-  { link: "/about", label: "About" },
-  { link: "/contacts", label: "Contacts" },
+  { link: "/", labelKey: "menu.home" },
+  { link: "/services", labelKey: "menu.services" },
+  { link: "/projects", labelKey: "menu.projects" },
+  { link: "/about", labelKey: "menu.about" },
+  { link: "/contacts", labelKey: "menu.contacts" },
 ];
 
 export const services: ProjectAndServiceType[] = [

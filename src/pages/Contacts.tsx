@@ -4,11 +4,34 @@ import contactsBg from "../assets/contacts-bg.jpeg";
 import Layout from "../components/Layout";
 
 const Container = styled.div`
-  max-width: 1200px;
+  max-width: 1170px;
   margin: 0 auto;
   padding: 40px 20px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    sans-serif;
+`;
+
+const Content = styled.div`
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--color-gray);
+`;
+
+const FloatingImage = styled.img`
+  float: none;
+  width: 100%;
+  margin: 0 0 20px 0;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+  @media (min-width: 768px) {
+    float: right;
+    width: 45%;
+    max-width: 500px;
+    margin: 0 0 20px 40px;
+  }
+`;
+
+const Paragraph = styled.p`
+  margin-bottom: 16px;
 `;
 
 const Title = styled.h1`
@@ -16,50 +39,6 @@ const Title = styled.h1`
   font-weight: 700;
   margin-bottom: 30px;
   color: #333;
-`;
-
-const ContactGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-bottom: 40px;
-`;
-
-const ContactCard = styled.div`
-  background: #f5f5f5;
-  border-radius: 8px;
-  padding: 25px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-  }
-`;
-
-const CardTitle = styled.h2`
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: #222;
-`;
-
-const ContactInfo = styled.p`
-  font-size: 14px;
-  color: #666;
-  margin: 8px 0;
-  line-height: 1.6;
-`;
-
-const Link = styled.a`
-  color: #0066cc;
-  text-decoration: none;
-  font-weight: 500;
-
-  &:hover {
-    text-decoration: underline;
-  }
 `;
 
 const FormSection = styled.div`
@@ -140,36 +119,24 @@ export const Contacts = () => {
     <Layout pageTitle="Contacts" icon={contactsIcon} bgImage={contactsBg}>
       <Container>
         <Title>Contact Us</Title>
-
-        <ContactGrid>
-          <ContactCard>
-            <CardTitle>Email</CardTitle>
-            <ContactInfo>
-              <Link href="mailto:support@liftfitter.com">
-                support@liftfitter.com
-              </Link>
-            </ContactInfo>
-          </ContactCard>
-
-          <ContactCard>
-            <CardTitle>Phone</CardTitle>
-            <ContactInfo>
-              <Link href="tel:+1234567890">+1 (234) 567-890</Link>
-            </ContactInfo>
-          </ContactCard>
-
-          <ContactCard>
-            <CardTitle>Address</CardTitle>
-            <ContactInfo>
-              123 Fitness Street
-              <br />
-              Gym City, GC 12345
-              <br />
-              United States
-            </ContactInfo>
-          </ContactCard>
-        </ContactGrid>
-
+        <Content>
+          <FloatingImage
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80"
+            alt="Modern elevator"
+          />
+          <Paragraph>
+            With over 15 years of experience in the elevator industry, we
+            provide comprehensive solutions for residential, commercial, and
+            industrial properties. Our commitment to excellence and safety has
+            made us a trusted partner for building owners and property managers.
+          </Paragraph>
+          <Paragraph>
+            Our team of certified technicians ensures your vertical
+            transportation systems operate safely and efficiently. We offer 24/7
+            emergency support, preventive maintenance programs, and complete
+            modernization services for aging equipment.
+          </Paragraph>
+        </Content>
         <FormSection>
           <FormTitle>Send us a Message</FormTitle>
           <form>

@@ -4,6 +4,7 @@ import type { Slide } from "../common/constants";
 import Footer from "./Footer";
 import Header from "./Header";
 import Slider from "./Slider";
+import { Section } from "../common/styles";
 
 type LayoutProps = {
   bgImage?: string;
@@ -92,7 +93,7 @@ const Layout = ({
           ) : null}
           <h1>{pageTitle}</h1>
         </Title>
-        <div>{children}</div>
+        <Section>{children}</Section>
       </Main>
       <Footer />
     </Container>

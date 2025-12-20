@@ -26,9 +26,9 @@ const FormContainer = styled.div`
   background: #fff;
   border-radius: 20px;
 
-  @media (min-width: 576px) {
+  @media (min-width: 768px) {
     flex: 1;
-    margin-left: 16px;
+    margin-left: 24px;
   }
 `;
 
@@ -73,7 +73,7 @@ const Message = styled.textarea`
   outline: none;
 
   &:focus {
-    border-color: #dca435;
+    border-color: #d19a1e;
   }
 `;
 

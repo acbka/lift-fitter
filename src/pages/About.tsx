@@ -4,11 +4,11 @@ import team from "../assets/team.jpeg";
 import about from "../assets/about-bg.jpeg";
 import Layout from "../components/Layout";
 import {
-  Section,
-  TextBlock,
   StyledImage,
   StyledTitle,
   CardsContainer,
+  Content,
+  Paragraph,
 } from "../common/styles";
 import ContactSection from "../components/ContactSection";
 import { partners } from "../common/constants";
@@ -26,6 +26,10 @@ const PartnersSection = styled.div`
     color: #2e3d41;
     padding: 48px 0 24px 0;
   }
+
+  @media (min-width: 1170px) {
+    width: 100%;
+  }
 `;
 
 const PartnersContainer = styled(CardsContainer)`
@@ -38,8 +42,9 @@ const PartnersContainer = styled(CardsContainer)`
 const About = () => {
   return (
     <Layout pageTitle="About" icon={homeIcon} bgImage={about}>
-      <Section>
-        <TextBlock>
+      <Content>
+        <StyledImage src={team} alt="team" />
+        <Paragraph>
           LiftFitter is an international team of specialists focused on the
           installation, modernization, servicing, and dismantling of elevator
           and escalator equipment. We provide a complete turnkey service — from
@@ -54,9 +59,9 @@ const About = () => {
           to the needs of each client. Our mission To deliver safe, reliable and
           durable elevator solutions while providing a professional installation
           and service process at the highest level.
-        </TextBlock>
-        <StyledImage src={team} alt="team" />
-      </Section>
+        </Paragraph>
+      </Content>
+
       <PartnersSection>
         <StyledTitle>Our Partners</StyledTitle>
         <PartnersContainer>
@@ -65,6 +70,7 @@ const About = () => {
           ))}
         </PartnersContainer>
       </PartnersSection>
+
       <ContactSection />
     </Layout>
   );

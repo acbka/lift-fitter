@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
+import styled from "styled-components";
 import Button from "./Button";
 
 type FormState = {
@@ -12,6 +13,7 @@ type FormState = {
 };
 
 type Errors = {
+  city?: string;
   name?: string;
   email?: string;
   phone?: string;
@@ -108,16 +110,19 @@ const ContactForm: React.FC = () => {
   const [errors, setErrors] = useState<Errors>({});
   const [success, setSuccess] = useState<string>("");
 
+  const { t } = useTranslation();
+
   const validate = () => {
     const newErrors: Errors = {};
 
-    if (!form.name.trim()) newErrors.name = "Name is required";
-    if (!form.email.trim()) newErrors.email = "Email is required";
-    else if (!/\S+@\S+\.\S+/.test(form.email))
-      newErrors.email = "Invalid email format";
-
-    if (!form.phone.trim()) newErrors.phone = "Phone is required";
-    if (!form.message.trim()) newErrors.message = "Message cannot be empty";
+    if (!form.name) newErrors.name = t("form.errors.nameRequired");
+    if (!form.email) newErrors.email = t("form.errors.emailRequired");
+    else if (!/\S+@\S+\.\S+/.test(form.email)) {
+      newErrors.email = t("form.errors.emailInvalid");
+    }
+    if (!form.phone) newErrors.phone = t("form.errors.phoneRequired");
+    if (!form.city) newErrors.city = t("form.errors.cityRequired");
+    if (!form.message) newErrors.message = t("form.errors.messageRequired");
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -166,14 +171,14 @@ const ContactForm: React.FC = () => {
         <Row>
           <Input
             name="name"
-            placeholder="Name"
+            placeholder={t("form.placeholders.name")}
             value={form.name}
             autoComplete="given name"
             onChange={handleChange}
           />
           <Input
             name="email"
-            placeholder="Email"
+            placeholder={t("form.placeholders.email")}
             value={form.email}
             autoComplete="off"
             onChange={handleChange}
@@ -183,14 +188,14 @@ const ContactForm: React.FC = () => {
         <Row>
           <Input
             name="phone"
-            placeholder="Phone"
+            placeholder={t("form.placeholders.phone")}
             value={form.phone}
             autoComplete="tel"
             onChange={handleChange}
           />
           <Input
             name="city"
-            placeholder="City"
+            placeholder={t("form.placeholders.city")}
             value={form.city}
             onChange={handleChange}
           />
@@ -198,7 +203,7 @@ const ContactForm: React.FC = () => {
 
         <Message
           name="message"
-          placeholder="Message"
+          placeholder={t("form.placeholders.message")}
           value={form.message}
           onChange={handleChange}
         />
@@ -209,7 +214,7 @@ const ContactForm: React.FC = () => {
 
         {success && <Success>{success}</Success>}
 
-        <SubmitButton type="submit" title="Submit" />
+        <SubmitButton type="submit" title={t("form.submit")} />
       </Form>
     </FormContainer>
   );

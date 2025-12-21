@@ -1,5 +1,14 @@
 import styled from "styled-components";
 
+export const Brand = styled.a`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+  z-index: 2;
+`;
+
 export const Content = styled.div`
   max-width: 1170px;
   margin: 0 auto;

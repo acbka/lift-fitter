@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
-import { menuItems } from "../common/constants";
-import LanguageSwitcher from "./LanguageSwitcher";
+import { menuItems } from "../../common/constants";
+import LanguageSwitcher from "../LanguageSwitcher";
 import { StyledLink } from "./NavBar";
 
 const NavBarContent = styled.div<{ $isOpen: boolean }>`

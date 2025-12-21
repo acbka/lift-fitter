@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
-import { menuItems } from "../common/constants";
-import { StyledLink } from "./NavBar";
+import { menuItems } from "../../common/constants";
+import { StyledLink } from "../header/NavBar";
 
 const Menu = styled.div`
   display: grid;

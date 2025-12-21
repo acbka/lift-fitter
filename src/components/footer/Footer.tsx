@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../assets/logo.svg";
-import email from "../assets/email.svg";
-import phone from "../assets/phone.svg";
-import { Brand } from "./Header";
+import email from "../../assets/email.svg";
+import logo from "../../assets/logo.svg";
+import phone from "../../assets/phone.svg";
+import { Brand } from "../../common/styles";
 import FooterMenu from "./FooterMenu";
 
 const FooterWrapper = styled.footer`

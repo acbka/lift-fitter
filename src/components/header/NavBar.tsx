@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
-import { menuItems } from "../common/constants";
+import { menuItems } from "../../common/constants";
 import MobileMenu from "./MobileMenu";
-import LanguageSwitcher from "./LanguageSwitcher";
+import LanguageSwitcher from "../LanguageSwitcher";
 
 const NavBarContent = styled.div`
   display: flex;

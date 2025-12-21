@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import logo from "../assets/logo.svg";
+import logo from "../../assets/logo.svg";
+import { Brand } from "../../common/styles";
 import NavBar from "./NavBar";
 
 const HeaderWrapper = styled.header<{ $isScrolled: boolean }>`
@@ -27,15 +28,6 @@ const HeaderContent = styled.div`
   width: 100%;
   max-width: 1170px;
   margin: 0 auto;
-`;
-
-export const Brand = styled.a`
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 18px;
-  z-index: 2;
 `;
 
 const LogoImage = styled.img<{ $isScrolled: boolean }>`

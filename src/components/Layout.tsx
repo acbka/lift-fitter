@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
 import styled from "styled-components";
 import type { Slide } from "../common/constants";
-import Footer from "./Footer";
-import Header from "./Header";
+import Footer from "./footer/Footer";
+import Header from "./header/Header";
 import Slider from "./Slider";
 
 type LayoutProps = {

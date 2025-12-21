@@ -38,5 +38,13 @@
       "cityRequired": "City is required",
       "messageRequired": "Message is required"
     }
+  },
+  "contactSection": {
+    "title": "Get all updates of our offers and promotions!",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisi cing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua is a big."
+  },
+  "footer": {
+    "quickLinks": "Quick links",
+    "copyright": "All rights reserved"
   }
 }

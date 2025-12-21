@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 import { StyledTitle } from "../common/styles";
 import ContactForm from "./ContactForm";
 
@@ -34,14 +35,13 @@ const Paragraph = styled.p`
 `;
 
 const ContactSection = () => {
+  const { t } = useTranslation();
+
   return (
     <Section>
       <TextBlock>
-        <StyledTitle>Get all updates of our offers and promotions!</StyledTitle>
-        <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipisi cing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua is a big.
-        </Paragraph>
+        <StyledTitle>{t("contactSection.title")}</StyledTitle>
+        <Paragraph>{t("contactSection.description")}</Paragraph>
       </TextBlock>
       <ContactForm />
     </Section>

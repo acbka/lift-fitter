@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import email from "../../assets/email.svg";
 import logo from "../../assets/logo.svg";
@@ -71,6 +72,7 @@ const StyledParagraph = styled.p`
 
 const Footer: React.FC = () => {
   const year = new Date().getFullYear();
+  const { t } = useTranslation();
 
   return (
     <FooterWrapper>
@@ -90,7 +92,7 @@ const Footer: React.FC = () => {
         </Container>
 
         <div>
-          <StyledTitle>Quick links</StyledTitle>
+          <StyledTitle>{t("footer.quickLinks")}</StyledTitle>
           <FooterMenu />
         </div>
       </FooterContent>

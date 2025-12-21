@@ -5,5 +5,19 @@
     "projects": "Projects",
     "about": "About us",
     "contacts": "Contacts"
+  },
+  "slider": {
+    "slide1": {
+      "title": "Elevating quality to new heights",
+      "caption": "Feel the expertise with us"
+    },
+    "slide2": {
+      "title": "Precision in every installation",
+      "caption": "Your project. Our responsibility."
+    },
+    "slide3": {
+      "title": "Lifting standards above expectations",
+      "caption": "Reliable. Professional. Proven."
+    }
   }
 }

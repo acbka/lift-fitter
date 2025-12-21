@@ -20,8 +20,8 @@ import mp from "../assets/mp.png";
 export type Slide = {
   id: number;
   image: string;
-  title?: string;
-  caption?: string;
+  titleKey?: string;
+  captionKey?: string;
 };
 
 type MenuItemType = {
@@ -48,31 +48,31 @@ export type LanguageType = {
   label: string;
 };
 
-export const sliders: Slide[] = [
-  {
-    id: 1,
-    image: slide1,
-    title: "Elevating quality to new heights",
-    caption: "Feel the expertise with us",
-  },
-  {
-    id: 2,
-    image: slide2,
-    title: "Precision in every installation",
-    caption: "Your project. Our responsibility.",
-  },
-  {
-    id: 3,
-    image: slide3,
-    title: "Lifting standards above expectations",
-    caption: "Reliable. Professional. Proven.",
-  },
-];
-
 export const LANGUAGES: LanguageType[] = [
   { code: "en", label: "EN" },
   { code: "pl", label: "PL" },
   { code: "de", label: "DE" },
+];
+
+export const sliders: Slide[] = [
+  {
+    id: 1,
+    image: slide1,
+    titleKey: "slider.slide1.title",
+    captionKey: "slider.slide1.caption",
+  },
+  {
+    id: 2,
+    image: slide2,
+    titleKey: "slider.slide2.title",
+    captionKey: "slider.slide2.caption",
+  },
+  {
+    id: 3,
+    image: slide3,
+    titleKey: "slider.slide3.title",
+    captionKey: "slider.slide3.caption",
+  },
 ];
 
 export const menuItems: MenuItemType[] = [

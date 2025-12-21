@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import arrrow from "../assets/arrow-left.svg";
 import type { Slide } from "../common/constants";
@@ -85,6 +86,8 @@ const Slider = ({
   const [index, setIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
+  const { t } = useTranslation();
+
   const nextSlide = useCallback(() => {
     setIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   }, [slides.length]);
@@ -109,12 +112,13 @@ const Slider = ({
     >
       {slides.map((slide, i) => (
         <SlideItem key={slide.id} $bg={slide.image} $isActive={i === index}>
-          {(slide.title || slide.caption) && (
+          {(slide.titleKey && t(slide.titleKey)) ||
+          (slide.captionKey && t(slide.captionKey)) ? (
             <Content>
-              {slide.title && <Title>{slide.title}</Title>}
-              {slide.caption && <Caption>{slide.caption}</Caption>}
+              {slide.titleKey && <Title>{t(slide.titleKey)}</Title>}
+              {slide.captionKey && <Caption>{t(slide.captionKey)}</Caption>}
             </Content>
-          )}
+          ) : null}
         </SlideItem>
       ))}
       <Arrow $direction="left" onClick={prevSlide} src={arrrow} alt="arrrow" />

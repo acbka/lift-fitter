@@ -5,5 +5,19 @@
     "projects": "Realizacje",
     "about": "O nas",
     "contacts": "Kontakt"
+  },
+  "slider": {
+    "slide1": {
+      "title": "Podnosimy jakość na nowy poziom",
+      "caption": "Poczuj doświadczenie z nami"
+    },
+    "slide2": {
+      "title": "Precyzja w każdej instalacji",
+      "caption": "Twój projekt. Nasza odpowiedzialność."
+    },
+    "slide3": {
+      "title": "Standardy powyżej oczekiwań",
+      "caption": "Niezawodny. Profesjonalny. Sprawdzony."
+    }
   }
 }

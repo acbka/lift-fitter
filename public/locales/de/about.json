@@ -1,43 +1,49 @@
 {
-  "title": "Über uns",
-  "intro": "LiftFitter ist ein internationales Team von Aufzugsspezialisten, das umfassende Lösungen in ganz Europa bietet. Wir kümmern uns um den kompletten Lebenszyklus von Aufzugs- und Rolltreppensystemen — von Installation und Modernisierung bis hin zu Wartung und Demontage.",
-  "expertise": {
-    "title": "Unsere Expertise umfasst:",
-    "item1": "Neuinstallationen von Aufzügen",
-    "item2": "Modernisierung und Upgrades",
-    "item3": "Regelmäßige Wartung und Notfallreparaturen",
-    "item4": "Sichere Demontage und Entsorgung"
-  },
-  "turnkey": "Wir bieten schlüsselfertige Lösungen und verwalten jedes Detail — von der ersten Dokumentation und Logistik bis zur endgültigen Inbetriebnahme und Übergabe.",
-  "reach": {
-    "title": "Unsere Reichweite",
-    "description": "Wir sind in Polen, Deutschland, Spanien, Dänemark, den Niederlanden und darüber hinaus tätig und arbeiten mit führenden Herstellern wie Kleemann, Schindler, KONE, Orona und BKG sowie vertrauenswürdigen lokalen Marken zusammen."
-  },
-  "whyUs": {
-    "title": "Warum Kunden uns wählen",
-    "delivery": {
-      "title": "Pünktliche Lieferung",
-      "description": "Wir schließen jedes Projekt termingerecht ab und minimieren Ausfallzeiten für Ihr Gebäude."
+  "about": {
+    "title": "Über LiftFitter",
+    "teamAlt": "LiftFitter Team",
+    "intro": "LiftFitter ist ein internationales Team von Spezialisten...",
+    "turnkey": "Wir bieten einen kompletten schlüsselfertigen Service...",
+    "expertise": {
+      "title": "Unsere Expertise",
+      "item1": "Installation von Aufzügen und Rolltreppen",
+      "item2": "Modernisierung und Sanierung",
+      "item3": "Wartung und Service",
+      "item4": "Demontage von Aufzugsanlagen"
     },
-    "experience": {
-      "title": "Erfahrene Teams",
-      "description": "Unsere zertifizierten Techniker bringen jahrelange praktische Erfahrung in jede Installation ein."
+    "reach": {
+      "title": "Internationale Reichweite",
+      "description": "Wir sind in Polen, Deutschland, Spanien tätig..."
     },
-    "transparency": {
-      "title": "Volle Transparenz",
-      "description": "Detaillierte Dokumentation in jeder Phase hält Sie informiert und compliant."
+    "whyUs": {
+      "title": "Warum wir",
+      "delivery": {
+        "title": "Pünktliche Lieferung",
+        "description": "Wir schließen alle Projekte termingerecht ab."
+      },
+      "experience": {
+        "title": "Erfahrene Teams",
+        "description": "Hochqualifizierte Installationsspezialisten."
+      },
+      "transparency": {
+        "title": "Volle Transparenz",
+        "description": "Jede Phase der Arbeit wird dokumentiert."
+      },
+      "safety": {
+        "title": "Sicherheit & Konformität",
+        "description": "Wir arbeiten nach EN81-Standards."
+      },
+      "tailored": {
+        "title": "Maßgeschneiderte Lösungen",
+        "description": "Wir passen Lösungen an jeden Kunden an."
+      }
     },
-    "safety": {
-      "title": "Sicherheit zuerst",
-      "description": "Alle Arbeiten entsprechen den EN81-Standards sowie lokalen Arbeitsschutz- und UDT-Vorschriften."
+    "mission": {
+      "title": "Unsere Mission",
+      "description": "Sichere, zuverlässige und langlebige Aufzugslösungen zu liefern."
     },
-    "tailored": {
-      "title": "Maßgeschneiderte Lösungen",
-      "description": "Wir passen unseren Ansatz an Ihre spezifischen Anforderungen und Ihr Budget an."
+    "partners": {
+      "title": "Unsere Partner"
     }
-  },
-  "mission": {
-    "title": "Unsere Mission",
-    "description": "Sichere, zuverlässige und langlebige Aufzugslösungen durch professionelle Installation und exzellenten Service zu liefern — damit Menschen jeden Tag sicher in Bewegung bleiben."
   }
 }

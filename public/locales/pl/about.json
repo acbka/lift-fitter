@@ -1,43 +1,49 @@
 {
-  "title": "O nas",
-  "intro": "LiftFitter to międzynarodowy zespół specjalistów od wind, dostarczający kompleksowe rozwiązania w całej Europie. Zajmujemy się pełnym cyklem życia urządzeń dźwigowych i schodów ruchomych — od instalacji i modernizacji po serwis i demontaż.",
-  "expertise": {
-    "title": "Nasza ekspertyza obejmuje:",
-    "item1": "Instalacje nowych wind",
-    "item2": "Modernizację i ulepszenia urządzeń",
-    "item3": "Regularne przeglądy i naprawy awaryjne",
-    "item4": "Bezpieczny demontaż i utylizację"
-  },
-  "turnkey": "Oferujemy rozwiązania pod klucz, zarządzając każdym szczegółem — od wstępnej dokumentacji i logistyki po końcowe uruchomienie i przekazanie.",
-  "reach": {
-    "title": "Nasz zasięg",
-    "description": "Działamy w Polsce, Niemczech, Hiszpanii, Danii, Holandii i innych krajach, współpracując z czołowymi producentami, takimi jak Kleemann, Schindler, KONE, Orona i BKG, a także z zaufanymi lokalnymi markami."
-  },
-  "whyUs": {
-    "title": "Dlaczego klienci nas wybierają",
-    "delivery": {
-      "title": "Terminowa realizacja",
-      "description": "Każdy projekt realizujemy zgodnie z harmonogramem, minimalizując przestoje w Twoim budynku."
+  "about": {
+    "title": "O LiftFitter",
+    "teamAlt": "Zespół LiftFitter",
+    "intro": "LiftFitter to międzynarodowy zespół specjalistów...",
+    "turnkey": "Oferujemy kompleksową usługę pod klucz...",
+    "expertise": {
+      "title": "Nasza ekspertyza",
+      "item1": "Instalacja wind i schodów ruchomych",
+      "item2": "Modernizacja i renowacja",
+      "item3": "Konserwacja i serwis",
+      "item4": "Demontaż urządzeń dźwigowych"
     },
-    "experience": {
-      "title": "Doświadczone zespoły",
-      "description": "Nasi certyfikowani technicy wnoszą lata praktycznego doświadczenia do każdej instalacji."
+    "reach": {
+      "title": "Zasięg międzynarodowy",
+      "description": "Działamy w Polsce, Niemczech, Hiszpanii..."
     },
-    "transparency": {
-      "title": "Pełna przejrzystość",
-      "description": "Szczegółowa dokumentacja na każdym etapie zapewnia Ci informację i zgodność z przepisami."
+    "whyUs": {
+      "title": "Dlaczego my",
+      "delivery": {
+        "title": "Terminowa realizacja",
+        "description": "Realizujemy wszystkie projekty zgodnie z harmonogramem."
+      },
+      "experience": {
+        "title": "Doświadczone zespoły",
+        "description": "Wysoko wykwalifikowani specjaliści montażowi."
+      },
+      "transparency": {
+        "title": "Pełna przejrzystość",
+        "description": "Każdy etap pracy jest dokumentowany."
+      },
+      "safety": {
+        "title": "Bezpieczeństwo i zgodność",
+        "description": "Pracujemy zgodnie ze standardami EN81."
+      },
+      "tailored": {
+        "title": "Dopasowane rozwiązania",
+        "description": "Dostosowujemy rozwiązania do każdego klienta."
+      }
     },
-    "safety": {
-      "title": "Bezpieczeństwo przede wszystkim",
-      "description": "Wszystkie prace są zgodne ze standardami EN81 oraz lokalnymi przepisami BHP i UDT."
+    "mission": {
+      "title": "Nasza misja",
+      "description": "Dostarczanie bezpiecznych, niezawodnych i trwałych rozwiązań windowych."
     },
-    "tailored": {
-      "title": "Dopasowane rozwiązania",
-      "description": "Dostosowujemy nasze podejście do Twoich konkretnych wymagań i budżetu."
+    "partners": {
+      "title": "Nasi partnerzy"
     }
-  },
-  "mission": {
-    "title": "Nasza misja",
-    "description": "Dostarczanie bezpiecznych, niezawodnych i trwałych rozwiązań windowych poprzez profesjonalną instalację i doskonałość w obsłudze — zapewniając bezpieczny ruch ludzi każdego dnia."
   }
 }

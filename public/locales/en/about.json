@@ -1,43 +1,47 @@
 {
-  "title": "About Us",
-  "intro": "LiftFitter is an international team of elevator specialists delivering comprehensive solutions across Europe. We handle the complete lifecycle of elevator and escalator equipment — from installation and modernization to servicing and dismantling.",
+  "title": "About LiftFitter",
+  "teamAlt": "LiftFitter team",
+  "intro": "LiftFitter is an international team of specialists...",
+  "turnkey": "We provide a complete turnkey service...",
   "expertise": {
-    "title": "Our expertise spans:",
-    "item1": "New elevator installations",
-    "item2": "Equipment modernization and upgrades",
-    "item3": "Regular maintenance and emergency repairs",
-    "item4": "Safe dismantling and disposal"
+    "title": "Our expertise",
+    "item1": "Installation of elevators and escalators",
+    "item2": "Modernisation and refurbishment",
+    "item3": "Maintenance and servicing",
+    "item4": "Dismantling of lift equipment"
   },
-  "turnkey": "We provide turnkey solutions, managing every detail from initial documentation and logistics to final commissioning and handover.",
   "reach": {
-    "title": "Our reach",
-    "description": "Operating across Poland, Germany, Spain, Denmark, the Netherlands, and beyond, we partner with leading manufacturers including Kleemann, Schindler, KONE, Orona, and BKG, as well as trusted local brands."
+    "title": "International reach",
+    "description": "We operate in Poland, Germany, Spain..."
   },
   "whyUs": {
-    "title": "Why clients choose us",
+    "title": "Why choose us",
     "delivery": {
       "title": "On-time delivery",
-      "description": "We complete every project according to schedule, minimizing downtime for your building."
+      "description": "We complete all projects on schedule."
     },
     "experience": {
       "title": "Experienced teams",
-      "description": "Our certified technicians bring years of hands-on expertise to every installation."
+      "description": "Highly qualified installation specialists."
     },
     "transparency": {
       "title": "Full transparency",
-      "description": "Detailed documentation at every stage keeps you informed and compliant."
+      "description": "Every stage of the work is documented."
     },
     "safety": {
-      "title": "Safety first",
-      "description": "All work adheres to EN81 standards and local health & safety regulations, including UDT compliance."
+      "title": "Safety & compliance",
+      "description": "We work in accordance with EN81 standards."
     },
     "tailored": {
       "title": "Tailored solutions",
-      "description": "We adapt our approach to meet your specific requirements and budget."
+      "description": "We adapt solutions to each client."
     }
   },
   "mission": {
     "title": "Our mission",
-    "description": "To deliver safe, reliable, and durable elevator solutions through professional installation and service excellence — keeping people moving safely, every day."
+    "description": "To deliver safe, reliable and durable elevator solutions."
+  },
+  "partners": {
+    "title": "Our partners"
   }
 }

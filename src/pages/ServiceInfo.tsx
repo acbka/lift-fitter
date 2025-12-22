@@ -39,7 +39,10 @@ const ServiceInfo = () => {
       {service && (
         <Layout pageTitle={t(`services.${service.id}.title`)}>
           <Content>
-            <StyledImage src={service.image} />
+            <StyledImage
+              src={service.image}
+              alt={t(`services.${service.id}.title`)}
+            />
             <Paragraph>
               <Trans
                 ns="services"
@@ -50,7 +53,7 @@ const ServiceInfo = () => {
 
             {sections.map((section, idx) => (
               <section key={idx}>
-                <h2>{section.title}</h2>
+                <h3>{section.title}</h3>
                 <p>{section.content}</p>
               </section>
             ))}

@@ -1,49 +1,22 @@
 {
-  "about": {
-    "title": "O LiftFitter",
-    "teamAlt": "Zespół LiftFitter",
-    "intro": "LiftFitter to międzynarodowy zespół specjalistów...",
-    "turnkey": "Oferujemy kompleksową usługę pod klucz...",
-    "expertise": {
-      "title": "Nasza ekspertyza",
-      "item1": "Instalacja wind i schodów ruchomych",
-      "item2": "Modernizacja i renowacja",
-      "item3": "Konserwacja i serwis",
-      "item4": "Demontaż urządzeń dźwigowych"
+  "title": "O LiftFitter",
+  "teamAlt": "Zespół LiftFitter",
+  "intro": "Lift Fitter to międzynarodowy zespół specjalistów oferujący kompleksowe rozwiązania w zakresie montażu, modernizacji, serwisu oraz demontażu urządzeń dźwigowych i schodów ruchomych. Zapewniamy pełną obsługę „pod klucz” — od przygotowania dokumentacji technicznej i logistyki, aż po końcowy odbiór i uruchomienie urządzenia.",
+  "sections": [
+    {
+      "title": "Zasięg Międzynarodowy i Współpraca",
+      "content": "Działamy aktywnie w Polsce, Niemczech, Hiszpanii, Danii, Holandii oraz innych krajach europejskich. Nasze doświadczenie obejmuje współpracę z wiodącymi producentami, takimi jak Kleemann, Schindler, KONE, Orona, BKG, a także z markami lokalnymi, co pozwala nam dostosować rozwiązania do indywidualnych potrzeb każdego klienta."
     },
-    "reach": {
-      "title": "Zasięg międzynarodowy",
-      "description": "Działamy w Polsce, Niemczech, Hiszpanii..."
+    {
+      "title": "Dlaczego Lift Fitter?",
+      "content": "Nasz priorytet to precyzja i bezpieczeństwo. Gwarantujemy terminową realizację wszystkich projektów dzięki doświadczonym zespołom montażowym. Każdy etap prac jest w pełni udokumentowany i przejrzysty, co zapewnia zgodność z normami EN81 oraz lokalnymi przepisami BHP i wymaganiami UDT. Naszą misją jest dostarczanie bezpiecznych, niezawodnych i trwałych rozwiązań dźwigowych oraz profesjonalna obsługa na najwyższym poziomie."
     },
-    "whyUs": {
-      "title": "Dlaczego my",
-      "delivery": {
-        "title": "Terminowa realizacja",
-        "description": "Realizujemy wszystkie projekty zgodnie z harmonogramem."
-      },
-      "experience": {
-        "title": "Doświadczone zespoły",
-        "description": "Wysoko wykwalifikowani specjaliści montażowi."
-      },
-      "transparency": {
-        "title": "Pełna przejrzystość",
-        "description": "Każdy etap pracy jest dokumentowany."
-      },
-      "safety": {
-        "title": "Bezpieczeństwo i zgodność",
-        "description": "Pracujemy zgodnie ze standardami EN81."
-      },
-      "tailored": {
-        "title": "Dopasowane rozwiązania",
-        "description": "Dostosowujemy rozwiązania do każdego klienta."
-      }
-    },
-    "mission": {
+    {
       "title": "Nasza misja",
-      "description": "Dostarczanie bezpiecznych, niezawodnych i trwałych rozwiązań windowych."
-    },
-    "partners": {
-      "title": "Nasi partnerzy"
+      "content": "Dostarczanie bezpiecznych, niezawodnych i trwałych rozwiązań dźwigowych."
     }
+  ],
+  "partners": {
+    "title": "Nasi partnerzy"
   }
 }

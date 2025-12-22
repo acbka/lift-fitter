@@ -48,6 +48,11 @@ h1 {
   }
 }
 
+h3 {
+  color: var(--color-yellow);
+  font-weight: 500;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

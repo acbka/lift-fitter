@@ -39,54 +39,23 @@ const PartnersContainer = styled(CardsContainer)`
   max-width: 1170px;
 `;
 
-const expertiseItems = [
-  "expertise.item1",
-  "expertise.item2",
-  "expertise.item3",
-  "expertise.item4",
-] as const;
-
-const whyUsBlocks = [
-  "delivery",
-  "experience",
-  "transparency",
-  "safety",
-  "tailored",
-] as const;
-
 const About: React.FC = () => {
   const { t } = useTranslation("about");
+
+  const sections = t(`sections`, {
+    returnObjects: true,
+  }) as { title: string; content: string }[];
 
   return (
     <Layout pageTitle={t("title")} icon={homeIcon} bgImage={about}>
       <Content>
         <StyledImage src={team} alt={t("teamAlt")} />
-
-        <p>{t("intro")}</p>
-
-        <h2>{t("expertise.title")}</h2>
-        <ul>
-          {expertiseItems.map((key) => (
-            <li key={key}>{t(`expertise.${key.split(".")[1]}`)}</li>
-          ))}
-        </ul>
-
-        <p>{t("turnkey")}</p>
-
-        <h2>{t("reach.title")}</h2>
-        <p>{t("reach.description")}</p>
-
-        <h2>{t("whyUs.title")}</h2>
-
-        {whyUsBlocks.map((block) => (
-          <section key={block}>
-            <h3>{t(`whyUs.${block}.title`)}</h3>
-            <p>{t(`whyUs.${block}.description`)}</p>
+        {sections.map((section, idx) => (
+          <section key={idx}>
+            <h3>{section.title}</h3>
+            <p>{section.content}</p>
           </section>
         ))}
-
-        <h2>{t("mission.title")}</h2>
-        <p>{t("mission.description")}</p>
       </Content>
 
       <PartnersSection>

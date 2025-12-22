@@ -1,49 +1,22 @@
 {
-  "about": {
-    "title": "Über LiftFitter",
-    "teamAlt": "LiftFitter Team",
-    "intro": "LiftFitter ist ein internationales Team von Spezialisten...",
-    "turnkey": "Wir bieten einen kompletten schlüsselfertigen Service...",
-    "expertise": {
-      "title": "Unsere Expertise",
-      "item1": "Installation von Aufzügen und Rolltreppen",
-      "item2": "Modernisierung und Sanierung",
-      "item3": "Wartung und Service",
-      "item4": "Demontage von Aufzugsanlagen"
+  "title": "Über LiftFitter",
+  "teamAlt": "LiftFitter Team",
+  "intro": "Lift Fitter ist ein internationales Spezialistenteam, das umfassende Lösungen für die Installation, Modernisierung, Wartung und Demontage von Aufzugs- und Fahrtreppenanlagen bietet. Wir bieten einen kompletten schlüsselfertigen Service, der von der technischen Dokumentation und komplexen Logistik bis hin zur endgültigen Inbetriebnahme der Anlagen alles abdeckt.",
+  "sections": [
+    {
+      "title": "Internationale Reichweite & Partnerschaften",
+      "content": "Wir sind in Polen, Deutschland, Spanien, Dänemark, den Niederlanden und anderen europäischen Ländern tätig. Unsere Expertise umfasst weltweit führende Hersteller wie Kleemann, Schindler, KONE, Orona und BKG sowie spezialisierte lokale Marken, was uns eine perfekte Anpassung an die individuellen Anforderungen jedes Kunden ermöglicht."
     },
-    "reach": {
-      "title": "Internationale Reichweite",
-      "description": "Wir sind in Polen, Deutschland, Spanien tätig..."
+    {
+      "title": "Warum Lift Fitter wählen?",
+      "content": "Unsere Priorität sind Präzision und Sicherheit. Wir garantieren die termingerechte Fertigstellung aller Projekte durch unsere erfahrenen Montageteams. Unser Prozess ist vollkommen transparent: Jeder Arbeitsschritt wird dokumentiert, um die Einhaltung der internationalen Norm EN81 sowie der lokalen Gesundheits-, Sicherheits- und UDT-Vorschriften zu gewährleisten. Unsere Mission ist es, sichere, zuverlässige und langlebige Lösungen auf höchstem professionellem Niveau zu liefern."
     },
-    "whyUs": {
-      "title": "Warum wir",
-      "delivery": {
-        "title": "Pünktliche Lieferung",
-        "description": "Wir schließen alle Projekte termingerecht ab."
-      },
-      "experience": {
-        "title": "Erfahrene Teams",
-        "description": "Hochqualifizierte Installationsspezialisten."
-      },
-      "transparency": {
-        "title": "Volle Transparenz",
-        "description": "Jede Phase der Arbeit wird dokumentiert."
-      },
-      "safety": {
-        "title": "Sicherheit & Konformität",
-        "description": "Wir arbeiten nach EN81-Standards."
-      },
-      "tailored": {
-        "title": "Maßgeschneiderte Lösungen",
-        "description": "Wir passen Lösungen an jeden Kunden an."
-      }
-    },
-    "mission": {
+    {
       "title": "Unsere Mission",
-      "description": "Sichere, zuverlässige und langlebige Aufzugslösungen zu liefern."
-    },
-    "partners": {
-      "title": "Unsere Partner"
+      "content": "Sichere, zuverlässige und langlebige Aufzugslösungen zu liefern."
     }
+  ],
+  "partners": {
+    "title": "Unsere Partner"
   }
 }

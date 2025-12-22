@@ -1,46 +1,21 @@
 {
   "title": "About LiftFitter",
   "teamAlt": "LiftFitter team",
-  "intro": "LiftFitter is an international team of specialists...",
-  "turnkey": "We provide a complete turnkey service...",
-  "expertise": {
-    "title": "Our expertise",
-    "item1": "Installation of elevators and escalators",
-    "item2": "Modernisation and refurbishment",
-    "item3": "Maintenance and servicing",
-    "item4": "Dismantling of lift equipment"
-  },
-  "reach": {
-    "title": "International reach",
-    "description": "We operate in Poland, Germany, Spain..."
-  },
-  "whyUs": {
-    "title": "Why choose us",
-    "delivery": {
-      "title": "On-time delivery",
-      "description": "We complete all projects on schedule."
+  "intro": "Lift Fitter is an international team of specialists providing comprehensive solutions for the installation, modernization, maintenance, and dismantling of elevator and escalator equipment. We deliver a complete turnkey service, managing everything from technical documentation and complex logistics to the final commissioning of every device.",
+  "sections": [
+    {
+      "title": "International Reach & Partnerships",
+      "content": "We operate extensively across Poland, Germany, Spain, Denmark, the Netherlands, and other European countries. Our expertise covers world-leading manufacturers such as Kleemann, Schindler, KONE, Orona, and BKG, as well as specialized local brands, allowing us to adapt perfectly to the unique needs of every client."
     },
-    "experience": {
-      "title": "Experienced teams",
-      "description": "Highly qualified installation specialists."
+    {
+      "title": "Why Choose Lift Fitter?",
+      "content": "Our priority is precision and safety. We guarantee that all projects are completed strictly on schedule by our highly experienced installation teams. Our process is fully transparent, with every stage documented to ensure compliance with international EN81 standards, as well as local health, safety, and UDT regulations. Our mission is to provide safe, reliable, and durable solutions with professional service at the highest level."
     },
-    "transparency": {
-      "title": "Full transparency",
-      "description": "Every stage of the work is documented."
-    },
-    "safety": {
-      "title": "Safety & compliance",
-      "description": "We work in accordance with EN81 standards."
-    },
-    "tailored": {
-      "title": "Tailored solutions",
-      "description": "We adapt solutions to each client."
+    {
+      "title": "Our mission",
+      "content": "To deliver safe, reliable and durable elevator solutions."
     }
-  },
-  "mission": {
-    "title": "Our mission",
-    "description": "To deliver safe, reliable and durable elevator solutions."
-  },
+  ],
   "partners": {
     "title": "Our partners"
   }

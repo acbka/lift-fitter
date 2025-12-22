@@ -1,0 +1,18 @@
+{
+  "title": "Kontakt",
+  "subtitle": "Kontaktieren Sie LiftFitter",
+  "phone": {
+    "title": "Telefon"
+  },
+  "email": {
+    "title": "E-Mail"
+  },
+  "address": {
+    "title": "Firmenadresse",
+    "value": "ul. Radogoska 9A/16, 71-607 Szczecin, Polen"
+  },
+  "locations": {
+    "title": "Wir arbeiten in",
+    "value": "Polen, Deutschland, Spanien, Dänemark, den Niederlanden und weiteren europäischen Ländern"
+  }
+}

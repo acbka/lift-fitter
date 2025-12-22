@@ -1,0 +1,18 @@
+{
+  "title": "Kontakt",
+  "subtitle": "Skontaktuj się z LiftFitter",
+  "phone": {
+    "title": "Telefon"
+  },
+  "email": {
+    "title": "E-mail"
+  },
+  "address": {
+    "title": "Adres biura",
+    "value": "ul. Radogoska 9A/16, 71-607 Szczecin"
+  },
+  "locations": {
+    "title": "Działamy w",
+    "value": "Polsce, Niemczech, Hiszpanii, Danii, Holandii oraz innych krajach Europy"
+  }
+}

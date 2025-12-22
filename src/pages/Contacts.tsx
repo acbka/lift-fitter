@@ -55,6 +55,11 @@ const InfoItem = styled.div`
     margin: 0;
     color: #555;
   }
+
+  a {
+    color: #555;
+    text-decoration: none;
+  }
 `;
 
 const Contacts: React.FC = () => {
@@ -70,7 +75,7 @@ const Contacts: React.FC = () => {
             <img src={phoneIcon} alt={t("phone.title")} />
             <div>
               <h4>{t("phone.title")}</h4>
-              <p>+48 000 000 000</p>
+              <p>(+48) 737974401</p>
             </div>
           </InfoItem>
 
@@ -86,7 +91,15 @@ const Contacts: React.FC = () => {
             <img src={location} alt={t("address.title")} />
             <div>
               <h4>{t("address.title")}</h4>
-              <p>{t("address.value")}</p>
+              <p>
+                <a
+                  href="https://maps.google.com/?q=ul.+Radogoska+9A/16,+71-607+Szczecin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t("address.value")}
+                </a>
+              </p>
             </div>
           </InfoItem>
 

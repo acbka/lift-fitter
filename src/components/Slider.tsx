@@ -86,7 +86,7 @@ const Slider = ({
   const [index, setIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  const { t } = useTranslation();
+  const { t } = useTranslation("slider");
 
   const nextSlide = useCallback(() => {
     setIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));

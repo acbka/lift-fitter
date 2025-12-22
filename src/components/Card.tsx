@@ -1,10 +1,12 @@
-import parse from "html-react-parser";
 import styled from "styled-components";
-import type { ProjectAndServiceType } from "../common/constants";
 import Button from "./Button";
+import { useTranslation } from "react-i18next";
 
 type CardPropsType = {
-  item: ProjectAndServiceType;
+  itemId: string;
+  itemKey: string;
+  image?: string;
+  buttonName: string;
   handleClick?: () => void;
 };
 
@@ -52,16 +54,26 @@ const ShortDescription = styled.p`
   margin-bottom: 20px;
 `;
 
-const Card = ({ item, handleClick }: CardPropsType) => {
+const Card = ({
+  itemId,
+  itemKey,
+  image,
+  buttonName,
+  handleClick,
+}: CardPropsType) => {
+  const { t } = useTranslation("services");
+
   return (
     <StyledCard>
-      <Image src={item.image} alt="Project" />
+      <Image src={image} alt={t(`${itemKey}.${itemId}.title`)} />
       <CardBody>
         <div>
-          <Title>{item.title}</Title>
-          <ShortDescription>{parse(item.shortDescription)}</ShortDescription>
+          <Title>{t(`${itemKey}.${itemId}.title`)}</Title>
+          <ShortDescription>
+            {t(`${itemKey}.${itemId}.shortDescription`)}
+          </ShortDescription>
         </div>
-        <Button title="Details" handleClick={handleClick} />
+        <Button title={buttonName} handleClick={handleClick} />
       </CardBody>
     </StyledCard>
   );

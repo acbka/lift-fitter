@@ -72,7 +72,7 @@ const StyledParagraph = styled.p`
 
 const Footer: React.FC = () => {
   const year = new Date().getFullYear();
-  const { t } = useTranslation();
+  const { t } = useTranslation("footer");
 
   return (
     <FooterWrapper>
@@ -92,12 +92,14 @@ const Footer: React.FC = () => {
         </Container>
 
         <div>
-          <StyledTitle>{t("footer.quickLinks")}</StyledTitle>
+          <StyledTitle>{t("footer:quickLinks")}</StyledTitle>
           <FooterMenu />
         </div>
       </FooterContent>
       <StyledParagraph>
-        <span>© {year} Lift Fitter. All rights reserved.</span>
+        <span>
+          © {year} Lift Fitter. {t("footer:copyright")}
+        </span>
       </StyledParagraph>
     </FooterWrapper>
   );

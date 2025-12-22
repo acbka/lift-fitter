@@ -35,7 +35,7 @@ export const StyledLink = styled(Link)`
 
 const NavBar: React.FC = () => {
   const [windowSize, setWindowSize] = useState<number | undefined>(undefined);
-  const { t } = useTranslation();
+  const { t } = useTranslation("nav");
 
   useEffect(() => {
     function handleResize() {

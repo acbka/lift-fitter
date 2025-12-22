@@ -1,7 +1,7 @@
-import parse from "html-react-parser";
 import { useParams } from "react-router";
+import { useTranslation, Trans } from "react-i18next";
 import styled from "styled-components";
-import { services } from "../common/constants";
+import { services } from "../common/services";
 import Layout from "../components/Layout";
 import { Content } from "../common/styles";
 
@@ -24,15 +24,36 @@ const Paragraph = styled.div`
 const ServiceInfo = () => {
   const { id } = useParams();
 
-  const service = id ? services.find((item) => item.id === id) : undefined;
+  const { t } = useTranslation("services");
+
+  const service = services.find((item) => item.id === id);
+
+  if (!service) return null;
+
+  const sections = t(`services.${id}.details.sections`, {
+    returnObjects: true,
+  }) as { title: string; content: string }[];
 
   return (
     <>
       {service && (
-        <Layout pageTitle={service.title}>
+        <Layout pageTitle={t(`services.${service.id}.title`)}>
           <Content>
             <StyledImage src={service.image} />
-            <Paragraph>{parse(service.description || "")}</Paragraph>
+            <Paragraph>
+              <Trans
+                ns="services"
+                i18nKey={`services.${service.id}.details.intro`}
+                components={{ strong: <strong />, u: <u /> }}
+              />
+            </Paragraph>
+
+            {sections.map((section, idx) => (
+              <section key={idx}>
+                <h2>{section.title}</h2>
+                <p>{section.content}</p>
+              </section>
+            ))}
           </Content>
         </Layout>
       )}

@@ -31,7 +31,7 @@ const MenuItem = styled(StyledLink)`
 `;
 
 const FooterMenu: React.FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("nav");
 
   return (
     <Menu>

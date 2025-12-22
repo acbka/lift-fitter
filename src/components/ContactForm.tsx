@@ -110,19 +110,19 @@ const ContactForm: React.FC = () => {
   const [errors, setErrors] = useState<Errors>({});
   const [success, setSuccess] = useState<string>("");
 
-  const { t } = useTranslation();
+  const { t } = useTranslation("form");
 
   const validate = () => {
     const newErrors: Errors = {};
 
-    if (!form.name) newErrors.name = t("form.errors.nameRequired");
-    if (!form.email) newErrors.email = t("form.errors.emailRequired");
+    if (!form.name) newErrors.name = t("form:errors.nameRequired");
+    if (!form.email) newErrors.email = t("form:errors.emailRequired");
     else if (!/\S+@\S+\.\S+/.test(form.email)) {
-      newErrors.email = t("form.errors.emailInvalid");
+      newErrors.email = t("form:errors.emailInvalid");
     }
-    if (!form.phone) newErrors.phone = t("form.errors.phoneRequired");
-    if (!form.city) newErrors.city = t("form.errors.cityRequired");
-    if (!form.message) newErrors.message = t("form.errors.messageRequired");
+    if (!form.phone) newErrors.phone = t("form:errors.phoneRequired");
+    if (!form.city) newErrors.city = t("form:errors.cityRequired");
+    if (!form.message) newErrors.message = t("form:errors.messageRequired");
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -171,14 +171,14 @@ const ContactForm: React.FC = () => {
         <Row>
           <Input
             name="name"
-            placeholder={t("form.placeholders.name")}
+            placeholder={t("form:placeholders.name")}
             value={form.name}
             autoComplete="given name"
             onChange={handleChange}
           />
           <Input
             name="email"
-            placeholder={t("form.placeholders.email")}
+            placeholder={t("form:placeholders.email")}
             value={form.email}
             autoComplete="off"
             onChange={handleChange}
@@ -188,14 +188,14 @@ const ContactForm: React.FC = () => {
         <Row>
           <Input
             name="phone"
-            placeholder={t("form.placeholders.phone")}
+            placeholder={t("form:placeholders.phone")}
             value={form.phone}
             autoComplete="tel"
             onChange={handleChange}
           />
           <Input
             name="city"
-            placeholder={t("form.placeholders.city")}
+            placeholder={t("form:placeholders.city")}
             value={form.city}
             onChange={handleChange}
           />
@@ -203,7 +203,7 @@ const ContactForm: React.FC = () => {
 
         <Message
           name="message"
-          placeholder={t("form.placeholders.message")}
+          placeholder={t("form:placeholders.message")}
           value={form.message}
           onChange={handleChange}
         />
@@ -214,7 +214,7 @@ const ContactForm: React.FC = () => {
 
         {success && <Success>{success}</Success>}
 
-        <SubmitButton type="submit" title={t("form.submit")} />
+        <SubmitButton type="submit" title={t("form:submit")} />
       </Form>
     </FormContainer>
   );

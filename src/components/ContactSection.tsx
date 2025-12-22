@@ -35,13 +35,13 @@ const Paragraph = styled.p`
 `;
 
 const ContactSection = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("contactSection");
 
   return (
     <Section>
       <TextBlock>
-        <StyledTitle>{t("contactSection.title")}</StyledTitle>
-        <Paragraph>{t("contactSection.description")}</Paragraph>
+        <StyledTitle>{t("contactSection:title")}</StyledTitle>
+        <Paragraph>{t("contactSection:description")}</Paragraph>
       </TextBlock>
       <ContactForm />
     </Section>

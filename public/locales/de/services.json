@@ -2,54 +2,72 @@
   "services": {
     "title": "Unsere Dienstleistungen",
     "liftEmergency": {
-      "title": "Aufzug-Notdienst",
-      "shortDescription": "24/7 schneller Einsatz bei Aufzugstörungen und Personenbefreiung.",
+      "title": "Aufzugs-Notdienst",
+      "shortDescription": "24/7 Aufzugs-Notdienst mit schneller Reaktion und sicherer Fehlerbehebung.",
       "details": {
-        "intro": "Unser <strong>Aufzug-Notdienst</strong> ist <u>rund um die Uhr</u> verfügbar und sorgt für maximale Sicherheit.",
+        "intro": "Für die Bequemlichkeit unserer Kunden bieten wir einen <strong>24/7 Aufzugs-Notdienst</strong>. Wir verstehen, dass Aufzugsausfälle unerwartet und zu den ungünstigsten Zeiten auftreten können, weshalb unser Team immer bereit ist, <u>schnell, sicher und effizient</u> zu reagieren.",
         "sections": [
           {
-            "title": "Leistungen",
-            "content": "Sofortige Reaktion, sichere Personenbefreiung und schnelle Fehlerdiagnose."
+            "title": "Sofortige Notfallreaktion",
+            "content": "Im Falle einer Aufzugsstörung oder Personeneinschließung reagieren unsere Techniker sofort. Wir priorisieren die Sicherheit der Passagiere, gewährleisten ruhige und sichere Befreiungsverfahren und stellen den Aufzugsbetrieb so schnell wie möglich wieder her."
           },
           {
-            "title": "Unsere Vorteile",
-            "content": "Erfahrene Techniker und moderne Diagnosetechnik."
+            "title": "Expertendiagnose von Störungen",
+            "content": "Unsere erfahrenen Ingenieure führen mit modernen Werkzeugen und bewährten Methoden eine schnelle und genaue Fehlerdiagnose durch. Dies ermöglicht es uns, die Ursache des Problems zu identifizieren und wiederholte Ausfälle zu verhindern."
+          },
+          {
+            "title": "Sicherheit an erster Stelle",
+            "content": "Alle Notfallarbeiten werden in strikter Übereinstimmung mit Sicherheitsvorschriften und Industriestandards durchgeführt. Wir stellen sicher, dass Ihr Aufzug sicher zu benutzen ist, bevor wir ihn wieder in Betrieb nehmen."
           }
         ]
       }
     },
-
     "liftMaintenance": {
-      "title": "Aufzugsservice & Wartung",
-      "shortDescription": "Regelmäßige Wartung für sicheren und zuverlässigen Betrieb.",
+      "title": "Aufzugswartung & Service",
+      "shortDescription": "Professioneller Aufzugsservice und Wartung für sicheren, zuverlässigen und langfristigen Betrieb.",
       "details": {
-        "intro": "Eine regelmäßige <strong>Wartung von Aufzügen</strong> ist entscheidend für Sicherheit und Lebensdauer.",
+        "intro": "Regelmäßiger <strong>Aufzugsservice und Wartung</strong> sind unerlässlich, um einen sicheren Betrieb, Zuverlässigkeit und lange Lebensdauer der Ausrüstung zu gewährleisten. Bei LiftFitter bieten wir umfassende Wartungslösungen, die auf die spezifischen Bedürfnisse jedes Gebäudes und Aufzugssystems zugeschnitten sind.",
         "sections": [
+          {
+            "title": "Umfassender Aufzugsservice",
+            "content": "Wir bieten professionellen Service für Personenaufzüge, Lastenaufzüge, behindertengerechte Plattformen, Treppenlifte und andere Hebeeinrichtungen. Unsere Wartungsprogramme umfassen Inspektionen, Schmierung, Einstellungen und detaillierte technische Prüfungen."
+          },
           {
             "title": "Vorbeugende Wartung",
-            "content": "Geplante Inspektionen, Einstellungen und Prüfungen."
+            "content": "Vorbeugende Wartung hilft, unerwartete Ausfälle und kostspielige Reparaturen zu reduzieren. Regelmäßige Inspektionen mechanischer und elektrischer Komponenten gewährleisten reibungslosen Betrieb und langfristige Zuverlässigkeit."
           },
           {
-            "title": "Vorschriften",
-            "content": "Alle Arbeiten entsprechen den geltenden Normen."
+            "title": "24/7 Notfallunterstützung",
+            "content": "Als Teil unseres Wartungsservices bieten wir 24/7 Notfallunterstützung. Im Falle eines Ausfalls reagieren unsere Techniker schnell, um Ausfallzeiten zu minimieren und den sicheren Betrieb wiederherzustellen."
+          },
+          {
+            "title": "Reparaturen und Modernisierungsberatung",
+            "content": "Wenn verschlissene oder beschädigte Komponenten ersetzt werden müssen, handeln wir schnell und effizient. Wir beraten auch Kunden zu Modernisierungsoptionen und helfen, Sicherheit, Leistung und Einhaltung aktueller Standards zu verbessern."
           }
         ]
       }
     },
-
     "modernisationRepair": {
       "title": "Modernisierung & Reparatur",
-      "shortDescription": "Modernisierung und Reparatur von Aufzügen nach aktuellen Standards.",
+      "shortDescription": "Lösungen für Aufzugsmodernisierung, Sanierung und Reparatur zur Verbesserung von Sicherheit, Effizienz und Aussehen.",
       "details": {
-        "intro": "Wir bieten <strong>Modernisierungs- und Reparaturlösungen</strong> zur Leistungssteigerung.",
+        "intro": "Investitionen in <strong>Aufzugsmodernisierung und Reparatur</strong> sind eine kostengünstige Möglichkeit, die Lebensdauer Ihrer Ausrüstung zu verlängern und gleichzeitig Sicherheit, Leistung und Energieeffizienz zu verbessern. Unsere Lösungen sind für Aufzüge <u>jeden Typs, jeder Marke und jeden Alters</u> geeignet.",
         "sections": [
           {
-            "title": "Modernisierung",
-            "content": "Erneuerung von Steuerungen und Innenausstattung."
+            "title": "Aufzugsmodernisierung",
+            "content": "Wir modernisieren Aufzugssysteme durch Aufrüstung von Steuereinheiten, Antriebssystemen, Türen und Sicherheitskomponenten. Die Modernisierung verbessert den Fahrkomfort, die Zuverlässigkeit und reduziert den Energieverbrauch."
           },
           {
-            "title": "Reparaturen",
-            "content": "Zuverlässige Reparatur mechanischer und elektrischer Teile."
+            "title": "Reparaturen und Komponentenaustausch",
+            "content": "Unsere Ingenieure bieten schnelle und zuverlässige Reparaturen mechanischer und elektrischer Komponenten. Wir haben Zugang zu Ersatzteilen führender Hersteller, was es uns ermöglicht, selbst komplexe Fehler ohne unnötige Verzögerungen zu beheben."
+          },
+          {
+            "title": "Verbesserte Sicherheit und Konformität",
+            "content": "Modernisierung und Sanierung helfen, die Einhaltung der neuesten Sicherheitsstandards und Vorschriften zu gewährleisten, Risiken zu reduzieren und das Vertrauen der Benutzer zu verbessern."
+          },
+          {
+            "title": "Maßgeschneiderte Lösungen",
+            "content": "Wir bewerten den Zustand Ihrer vorhandenen Ausrüstung und empfehlen die am besten geeignete Lösung — von gezielten Komponenten-Upgrades bis zum vollständigen Aufzugsaustausch im vorhandenen Schacht."
           }
         ]
       }

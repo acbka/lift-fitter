@@ -1,55 +1,73 @@
 {
   "services": {
-    "title": "Nasze Usługi",
+    "title": "Nasze usługi",
     "liftEmergency": {
-      "title": "Serwis awaryjny wind",
-      "shortDescription": "Całodobowa szybka reakcja na awarie wind i uwięzienie pasażerów.",
+      "title": "Pogotowie dźwigowe",
+      "shortDescription": "Całodobowa pomoc awaryjna z szybkim reagowaniem i bezpiecznym usuwaniem usterek.",
       "details": {
-        "intro": "Nasz <strong>serwis awaryjny wind</strong> działa <u>24 godziny na dobę, 7 dni w tygodniu</u>, zapewniając bezpieczeństwo pasażerów.",
+        "intro": "Dla wygody naszych klientów zapewniamy <strong>całodobowe pogotowie dźwigowe 24/7</strong>. Rozumiemy, że awarie wind mogą zdarzyć się niespodziewanie i w najmniej odpowiednim momencie, dlatego nasz zespół jest zawsze gotowy do <u>szybkiej, bezpiecznej i skutecznej reakcji</u>.",
         "sections": [
           {
-            "title": "Zakres usług",
-            "content": "Natychmiastowa reakcja, bezpieczne uwalnianie pasażerów oraz szybka diagnoza usterek."
+            "title": "Natychmiastowa reakcja awaryjna",
+            "content": "W przypadku awarii windy lub uwięzienia pasażerów nasi technicy reagują natychmiast. Priorytetem jest bezpieczeństwo pasażerów, zapewniamy spokojne i bezpieczne procedury uwolnienia oraz jak najszybsze przywrócenie działania windy."
           },
           {
-            "title": "Dlaczego my",
-            "content": "Doświadczeni technicy, nowoczesny sprzęt i zgodność z normami bezpieczeństwa."
+            "title": "Ekspercka diagnoza usterek",
+            "content": "Nasi doświadczeni inżynierowie przeprowadzają szybką i dokładną diagnostykę usterek przy użyciu nowoczesnych narzędzi i sprawdzonych metod. Pozwala nam to zidentyfikować przyczynę problemu i zapobiec powtarzającym się awariom."
+          },
+          {
+            "title": "Bezpieczeństwo przede wszystkim",
+            "content": "Wszystkie prace awaryjne wykonywane są w ścisłej zgodności z przepisami bezpieczeństwa i normami branżowymi. Zapewniamy, że winda jest bezpieczna w użytkowaniu przed jej ponownym uruchomieniem."
           }
         ]
       }
     },
-
     "liftMaintenance": {
       "title": "Serwis i konserwacja wind",
-      "shortDescription": "Regularna konserwacja zapewniająca bezpieczną i niezawodną pracę wind.",
+      "shortDescription": "Profesjonalny serwis i konserwacja wind zapewniające bezpieczne, niezawodne i długotrwałe działanie.",
       "details": {
-        "intro": "Regularna <strong>konserwacja wind</strong> jest kluczowa dla bezpieczeństwa i niezawodności.",
+        "intro": "Regularny <strong>serwis i konserwacja wind</strong> są niezbędne do zapewnienia bezpiecznej eksploatacji, niezawodności i długiej żywotności sprzętu. W LiftFitter oferujemy kompleksowe rozwiązania konserwacyjne dostosowane do specyficznych potrzeb każdego budynku i systemu windowego.",
         "sections": [
           {
-            "title": "Konserwacja zapobiegawcza",
-            "content": "Planowane przeglądy, regulacje oraz kontrola komponentów."
+            "title": "Kompleksowy serwis wind",
+            "content": "Oferujemy profesjonalny serwis wind osobowych, towarowych, platform dla niepełnosprawnych, wind schodowych i innych urządzeń dźwigowych. Nasze programy konserwacyjne obejmują przeglądy, smarowanie, regulacje i szczegółowe kontrole techniczne."
           },
           {
-            "title": "Zgodność",
-            "content": "Prace wykonywane zgodnie z obowiązującymi przepisami."
+            "title": "Konserwacja zapobiegawcza",
+            "content": "Konserwacja zapobiegawcza pomaga zmniejszyć niespodziewane awarie i kosztowne naprawy. Regularne przeglądy komponentów mechanicznych i elektrycznych zapewniają płynne działanie i długoterminową niezawodność."
+          },
+          {
+            "title": "Wsparcie awaryjne 24/7",
+            "content": "W ramach naszego serwisu konserwacyjnego zapewniamy całodobowe wsparcie awaryjne. W przypadku awarii nasi technicy reagują szybko, aby zminimalizować przestoje i przywrócić bezpieczne działanie."
+          },
+          {
+            "title": "Naprawy i doradztwo w zakresie modernizacji",
+            "content": "Gdy zużyte lub uszkodzone komponenty wymagają wymiany, działamy szybko i skutecznie. Doradzamy również klientom w zakresie opcji modernizacji, pomagając poprawić bezpieczeństwo, wydajność i zgodność z aktualnymi normami."
           }
         ]
       }
     },
-
     "modernisationRepair": {
       "title": "Modernizacja i naprawa",
-      "shortDescription": "Unowocześnianie i naprawa wind zgodnie z nowymi standardami.",
+      "shortDescription": "Rozwiązania w zakresie modernizacji, renowacji i naprawy wind dla poprawy bezpieczeństwa, wydajności i wyglądu.",
       "details": {
-        "intro": "Oferujemy <strong>modernizację i naprawę wind</strong> w celu poprawy wydajności.",
+        "intro": "Inwestycja w <strong>modernizację i naprawę wind</strong> to opłacalny sposób na wydłużenie żywotności sprzętu przy jednoczesnej poprawie bezpieczeństwa, wydajności i efektywności energetycznej. Nasze rozwiązania są odpowiednie dla wind <u>dowolnego typu, marki lub wieku</u>.",
         "sections": [
           {
-            "title": "Modernizacja",
-            "content": "Wymiana systemów sterowania i poprawa efektywności energetycznej."
+            "title": "Modernizacja wind",
+            "content": "Modernizujemy systemy windowe poprzez aktualizację sterowników, układów napędowych, drzwi i komponentów bezpieczeństwa. Modernizacja poprawia komfort jazdy, niezawodność i zmniejsza zużycie energii."
           },
           {
-            "title": "Naprawy",
-            "content": "Szybka naprawa elementów mechanicznych i elektrycznych."
+            "title": "Naprawy i wymiana komponentów",
+            "content": "Nasi inżynierowie zapewniają szybką i niezawodną naprawę komponentów mechanicznych i elektrycznych. Mamy dostęp do części zamiennych od wiodących producentów, co pozwala nam rozwiązywać nawet złożone usterki bez zbędnych opóźnień."
+          },
+          {
+            "title": "Poprawa bezpieczeństwa i zgodności",
+            "content": "Modernizacja i renowacja pomagają zapewnić zgodność z najnowszymi normami i przepisami bezpieczeństwa, zmniejszając ryzyko i zwiększając zaufanie użytkowników."
+          },
+          {
+            "title": "Rozwiązania dostosowane do potrzeb",
+            "content": "Oceniamy stan istniejącego sprzętu i rekomendujemy najodpowiedniejsze rozwiązanie — od ukierunkowanych aktualizacji komponentów po pełną wymianę windy w istniejącym szybie."
           }
         ]
       }

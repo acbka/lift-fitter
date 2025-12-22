@@ -9,8 +9,13 @@ import Layout from "../components/Layout";
 
 const Projects: React.FC = () => {
   const { t } = useTranslation(["projects", "common"]);
+
   return (
-    <Layout pageTitle="Projects" icon={projectsIcon} bgImage={projectsBg}>
+    <Layout
+      pageTitle={t("projects.title")}
+      icon={projectsIcon}
+      bgImage={projectsBg}
+    >
       <CardsContainer>
         {projects.map((project) => (
           <Card

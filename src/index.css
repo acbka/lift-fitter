@@ -33,10 +33,19 @@ body {
 }
 
 h1 {
-  font-size: 3.8em;
+  font-size: 2.3em;
   line-height: 1.1;
-  margin-bottom: 48px;
+  margin-bottom: 24px;
   text-transform: uppercase;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
+  hyphens: auto;
+
+  @media (min-width: 768px) {
+    font-size: 3.7em;
+    margin-bottom: 48px;
+  }
 }
 
 * {

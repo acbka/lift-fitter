@@ -1,0 +1,58 @@
+{
+  "services": {
+    "title": "Nasze Usługi",
+    "liftEmergency": {
+      "title": "Serwis awaryjny wind",
+      "shortDescription": "Całodobowa szybka reakcja na awarie wind i uwięzienie pasażerów.",
+      "details": {
+        "intro": "Nasz <strong>serwis awaryjny wind</strong> działa <u>24 godziny na dobę, 7 dni w tygodniu</u>, zapewniając bezpieczeństwo pasażerów.",
+        "sections": [
+          {
+            "title": "Zakres usług",
+            "content": "Natychmiastowa reakcja, bezpieczne uwalnianie pasażerów oraz szybka diagnoza usterek."
+          },
+          {
+            "title": "Dlaczego my",
+            "content": "Doświadczeni technicy, nowoczesny sprzęt i zgodność z normami bezpieczeństwa."
+          }
+        ]
+      }
+    },
+
+    "liftMaintenance": {
+      "title": "Serwis i konserwacja wind",
+      "shortDescription": "Regularna konserwacja zapewniająca bezpieczną i niezawodną pracę wind.",
+      "details": {
+        "intro": "Regularna <strong>konserwacja wind</strong> jest kluczowa dla bezpieczeństwa i niezawodności.",
+        "sections": [
+          {
+            "title": "Konserwacja zapobiegawcza",
+            "content": "Planowane przeglądy, regulacje oraz kontrola komponentów."
+          },
+          {
+            "title": "Zgodność",
+            "content": "Prace wykonywane zgodnie z obowiązującymi przepisami."
+          }
+        ]
+      }
+    },
+
+    "modernisationRepair": {
+      "title": "Modernizacja i naprawa",
+      "shortDescription": "Unowocześnianie i naprawa wind zgodnie z nowymi standardami.",
+      "details": {
+        "intro": "Oferujemy <strong>modernizację i naprawę wind</strong> w celu poprawy wydajności.",
+        "sections": [
+          {
+            "title": "Modernizacja",
+            "content": "Wymiana systemów sterowania i poprawa efektywności energetycznej."
+          },
+          {
+            "title": "Naprawy",
+            "content": "Szybka naprawa elementów mechanicznych i elektrycznych."
+          }
+        ]
+      }
+    }
+  }
+}

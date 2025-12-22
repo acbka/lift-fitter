@@ -1,0 +1,19 @@
+{
+  "placeholders": {
+    "name": "Imię",
+    "email": "Email",
+    "phone": "Telefon",
+    "city": "Miasto",
+    "message": "Wiadomość"
+  },
+  "submit": "Wyślij",
+  "success": "Twoja wiadomość została wysłana pomyślnie!",
+  "errors": {
+    "nameRequired": "Imię jest wymagane",
+    "emailRequired": "Email jest wymagany",
+    "emailInvalid": "Proszę podać prawidłowy adres email",
+    "phoneRequired": "Telefon jest wymagany",
+    "cityRequired": "Miasto jest wymagane",
+    "messageRequired": "Wiadomość jest wymagana"
+  }
+}

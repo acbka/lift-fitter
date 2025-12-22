@@ -1,0 +1,58 @@
+{
+  "services": {
+    "title": "Unsere Dienstleistungen",
+    "liftEmergency": {
+      "title": "Aufzug-Notdienst",
+      "shortDescription": "24/7 schneller Einsatz bei Aufzugstörungen und Personenbefreiung.",
+      "details": {
+        "intro": "Unser <strong>Aufzug-Notdienst</strong> ist <u>rund um die Uhr</u> verfügbar und sorgt für maximale Sicherheit.",
+        "sections": [
+          {
+            "title": "Leistungen",
+            "content": "Sofortige Reaktion, sichere Personenbefreiung und schnelle Fehlerdiagnose."
+          },
+          {
+            "title": "Unsere Vorteile",
+            "content": "Erfahrene Techniker und moderne Diagnosetechnik."
+          }
+        ]
+      }
+    },
+
+    "liftMaintenance": {
+      "title": "Aufzugsservice & Wartung",
+      "shortDescription": "Regelmäßige Wartung für sicheren und zuverlässigen Betrieb.",
+      "details": {
+        "intro": "Eine regelmäßige <strong>Wartung von Aufzügen</strong> ist entscheidend für Sicherheit und Lebensdauer.",
+        "sections": [
+          {
+            "title": "Vorbeugende Wartung",
+            "content": "Geplante Inspektionen, Einstellungen und Prüfungen."
+          },
+          {
+            "title": "Vorschriften",
+            "content": "Alle Arbeiten entsprechen den geltenden Normen."
+          }
+        ]
+      }
+    },
+
+    "modernisationRepair": {
+      "title": "Modernisierung & Reparatur",
+      "shortDescription": "Modernisierung und Reparatur von Aufzügen nach aktuellen Standards.",
+      "details": {
+        "intro": "Wir bieten <strong>Modernisierungs- und Reparaturlösungen</strong> zur Leistungssteigerung.",
+        "sections": [
+          {
+            "title": "Modernisierung",
+            "content": "Erneuerung von Steuerungen und Innenausstattung."
+          },
+          {
+            "title": "Reparaturen",
+            "content": "Zuverlässige Reparatur mechanischer und elektrischer Teile."
+          }
+        ]
+      }
+    }
+  }
+}

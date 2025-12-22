@@ -1,0 +1,78 @@
+{
+  "services": {
+    "title": "Our Services",
+    "liftEmergency": {
+      "title": "Lift Emergency Service",
+      "shortDescription": "24/7 emergency lift assistance with rapid response and safe fault resolution.",
+      "details": {
+        "intro": "For our clients’ convenience, we provide a <strong>24/7 Lift Emergency Service</strong>. We understand that lift breakdowns can happen unexpectedly and at the most inconvenient times, which is why our team is always ready to respond <u>quickly, safely, and efficiently</u>.",
+        "sections": [
+          {
+            "title": "Immediate Emergency Response",
+            "content": "In the event of a lift malfunction or passenger entrapment, our technicians respond immediately. We prioritise passenger safety, ensure calm and secure release procedures, and restore lift operation as quickly as possible."
+          },
+          {
+            "title": "Expert Fault Diagnosis",
+            "content": "Our experienced engineers carry out rapid and accurate fault diagnosis using modern tools and proven methods. This allows us to identify the root cause of the problem and prevent repeated failures."
+          },
+          {
+            "title": "Safety First",
+            "content": "All emergency work is performed in strict compliance with safety regulations and industry standards. We ensure that your lift is safe to use before returning it to service."
+          }
+        ]
+      }
+    },
+
+    "liftMaintenance": {
+      "title": "Lift Service & Maintenance",
+      "shortDescription": "Professional lift servicing and maintenance to ensure safe, reliable, and long-term operation.",
+      "details": {
+        "intro": "Regular <strong>lift service and maintenance</strong> are essential to ensure safe operation, reliability, and long equipment life. At LiftFitter, we provide comprehensive maintenance solutions tailored to the specific needs of each building and lift system.",
+        "sections": [
+          {
+            "title": "Comprehensive Lift Servicing",
+            "content": "We offer professional servicing of passenger lifts, goods lifts, disabled access platforms, stair lifts, and other lifting equipment. Our maintenance programs include inspections, lubrication, adjustments, and detailed technical checks."
+          },
+          {
+            "title": "Preventive Maintenance",
+            "content": "Preventive maintenance helps reduce unexpected breakdowns and costly repairs. Regular inspections of mechanical and electrical components ensure smooth operation and long-term reliability."
+          },
+          {
+            "title": "24/7 Emergency Support",
+            "content": "As part of our maintenance service, we provide 24/7 emergency support. In case of a breakdown, our technicians respond quickly to minimise downtime and restore safe operation."
+          },
+          {
+            "title": "Repairs and Modernisation Advice",
+            "content": "When worn or damaged components need replacement, we act quickly and efficiently. We also advise clients on modernisation options, helping to improve safety, performance, and compliance with current standards."
+          }
+        ]
+      }
+    },
+
+    "modernisationRepair": {
+      "title": "Modernisation & Repair",
+      "shortDescription": "Lift modernisation, refurbishment, and repair solutions to improve safety, efficiency, and appearance.",
+      "details": {
+        "intro": "Investing in <strong>lift modernisation and repair</strong> is a cost-effective way to extend the life of your equipment while improving safety, performance, and energy efficiency. Our solutions are suitable for lifts of <u>any type, brand, or age</u>.",
+        "sections": [
+          {
+            "title": "Lift Modernisation",
+            "content": "We modernise lift systems by upgrading control units, drive systems, doors, and safety components. Modernisation improves ride comfort, reliability, and reduces energy consumption."
+          },
+          {
+            "title": "Repairs and Component Replacement",
+            "content": "Our engineers provide fast and reliable repair of mechanical and electrical components. We have access to spare parts from leading manufacturers, allowing us to resolve even complex faults without unnecessary delays."
+          },
+          {
+            "title": "Improved Safety and Compliance",
+            "content": "Modernisation and refurbishment help ensure compliance with the latest safety standards and regulations, reducing risk and improving user confidence."
+          },
+          {
+            "title": "Tailored Solutions",
+            "content": "We assess the condition of your existing equipment and recommend the most suitable solution — from targeted component upgrades to full lift replacement within the existing shaft."
+          }
+        ]
+      }
+    }
+  }
+}

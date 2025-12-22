@@ -1,0 +1,27 @@
+{
+  "projects": {
+    "title": "Our Projects",
+    "szczecin": {
+      "title": "Szczecin, Poland",
+      "shortDescription": "Schindler"
+    },
+
+    "wilhelmsdorf": {
+      "title": "Wilhelmsdorf, Germany",
+      "shortDescription": "Kleemann ATLAS BASIC"
+    },
+
+    "kirchen": {
+      "title": "Kirchen, Germany",
+      "shortDescription": "Klemann Maison100 H"
+    },
+    "haren": {
+      "title": "Haren, Germany",
+      "shortDescription": "Kleemann City"
+    },
+    "zeewolde": {
+      "title": "Zeewolde, Holland",
+      "shortDescription": "Panoramic elevator in a single-family home."
+    }
+  }
+}

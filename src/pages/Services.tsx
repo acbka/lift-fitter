@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 import servicesIcon from "../assets/services.png";
 import servicesBg from "../assets/services-bg.jpg";
 import { CardsContainer } from "../common/styles";
-// import { services } from "../common/constants";
 import Card from "../components/Card";
 import ContactSection from "../components/ContactSection";
 import Layout from "../components/Layout";
@@ -29,7 +28,7 @@ const Services: React.FC = () => {
           <Card
             key={service.id}
             image={service?.image}
-            itemKey="services"
+            pageKey="services"
             itemId={service.id as string}
             buttonName={t("common:details")}
             handleClick={() => showDetails(service.id as string)}

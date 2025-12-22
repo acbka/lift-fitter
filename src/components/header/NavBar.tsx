@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { menuItems } from "../../common/constants";
@@ -18,17 +18,16 @@ const Nav = styled.nav`
   align-items: center;
 `;
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled(NavLink)`
   text-decoration: none;
   color: var(--color-white);
   padding: 8px 12px;
 
-  &.active {
+  &.hover {
     color: var(--color-yellow);
-    border-bottom: 2px solid var(--color-yellow);
   }
 
-  &:hover {
+  &.active {
     color: var(--color-yellow);
   }
 `;

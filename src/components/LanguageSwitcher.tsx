@@ -38,7 +38,7 @@ export const DropdownItem = styled.button<{ $active: boolean }>`
   text-decoration: ${({ $active }) => ($active ? "underline" : "none")};
 
   &:hover {
-    color: #ffffff;
+    color: var(--color-yellow);
   }
 `;
 

@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 type CardPropsType = {
   itemId: string;
-  itemKey: string;
+  pageKey: string;
   image?: string;
   buttonName: string;
   handleClick?: () => void;
@@ -56,21 +56,21 @@ const ShortDescription = styled.p`
 
 const Card = ({
   itemId,
-  itemKey,
+  pageKey,
   image,
   buttonName,
   handleClick,
 }: CardPropsType) => {
-  const { t } = useTranslation("services");
+  const { t } = useTranslation(pageKey);
 
   return (
     <StyledCard>
-      <Image src={image} alt={t(`${itemKey}.${itemId}.title`)} />
+      <Image src={image} alt={t(`${pageKey}.${itemId}.title`)} />
       <CardBody>
         <div>
-          <Title>{t(`${itemKey}.${itemId}.title`)}</Title>
+          <Title>{t(`${pageKey}.${itemId}.title`)}</Title>
           <ShortDescription>
-            {t(`${itemKey}.${itemId}.shortDescription`)}
+            {t(`${pageKey}.${itemId}.shortDescription`)}
           </ShortDescription>
         </div>
         <Button title={buttonName} handleClick={handleClick} />

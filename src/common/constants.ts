@@ -1,11 +1,6 @@
 import slide1 from "../assets/slide1.jpg";
 import slide2 from "../assets/slide2.jpg";
 import slide3 from "../assets/slide3.jpg";
-import lift1 from "../assets/lift1.jpg";
-import lift2 from "../assets/lift2.jpg";
-import lift3 from "../assets/lift3.jpg";
-import lift4 from "../assets/lift4.jpg";
-import lift5 from "../assets/lift5.jpg";
 import kleemann from "../assets/kleemann.png";
 import schindler from "../assets/schindler.png";
 import otis from "../assets/otis.png";
@@ -90,54 +85,6 @@ export const menuItems: MenuItemType[] = [
   { link: "/projects", labelKey: "nav:projects" },
   { link: "/about", labelKey: "nav:about" },
   { link: "/contacts", labelKey: "nav:contacts" },
-];
-
-export const projects: ProjectAndServiceType[] = [
-  {
-    id: "project1",
-    title: "Project One",
-    shortDescription: "Brief description",
-    description: {
-      paragraph1: "Description for your first project.",
-    },
-    image: lift1,
-  },
-  {
-    id: "project2",
-    title: "Project Two",
-    shortDescription: "Brief description",
-    description: {
-      paragraph1: "Description for your second project.",
-    },
-    image: lift2,
-  },
-  {
-    id: "project3",
-    title: "Project Three",
-    shortDescription: "Brief description",
-    description: {
-      paragraph1: "Description for your third project.",
-    },
-    image: lift3,
-  },
-  {
-    id: "project4",
-    title: "Project Four",
-    shortDescription: "Brief description",
-    description: {
-      paragraph1: "Description for your first project.",
-    },
-    image: lift4,
-  },
-  {
-    id: "project5",
-    title: "Project Five",
-    shortDescription: "Brief description",
-    description: {
-      paragraph1: "Description for your first project.",
-    },
-    image: lift5,
-  },
 ];
 
 export const partners: PartnerType[] = [

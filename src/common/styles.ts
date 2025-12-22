@@ -49,7 +49,7 @@ export const Paragraph = styled.p`
 export const CardsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 16px;
   padding: 24px 0;

@@ -29,7 +29,7 @@ const SlideItem = styled.div<{ $bg: string; $isActive: boolean }>`
   display: ${({ $isActive }) => ($isActive ? "flex" : "none")};
 `;
 
-const Content = styled.div`
+const Section = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -114,10 +114,10 @@ const Slider = ({
         <SlideItem key={slide.id} $bg={slide.image} $isActive={i === index}>
           {(slide.titleKey && t(slide.titleKey)) ||
           (slide.captionKey && t(slide.captionKey)) ? (
-            <Content>
+            <Section>
               {slide.titleKey && <Title>{t(slide.titleKey)}</Title>}
               {slide.captionKey && <Caption>{t(slide.captionKey)}</Caption>}
-            </Content>
+            </Section>
           ) : null}
         </SlideItem>
       ))}

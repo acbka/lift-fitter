@@ -7,27 +7,12 @@ import { LANGS, type Language } from "../i18n";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 
-export const Section = styled.div`
-  width: 100%;
-  margin: 0 auto;
-  margin-bottom: 48px;
-`;
-
 const Container = styled.div`
   background: var(--color-dark);
   position: relative;
   margin: 0 auto;
   min-height: 100vh;
   width: 100vw;
-`;
-
-const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
 `;
 
 const AppLayout = () => {
@@ -60,9 +45,7 @@ const AppLayout = () => {
   return (
     <Container>
       <Header />
-      <Main>
-        <Outlet />
-      </Main>
+      <Outlet />
       <Footer />
     </Container>
   );

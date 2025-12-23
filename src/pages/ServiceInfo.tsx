@@ -1,7 +1,7 @@
 import { Navigate, useParams } from "react-router";
 import { useTranslation, Trans } from "react-i18next";
 import styled from "styled-components";
-import { Content } from "../common/styles";
+import { Section } from "../common/styles";
 import { services } from "../common/services";
 import ContactSection from "../components/ContactSection";
 import Title from "../components/Title";
@@ -46,7 +46,7 @@ const ServiceInfo = () => {
       {service && (
         <>
           <Title pageTitle={t(`services.${service.id}.title`)} />
-          <Content>
+          <Section>
             <StyledImage
               src={service.image}
               alt={t(`services.${service.id}.title`)}
@@ -64,7 +64,7 @@ const ServiceInfo = () => {
                 <p>{section.content}</p>
               </section>
             ))}
-          </Content>
+          </Section>
           <ContactSection />
         </>
       )}

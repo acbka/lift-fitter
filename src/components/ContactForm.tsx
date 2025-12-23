@@ -54,7 +54,6 @@ const Row = styled.div`
 const Input = styled.input`
   flex: 1;
   padding: 16px 24px;
-  font-size: 18px;
   border: 2px solid var(--color-yellow);
   border-radius: 20px;
   outline: none;
@@ -68,7 +67,6 @@ const Message = styled.textarea`
   width: 100%;
   height: 180px;
   padding: 18px 22px;
-  font-size: 18px;
   border: 2px solid var(--color-yellow);
   border-radius: 20px;
   resize: vertical;

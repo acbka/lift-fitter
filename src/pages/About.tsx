@@ -5,12 +5,7 @@ import team from "../assets/team.jpeg";
 import about from "../assets/about-bg.jpeg";
 import { partners } from "../common/constants";
 
-import {
-  StyledImage,
-  StyledTitle,
-  CardsContainer,
-  Content,
-} from "../common/styles";
+import { StyledImage, CardsContainer, Section } from "../common/styles";
 import ContactSection from "../components/ContactSection";
 import PartnerCard from "../components/PartnerCard";
 import Title from "../components/Title";
@@ -50,7 +45,7 @@ const About = () => {
   return (
     <>
       <Title pageTitle={t("title")} icon={homeIcon} bgImage={about} />
-      <Content>
+      <Section>
         <StyledImage src={team} alt={t("teamAlt")} />
         {sections.map((section, idx) => (
           <section key={idx}>
@@ -58,9 +53,9 @@ const About = () => {
             <p>{section.content}</p>
           </section>
         ))}
-      </Content>
+      </Section>
       <PartnersSection>
-        <StyledTitle>{t("partners.title")}</StyledTitle>
+        <h2>{t("partners.title")}</h2>
         <PartnersContainer>
           {partners.map((partner) => (
             <PartnerCard key={partner.name} partner={partner} />

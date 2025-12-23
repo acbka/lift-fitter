@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import home from "../assets/home.jpeg";
 import homeIcon from "../assets/home.png";
 import { sliders } from "../common/constants";
-import { Content, StyledImage } from "../common/styles";
+import { Section, StyledImage } from "../common/styles";
 import Slider from "../components/Slider";
 import Title from "../components/Title";
 
@@ -17,7 +17,7 @@ const Home = () => {
     <>
       <Slider slides={sliders} />
       <Title pageTitle={t("title")} icon={homeIcon} hasSlider={true} />
-      <Content>
+      <Section>
         <StyledImage src={home} alt={t("teamAlt")} />
         {sections.map((section, idx) => (
           <section key={idx}>
@@ -25,8 +25,7 @@ const Home = () => {
             <p>{section.content}</p>
           </section>
         ))}
-      </Content>
-      //{" "}
+      </Section>
     </>
   );
 };

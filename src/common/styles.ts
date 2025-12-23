@@ -1,6 +1,22 @@
 import { Link } from "react-router";
 import styled from "styled-components";
 
+export const Section = styled.div`
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+  line-height: 1.8;
+  padding: 32px 24px;
+  color: var(--color-gray);
+`;
+
+export const TextSection = styled(Section)`
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+  }
+`;
+
 export const Brand = styled(Link)`
   display: flex;
   align-items: center;
@@ -10,29 +26,29 @@ export const Brand = styled(Link)`
   z-index: 2;
 `;
 
-export const Section = styled.div`
+export const TextBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  line-height: 2em;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   width: 100%;
-  margin: 0 auto;
-  margin-bottom: 48px;
-`;
 
+  & > p {
+    padding: 24px 0;
+  }
 
-export const Content = styled.div`
-  max-width: 1170px;
-  margin: 0 auto;
-  font-size: 18px;
-  line-height: 1.8;
-  padding: 0 24px;
-  color: var(--color-gray);
-  margin-bottom: 64px;
+  @media (min-width: 768px) {
+    & > h2 {
+      padding: 0;
+    }
+    flex: 1;
+    text-align: left;
+  }
 `;
 
 export const StyledTitle = styled.h2`
-  font-size: 30px;
-  line-height: 39px;
-  font-weight: 600;
-  text-align: center;
-  padding-bottom: 32px;
   max-width: 550px;
 
   @media (min-width: 768px) {
@@ -51,10 +67,6 @@ export const StyledImage = styled.img`
     max-width: 500px;
     margin: 0 0 20px 40px;
   }
-`;
-
-export const Paragraph = styled.p`
-  margin-bottom: 16px;
 `;
 
 export const CardsContainer = styled.div`

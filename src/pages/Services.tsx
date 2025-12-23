@@ -3,38 +3,23 @@ import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import servicesIcon from "../assets/services.png";
 import servicesBg from "../assets/services-bg.jpg";
-import { CardsContainer, StyledTitle } from "../common/styles";
+import {
+  CardsContainer,
+  TextSection,
+  TextBlock,
+  StyledTitle,
+} from "../common/styles";
 import { services, statistics } from "../common/services";
 import Card from "../components/Card";
 import ContactSection from "../components/ContactSection";
 import Title from "../components/Title";
 
 const Section = styled.div`
-  width: 100%;
   background-color: var(--color-white);
-  padding: 24px;
-  margin: 64px auto;
 `;
 
-const TextBlock = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  line-height: 2em;
+const StyledTextBlock = styled(TextBlock)`
   color: var(--color-dark);
-  width: 100%;
-  max-width: 1170px;
-  margin: 32px auto;
-
-  & > p {
-    padding: 24px 0;
-  }
-
-  @media (min-width: 768px) {
-    flex-direction: row;
-    text-align: left;
-  }
 `;
 
 const StatisticBlock = styled.div`
@@ -43,6 +28,7 @@ const StatisticBlock = styled.div`
   align-items: center;
   justify-content: center;
   gap: 6vw;
+  color: var(--color-dark);
 `;
 
 const StatisticItem = styled.div`
@@ -100,8 +86,10 @@ const Services = () => {
         ))}
       </CardsContainer>
       <Section>
-        <TextBlock>
-          <StyledTitle>{t("services:statistics.title")}</StyledTitle>
+        <TextSection>
+          <StyledTextBlock>
+            <StyledTitle>{t("services:statistics.title")}</StyledTitle>
+          </StyledTextBlock>
           <StatisticBlock>
             {statistics.map((statistic) => (
               <StatisticItem key={statistic.id}>
@@ -113,7 +101,7 @@ const Services = () => {
               </StatisticItem>
             ))}
           </StatisticBlock>
-        </TextBlock>
+        </TextSection>
       </Section>
       <ContactSection />
     </>

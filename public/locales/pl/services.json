@@ -72,5 +72,20 @@
         ]
       }
     }
+  },
+  "statistics": {
+    "title": "Liderzy w Budownictwie i Inżynierii Lądowej",
+    "yearsOfExperience": {
+      "label": "Lat",
+      "value": "7"
+    },
+    "completedProjects": {
+      "label": "Projektów",
+      "value": "1K"
+    },
+    "satisfiedClients": {
+      "label": "Klientów",
+      "value": "200"
+    }
   }
 }

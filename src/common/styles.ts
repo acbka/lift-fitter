@@ -16,6 +16,7 @@ export const Content = styled.div`
   line-height: 1.8;
   padding: 0 24px;
   color: var(--color-gray);
+  margin-bottom: 64px;
 `;
 
 export const StyledTitle = styled.h2`
@@ -23,8 +24,10 @@ export const StyledTitle = styled.h2`
   line-height: 39px;
   font-weight: 600;
   text-align: center;
+  padding-bottom: 32px;
+  max-width: 550px;
 
-  @media (min-width: 576px) {
+  @media (min-width: 768px) {
     text-align: left;
   }
 `;

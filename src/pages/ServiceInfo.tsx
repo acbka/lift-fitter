@@ -1,9 +1,10 @@
 import { useParams } from "react-router";
 import { useTranslation, Trans } from "react-i18next";
 import styled from "styled-components";
-import { services } from "../common/services";
-import Layout from "../components/Layout";
 import { Content } from "../common/styles";
+import { services } from "../common/services";
+import ContactSection from "../components/ContactSection";
+import Layout from "../components/Layout";
 
 const StyledImage = styled.img`
   padding: 24px 0;
@@ -50,7 +51,6 @@ const ServiceInfo = () => {
                 components={{ strong: <strong />, u: <u /> }}
               />
             </Paragraph>
-
             {sections.map((section, idx) => (
               <section key={idx}>
                 <h3>{section.title}</h3>
@@ -58,6 +58,7 @@ const ServiceInfo = () => {
               </section>
             ))}
           </Content>
+          <ContactSection />
         </Layout>
       )}
     </>

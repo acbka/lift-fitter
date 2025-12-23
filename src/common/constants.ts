@@ -21,14 +21,6 @@ type MenuItemType = {
   labelKey: string;
 };
 
-export type ServiceType = {
-  id: string;
-  titleKey: string;
-  shortDescriptionKey: string;
-  descriptionKey: string;
-  image: string;
-};
-
 export type ProjectAndServiceType = {
   id?: string;
   title: string;

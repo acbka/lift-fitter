@@ -74,5 +74,20 @@
         ]
       }
     }
+  },
+  "statistics": {
+    "title": "Leading The Way In Building And Civil Construction",
+    "yearsOfExperience": {
+      "label": "Years",
+      "value": "7"
+    },
+    "completedProjects": {
+      "label": "Projects",
+      "value": "1K"
+    },
+    "satisfiedClients": {
+      "label": "Clients",
+      "value": "200"
+    }
   }
 }

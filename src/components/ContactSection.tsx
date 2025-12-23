@@ -20,18 +20,21 @@ const Section = styled.div`
 `;
 
 const TextBlock = styled.div`
+  display: flex;
+  flex-direction: column;
   line-height: 2em;
-  text-align: justify;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 
-  @media (min-width: 576px) {
+  & > p {
+    padding: 24px 0;
+  }
+
+  @media (min-width: 768px) {
     flex: 1;
     text-align: left;
   }
-`;
-
-const Paragraph = styled.p`
-  padding: 24px 0;
 `;
 
 const ContactSection = () => {
@@ -41,7 +44,7 @@ const ContactSection = () => {
     <Section>
       <TextBlock>
         <StyledTitle>{t("contactSection:title")}</StyledTitle>
-        <Paragraph>{t("contactSection:description")}</Paragraph>
+        <p>{t("contactSection:description")}</p>
       </TextBlock>
       <ContactForm />
     </Section>

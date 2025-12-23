@@ -72,5 +72,20 @@
         ]
       }
     }
+  },
+  "statistics": {
+    "title": "Führend im Hoch- und Tiefbau",
+    "yearsOfExperience": {
+      "label": "Jahre",
+      "value": "7"
+    },
+    "completedProjects": {
+      "label": "Projekte",
+      "value": "1K"
+    },
+    "satisfiedClients": {
+      "label": "Kunden",
+      "value": "200"
+    }
   }
 }

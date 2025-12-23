@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useLocation, useNavigate, useParams } from "react-router";
 import styled from "styled-components";
 
 export const SwitcherWrapper = styled.div`
@@ -42,27 +42,30 @@ export const DropdownItem = styled.button<{ $active: boolean }>`
   }
 `;
 
-const LanguageSwitcher: React.FC = () => {
+const LanguageSwitcher = () => {
   const LANGS = ["en", "pl", "de"] as const;
   type Language = (typeof LANGS)[number];
 
-  const { i18n } = useTranslation();
+  const { lng } = useParams<{ lng: string }>();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const currentLang = lng ?? "en";
   const [open, setOpen] = useState(false);
 
-  const currentLang = (i18n.resolvedLanguage || i18n.language || "en").slice(
-    0,
-    2
-  );
-
   const changeLanguage = (lang: Language) => {
-    i18n.changeLanguage(lang);
+    if (lang === currentLang) return;
+
+    const newPath = location.pathname.replace(/^\/[^/]+/, `/${lang}`);
+
+    navigate(newPath);
     setOpen(false);
   };
 
   return (
     <SwitcherWrapper>
       <LangButton onClick={() => setOpen((prev) => !prev)}>
-        {currentLang?.toUpperCase()}
+        {currentLang.toUpperCase()}
       </LangButton>
 
       {open && (

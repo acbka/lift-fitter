@@ -1,4 +1,3 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import email from "../../assets/email.svg";
@@ -70,7 +69,7 @@ const StyledParagraph = styled.p`
   margin-top: 48px;
 `;
 
-const Footer: React.FC = () => {
+const Footer = () => {
   const year = new Date().getFullYear();
   const { t } = useTranslation("footer");
 
@@ -78,7 +77,7 @@ const Footer: React.FC = () => {
     <FooterWrapper>
       <FooterContent>
         <Container>
-          <BrandLogo href="/" aria-label="Lift Fitter home">
+          <BrandLogo to="" aria-label="Lift Fitter home">
             <LogoImage src={logo} alt="logo" />
           </BrandLogo>
           <IconBlock>

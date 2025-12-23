@@ -1,5 +1,4 @@
-import React from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import servicesIcon from "../assets/services.png";
@@ -7,7 +6,7 @@ import servicesBg from "../assets/services-bg.jpg";
 import { CardsContainer, StyledTitle } from "../common/styles";
 import Card from "../components/Card";
 import ContactSection from "../components/ContactSection";
-import Layout from "../components/Layout";
+import Layout from "../components/PageLayout";
 import { services, statistics } from "../common/services";
 
 const Section = styled.div`
@@ -74,13 +73,10 @@ const StatisticIcon = styled.div`
   border-radius: 50%;
 `;
 
-const Services: React.FC = () => {
+const Services = () => {
+  const { lng } = useParams<{ lng: string }>();
   const navigate = useNavigate();
   const { t } = useTranslation(["services", "common"]);
-
-  const showDetails = (id: string) => {
-    navigate(`/service/${id}`);
-  };
 
   return (
     <Layout
@@ -96,7 +92,9 @@ const Services: React.FC = () => {
             pageKey="services"
             itemId={service.id as string}
             buttonName={t("common:details")}
-            handleClick={() => showDetails(service.id as string)}
+            handleClick={() => {
+              navigate(`/${lng}/services/${service.id}`);
+            }}
           ></Card>
         ))}
       </CardsContainer>

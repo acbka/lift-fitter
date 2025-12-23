@@ -1,8 +1,6 @@
 import type { ReactNode } from "react";
 import styled from "styled-components";
 import type { Slide } from "../common/constants";
-import Footer from "./footer/Footer";
-import Header from "./header/Header";
 import Slider from "./Slider";
 
 type LayoutProps = {
@@ -17,23 +15,6 @@ export const Section = styled.div`
   width: 100%;
   margin: 0 auto;
   margin-bottom: 48px;
-`;
-
-const Container = styled.div`
-  background: var(--color-dark);
-  position: relative;
-  margin: 0 auto;
-  min-height: 100vh;
-  width: 100vw;
-`;
-
-const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
 `;
 
 const Title = styled.div<{ $bgImage?: string; $slider: boolean }>`
@@ -78,7 +59,7 @@ const IconBlock = styled.div`
   }
 `;
 
-const Layout = ({
+const PageLayout = ({
   bgImage,
   children,
   icon,
@@ -86,23 +67,21 @@ const Layout = ({
   sliders,
 }: LayoutProps) => {
   return (
-    <Container>
-      <Header />
-      <Main>
-        {sliders ? <Slider slides={sliders} /> : null}
-        <Title $bgImage={bgImage} $slider={Boolean(sliders)}>
-          {icon ? (
-            <IconBlock>
-              <img src={icon} alt={pageTitle} />
-            </IconBlock>
-          ) : null}
-          <h1>{pageTitle}</h1>
-        </Title>
-        <Section>{children}</Section>
-      </Main>
-      <Footer />
-    </Container>
+    <>
+      {sliders ? <Slider slides={sliders} /> : null}
+
+      <Title $bgImage={bgImage} $slider={Boolean(sliders)}>
+        {icon && (
+          <IconBlock>
+            <img src={icon} alt={pageTitle} />
+          </IconBlock>
+        )}
+        <h1>{pageTitle}</h1>
+      </Title>
+
+      <Section>{children}</Section>
+    </>
   );
 };
 
-export default Layout;
+export default PageLayout;

@@ -1,13 +1,13 @@
 import { useTranslation } from "react-i18next";
-import projectsIcon from "../assets/projects.png";
 import projectsBg from "../assets/projects-bg.jpg";
+import projectsIcon from "../assets/projects.png";
 import { CardsContainer } from "../common/styles";
 import { projects } from "../common/projects";
 import Card from "../components/Card";
 import ContactSection from "../components/ContactSection";
-import Layout from "../components/Layout";
+import Layout from "../components/PageLayout";
 
-const Projects: React.FC = () => {
+const Projects = () => {
   const { t } = useTranslation(["projects", "common"]);
 
   return (

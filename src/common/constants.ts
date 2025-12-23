@@ -19,6 +19,7 @@ export type Slide = {
 type MenuItemType = {
   link: string;
   labelKey: string;
+  exact?: boolean;
 };
 
 export type ProjectAndServiceType = {
@@ -72,11 +73,11 @@ export const sliders: Slide[] = [
 ];
 
 export const menuItems: MenuItemType[] = [
-  { link: "/", labelKey: "nav:home" },
-  { link: "/services", labelKey: "nav:services" },
-  { link: "/projects", labelKey: "nav:projects" },
-  { link: "/about", labelKey: "nav:about" },
-  { link: "/contacts", labelKey: "nav:contacts" },
+  { link: "", labelKey: "nav:home", exact: true },
+  { link: "services", labelKey: "nav:services" },
+  { link: "projects", labelKey: "nav:projects" },
+  { link: "about", labelKey: "nav:about" },
+  { link: "contacts", labelKey: "nav:contacts" },
 ];
 
 export const partners: PartnerType[] = [

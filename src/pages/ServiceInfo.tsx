@@ -1,10 +1,10 @@
-import { useParams } from "react-router";
+import { Navigate, useParams } from "react-router";
 import { useTranslation, Trans } from "react-i18next";
 import styled from "styled-components";
 import { Content } from "../common/styles";
 import { services } from "../common/services";
 import ContactSection from "../components/ContactSection";
-import Layout from "../components/Layout";
+import Layout from "../components/PageLayout";
 
 const StyledImage = styled.img`
   padding: 24px 0;
@@ -23,9 +23,11 @@ const Paragraph = styled.div`
 `;
 
 const ServiceInfo = () => {
-  const { id } = useParams();
+  const { id } = useParams<{ id: string }>();
 
   const { t } = useTranslation("services");
+
+  if (!id) return null;
 
   const service = services.find((item) => item.id === id);
 
@@ -34,6 +36,10 @@ const ServiceInfo = () => {
   const sections = t(`services.${id}.details.sections`, {
     returnObjects: true,
   }) as { title: string; content: string }[];
+
+  if (!services.find((s) => s.id === id)) {
+    return <Navigate to="../services" replace />;
+  }
 
   return (
     <>

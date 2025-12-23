@@ -1,6 +1,7 @@
+import { Link } from "react-router";
 import styled from "styled-components";
 
-export const Brand = styled.a`
+export const Brand = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;

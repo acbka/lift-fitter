@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useLocation } from "react-router";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { menuItems } from "../../common/constants";
+import { getIsActive } from "../../utils/getIsActive";
 import LanguageSwitcher from "../LanguageSwitcher";
 import { StyledLink } from "./NavBar";
 
@@ -74,7 +76,9 @@ const BurgerLine = styled.div<{ $isOpen: boolean }>`
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { t } = useTranslation();
+
+  const location = useLocation();
+  const { i18n, t } = useTranslation();
 
   return (
     <>
@@ -87,7 +91,19 @@ const MobileMenu = () => {
       <NavBarContent $isOpen={isOpen}>
         <Nav $isOpen={isOpen}>
           {menuItems.map((item) => (
-            <StyledLink key={item.link} to={item.link}>
+            <StyledLink
+              key={item.link}
+              to={item.link}
+              onClick={() => setIsOpen(false)}
+              $isActive={Boolean(
+                getIsActive(
+                  location.pathname,
+                  i18n.language,
+                  item.link,
+                  item.exact
+                )
+              )}
+            >
               {t(item.labelKey)}
             </StyledLink>
           ))}

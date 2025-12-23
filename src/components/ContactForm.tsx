@@ -98,7 +98,7 @@ const SubmitButton = styled(Button)`
   }
 `;
 
-const ContactForm: React.FC = () => {
+const ContactForm = () => {
   const [form, setForm] = useState<FormState>({
     name: "",
     email: "",

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import logo from "../../assets/logo.svg";
 import { Brand } from "../../common/styles";
@@ -41,7 +41,7 @@ const LogoImage = styled.img<{ $isScrolled: boolean }>`
   }
 `;
 
-const Header: React.FC = () => {
+const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -56,7 +56,7 @@ const Header: React.FC = () => {
   return (
     <HeaderWrapper $isScrolled={isScrolled}>
       <HeaderContent>
-        <Brand href="/" aria-label="Lift Fitter home">
+        <Brand to="" aria-label="Lift Fitter home">
           <LogoImage src={logo} alt="logo" $isScrolled={isScrolled} />
         </Brand>
         <NavBar />

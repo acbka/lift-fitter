@@ -4,7 +4,7 @@ import homeIcon from "../assets/home.png";
 import team from "../assets/team.jpeg";
 import about from "../assets/about-bg.jpeg";
 import { partners } from "../common/constants";
-import Layout from "../components/Layout";
+import Layout from "../components/PageLayout";
 import {
   StyledImage,
   StyledTitle,
@@ -39,7 +39,7 @@ const PartnersContainer = styled(CardsContainer)`
   max-width: 1170px;
 `;
 
-const About: React.FC = () => {
+const About = () => {
   const { t } = useTranslation("about");
 
   const sections = t(`sections`, {

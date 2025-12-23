@@ -2,11 +2,11 @@ import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import contactsIcon from "../assets/contacts.png";
 import contactsBg from "../assets/contacts-bg.jpeg";
-import phoneIcon from "../assets/phone.svg";
 import location from "../assets/location.svg";
 import mailIcon from "../assets/email.svg";
+import phoneIcon from "../assets/phone.svg";
 import ContactSection from "../components/ContactSection";
-import Layout from "../components/Layout";
+import Layout from "../components/PageLayout";
 
 const ContactsWrap = styled.div`
   display: flex;
@@ -62,7 +62,7 @@ const InfoItem = styled.div`
   }
 `;
 
-const Contacts: React.FC = () => {
+const Contacts = () => {
   const { t } = useTranslation("contacts");
 
   return (

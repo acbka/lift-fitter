@@ -1,12 +1,11 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
-import homeIcon from "../assets/home.png";
 import home from "../assets/home.jpeg";
-import { StyledImage, Content } from "../common/styles";
-import Layout from "../components/Layout";
+import homeIcon from "../assets/home.png";
 import { sliders } from "../common/constants";
+import { StyledImage, Content } from "../common/styles";
+import Layout from "../components/PageLayout";
 
-const Home: React.FC = () => {
+const Home = () => {
   const { t } = useTranslation("home");
 
   const sections = t(`sections`, {

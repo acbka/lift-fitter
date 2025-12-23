@@ -1,5 +1,7 @@
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router";
 import styled from "styled-components";
+import { getIsActive } from "../../utils/getIsActive";
 import { menuItems } from "../../common/constants";
 import { StyledLink } from "../header/NavBar";
 
@@ -30,13 +32,20 @@ const MenuItem = styled(StyledLink)`
   }
 `;
 
-const FooterMenu: React.FC = () => {
-  const { t } = useTranslation("nav");
+const FooterMenu = () => {
+  const { t, i18n } = useTranslation("nav");
+  const location = useLocation();
 
   return (
     <Menu>
       {menuItems.map((item) => (
-        <MenuItem key={item.link} to={item.link}>
+        <MenuItem
+          key={item.link}
+          to={item.link}
+          $isActive={Boolean(
+            getIsActive(location.pathname, i18n.language, item.link, item.exact)
+          )}
+        >
           {t(item.labelKey)}
         </MenuItem>
       ))}

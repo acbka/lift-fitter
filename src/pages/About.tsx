@@ -4,7 +4,7 @@ import homeIcon from "../assets/home.png";
 import team from "../assets/team.jpeg";
 import about from "../assets/about-bg.jpeg";
 import { partners } from "../common/constants";
-import Layout from "../components/PageLayout";
+
 import {
   StyledImage,
   StyledTitle,
@@ -13,6 +13,7 @@ import {
 } from "../common/styles";
 import ContactSection from "../components/ContactSection";
 import PartnerCard from "../components/PartnerCard";
+import Title from "../components/Title";
 
 const PartnersSection = styled.div`
   display: flex;
@@ -47,7 +48,8 @@ const About = () => {
   }) as { title: string; content: string }[];
 
   return (
-    <Layout pageTitle={t("title")} icon={homeIcon} bgImage={about}>
+    <>
+      <Title pageTitle={t("title")} icon={homeIcon} bgImage={about} />
       <Content>
         <StyledImage src={team} alt={t("teamAlt")} />
         {sections.map((section, idx) => (
@@ -57,7 +59,6 @@ const About = () => {
           </section>
         ))}
       </Content>
-
       <PartnersSection>
         <StyledTitle>{t("partners.title")}</StyledTitle>
         <PartnersContainer>
@@ -66,9 +67,8 @@ const About = () => {
           ))}
         </PartnersContainer>
       </PartnersSection>
-
       <ContactSection />
-    </Layout>
+    </>
   );
 };
 

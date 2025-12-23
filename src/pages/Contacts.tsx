@@ -6,7 +6,7 @@ import location from "../assets/location.svg";
 import mailIcon from "../assets/email.svg";
 import phoneIcon from "../assets/phone.svg";
 import ContactSection from "../components/ContactSection";
-import Layout from "../components/PageLayout";
+import Title from "../components/Title";
 
 const ContactsWrap = styled.div`
   display: flex;
@@ -66,7 +66,8 @@ const Contacts = () => {
   const { t } = useTranslation("contacts");
 
   return (
-    <Layout pageTitle="Contacts" icon={contactsIcon} bgImage={contactsBg}>
+    <>
+      <Title pageTitle="Contacts" icon={contactsIcon} bgImage={contactsBg} />
       <ContactsWrap>
         <InfoBlock>
           <h2>{t("subtitle")}</h2>
@@ -112,7 +113,7 @@ const Contacts = () => {
         </InfoBlock>
       </ContactsWrap>
       <ContactSection />
-    </Layout>
+    </>
   );
 };
 

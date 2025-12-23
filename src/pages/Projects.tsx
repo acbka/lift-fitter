@@ -5,17 +5,18 @@ import { CardsContainer } from "../common/styles";
 import { projects } from "../common/projects";
 import Card from "../components/Card";
 import ContactSection from "../components/ContactSection";
-import Layout from "../components/PageLayout";
+import Title from "../components/Title";
 
 const Projects = () => {
   const { t } = useTranslation(["projects", "common"]);
 
   return (
-    <Layout
-      pageTitle={t("projects.title")}
-      icon={projectsIcon}
-      bgImage={projectsBg}
-    >
+    <>
+      <Title
+        pageTitle={t("projects.title")}
+        icon={projectsIcon}
+        bgImage={projectsBg}
+      />
       <CardsContainer>
         {projects.map((project) => (
           <Card
@@ -28,7 +29,7 @@ const Projects = () => {
         ))}
       </CardsContainer>
       <ContactSection />
-    </Layout>
+    </>
   );
 };
 

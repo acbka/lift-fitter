@@ -1,30 +1,20 @@
-import type { ReactNode } from "react";
 import styled from "styled-components";
-import type { Slide } from "../common/constants";
-import Slider from "./Slider";
 
-type LayoutProps = {
+type TitleType = {
   bgImage?: string;
-  children: ReactNode;
   icon?: string;
   pageTitle: string;
-  sliders?: Slide[];
+  hasSlider?: boolean;
 };
 
-export const Section = styled.div`
-  width: 100%;
-  margin: 0 auto;
-  margin-bottom: 48px;
-`;
-
-const Title = styled.div<{ $bgImage?: string; $slider: boolean }>`
+const PageTitle = styled.div<{ $bgImage?: string; $hasSlider: boolean }>`
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: ${({ $slider }) => ($slider ? "48px" : "144px")};
+  padding-top: ${({ $hasSlider }) => ($hasSlider ? "48px" : "144px")};
   background: ${({ $bgImage }) =>
     $bgImage
       ? `linear-gradient(rgba(32, 46, 49, 0.7), rgba(32, 46, 49, 1)),
@@ -59,29 +49,17 @@ const IconBlock = styled.div`
   }
 `;
 
-const PageLayout = ({
-  bgImage,
-  children,
-  icon,
-  pageTitle,
-  sliders,
-}: LayoutProps) => {
+const Title = ({ bgImage, icon, pageTitle, hasSlider = false }: TitleType) => {
   return (
-    <>
-      {sliders ? <Slider slides={sliders} /> : null}
-
-      <Title $bgImage={bgImage} $slider={Boolean(sliders)}>
-        {icon && (
-          <IconBlock>
-            <img src={icon} alt={pageTitle} />
-          </IconBlock>
-        )}
-        <h1>{pageTitle}</h1>
-      </Title>
-
-      <Section>{children}</Section>
-    </>
+    <PageTitle $bgImage={bgImage} $hasSlider={hasSlider}>
+      {icon && (
+        <IconBlock>
+          <img src={icon} alt={pageTitle} />
+        </IconBlock>
+      )}
+      <h1>{pageTitle}</h1>
+    </PageTitle>
   );
 };
 
-export default PageLayout;
+export default Title;

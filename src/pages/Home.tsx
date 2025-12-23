@@ -2,8 +2,9 @@ import { useTranslation } from "react-i18next";
 import home from "../assets/home.jpeg";
 import homeIcon from "../assets/home.png";
 import { sliders } from "../common/constants";
-import { StyledImage, Content } from "../common/styles";
-import Layout from "../components/PageLayout";
+import { Content, StyledImage } from "../common/styles";
+import Slider from "../components/Slider";
+import Title from "../components/Title";
 
 const Home = () => {
   const { t } = useTranslation("home");
@@ -13,7 +14,9 @@ const Home = () => {
   }) as { title: string; content: string }[];
 
   return (
-    <Layout pageTitle={t("title")} icon={homeIcon} sliders={sliders}>
+    <>
+      <Slider slides={sliders} />
+      <Title pageTitle={t("title")} icon={homeIcon} hasSlider={true} />
       <Content>
         <StyledImage src={home} alt={t("teamAlt")} />
         {sections.map((section, idx) => (
@@ -23,7 +26,8 @@ const Home = () => {
           </section>
         ))}
       </Content>
-    </Layout>
+      //{" "}
+    </>
   );
 };
 

@@ -4,10 +4,10 @@ import styled from "styled-components";
 import servicesIcon from "../assets/services.png";
 import servicesBg from "../assets/services-bg.jpg";
 import { CardsContainer, StyledTitle } from "../common/styles";
+import { services, statistics } from "../common/services";
 import Card from "../components/Card";
 import ContactSection from "../components/ContactSection";
-import Layout from "../components/PageLayout";
-import { services, statistics } from "../common/services";
+import Title from "../components/Title";
 
 const Section = styled.div`
   width: 100%;
@@ -74,16 +74,17 @@ const StatisticIcon = styled.div`
 `;
 
 const Services = () => {
-  const { lng } = useParams<{ lng: string }>();
   const navigate = useNavigate();
+  const { lng } = useParams<{ lng: string }>();
   const { t } = useTranslation(["services", "common"]);
 
   return (
-    <Layout
-      pageTitle={t("services.title")}
-      icon={servicesIcon}
-      bgImage={servicesBg}
-    >
+    <>
+      <Title
+        pageTitle={t("services.title")}
+        icon={servicesIcon}
+        bgImage={servicesBg}
+      />
       <CardsContainer>
         {services.map((service) => (
           <Card
@@ -115,7 +116,7 @@ const Services = () => {
         </TextBlock>
       </Section>
       <ContactSection />
-    </Layout>
+    </>
   );
 };
 

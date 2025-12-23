@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Content } from "../common/styles";
 import { services } from "../common/services";
 import ContactSection from "../components/ContactSection";
-import Layout from "../components/PageLayout";
+import Title from "../components/Title";
 
 const StyledImage = styled.img`
   padding: 24px 0;
@@ -44,7 +44,8 @@ const ServiceInfo = () => {
   return (
     <>
       {service && (
-        <Layout pageTitle={t(`services.${service.id}.title`)}>
+        <>
+          <Title pageTitle={t(`services.${service.id}.title`)} />
           <Content>
             <StyledImage
               src={service.image}
@@ -65,7 +66,7 @@ const ServiceInfo = () => {
             ))}
           </Content>
           <ContactSection />
-        </Layout>
+        </>
       )}
     </>
   );

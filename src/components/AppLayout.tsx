@@ -16,13 +16,13 @@ const Container = styled.div`
 
 const AppLayout = () => {
   const { lng } = useParams<{ lng: string }>();
-  const { i18n, t } = useTranslation();
+  const { i18n, t } = useTranslation("common");
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
   useEffect(() => {
     document.documentElement.lang = i18n.language;
-    document.title = t("common:meta.title");
+    document.title = t("meta.title");
     document
       .querySelector('meta[name="description"]')
       ?.setAttribute("content", t("common:meta.description"));

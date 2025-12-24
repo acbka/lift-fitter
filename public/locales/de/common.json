@@ -2,5 +2,9 @@
   "request": "Anfrage",
   "details": "Details",
   "send": "Senden",
-  "readMore": "Mehr lesen"
+  "readMore": "Mehr lesen",
+  "meta": {
+    "title": "Lift Fitter - Ihr Partner für Aufzugs- und Fahrtreppenlösungen",
+    "description": "Lift Fitter ist ein internationales Team von Spezialisten, das umfassende Lösungen für die Installation, Modernisierung, Wartung und Demontage von Aufzugs- und Fahrtreppenanlagen bietet. Wir bieten einen kompletten schlüsselfertigen Service, der von der technischen Dokumentation und komplexen Logistik bis hin zur endgültigen Inbetriebnahme der Anlagen alles abdeckt."
+  }
 }

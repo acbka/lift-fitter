@@ -2,5 +2,9 @@
   "request": "Request",
   "details": "Details",
   "send": "Send",
-  "readMore": "Read more"
+  "readMore": "Read more",
+  "meta": {
+    "title": "Lift Fitter - Your Partner for Elevator and Escalator Solutions",
+    "description": "Lift Fitter is an international team of specialists providing comprehensive solutions for the installation, modernization, maintenance, and dismantling of elevator and escalator equipment. We deliver a complete turnkey service, managing everything from technical documentation and complex logistics to the final commissioning of every device."
+  }
 }

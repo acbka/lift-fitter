@@ -2,5 +2,9 @@
   "request": "Zapytanie",
   "details": "Szczegóły",
   "send": "Wyślij",
-  "readMore": "Czytaj więcej"
+  "readMore": "Czytaj więcej",
+  "meta": {
+    "title": "Lift Fitter - Twój partner w rozwiązaniach dla wind i schodów ruchomych",
+    "description": "Lift Fitter to międzynarodowy zespół specjalistów oferujący kompleksowe rozwiązania w zakresie montażu, modernizacji, serwisu oraz demontażu urządzeń dźwigowych i schodów ruchomych. Zapewniamy pełną obsługę „pod klucz” — od przygotowania dokumentacji technicznej i logistyki, aż po końcowy odbiór i uruchomienie urządzenia."
+  }
 }

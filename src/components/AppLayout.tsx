@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { Outlet, useLocation, useNavigate, useParams } from "react-router";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
-import { t } from "i18next";
 import { LANGS, type Language } from "../i18n";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
@@ -17,17 +16,17 @@ const Container = styled.div`
 
 const AppLayout = () => {
   const { lng } = useParams<{ lng: string }>();
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
   useEffect(() => {
     document.documentElement.lang = i18n.language;
-    document.title = t("meta.title");
+    document.title = t("common:meta.title");
     document
       .querySelector('meta[name="description"]')
-      ?.setAttribute("content", t("meta.description"));
-  }, [i18n.language]);
+      ?.setAttribute("content", t("common:meta.description"));
+  }, [i18n.language, t]);
 
   useEffect(() => {
     const isSupported = LANGS.includes(lng as Language);

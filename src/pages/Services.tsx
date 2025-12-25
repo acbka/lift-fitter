@@ -5,13 +5,15 @@ import servicesIcon from "../assets/services.png";
 import servicesBg from "../assets/services-bg.jpg";
 import {
   CardsContainer,
-  TextSection,
-  TextBlock,
   StyledTitle,
+  TextBlock,
+  TextSection,
 } from "../common/styles";
 import { services, statistics } from "../common/services";
+import { useInView } from "../hooks/useInView";
 import Card from "../components/Card";
 import ContactSection from "../components/ContactSection";
+import Counter from "../components/Counter";
 import Title from "../components/Title";
 
 const Section = styled.div`
@@ -27,7 +29,7 @@ const StatisticBlock = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 6vw;
+  gap: 3vw;
   color: var(--color-dark);
 `;
 
@@ -35,13 +37,14 @@ const StatisticItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 16px;
+  width: 90px;
 
   & > h4 {
     margin-bottom: 5px;
-    font-size: 36px;
+    font-size: 24px;
     font-weight: 400;
     line-height: 52px;
+    opacity: 0.7;
   }
 `;
 
@@ -54,7 +57,7 @@ const StatisticIcon = styled.div`
   margin-bottom: 16px;
   padding: 15px;
   line-height: 50px;
-  background-color: #141c1e;
+  background-color: var(--color-dark);
   text-align: center;
   border-radius: 50%;
 `;
@@ -63,6 +66,10 @@ const Services = () => {
   const navigate = useNavigate();
   const { lng } = useParams<{ lng: string }>();
   const { t } = useTranslation(["services", "common"]);
+
+  const { ref, isVisible } = useInView({
+    threshold: 0.3,
+  });
 
   return (
     <>
@@ -90,14 +97,17 @@ const Services = () => {
           <StyledTextBlock>
             <StyledTitle>{t("services:statistics.title")}</StyledTitle>
           </StyledTextBlock>
-          <StatisticBlock>
+          <StatisticBlock ref={ref}>
             {statistics.map((statistic) => (
               <StatisticItem key={statistic.id}>
                 <StatisticIcon>
                   <img src={statistic.icon} alt={statistic.id} />
                 </StatisticIcon>
-                <h4>{t(`services:statistics.${statistic.id}.value`)} </h4>
-                <p>{t(`services:statistics.${statistic.id}.label`)}</p>
+                <Counter
+                  value={Number(t(`services:statistics.${statistic.id}.value`))}
+                  start={isVisible}
+                />
+                <h4>{t(`services:statistics.${statistic.id}.label`)} </h4>
               </StatisticItem>
             ))}
           </StatisticBlock>

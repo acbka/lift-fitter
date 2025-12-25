@@ -8,10 +8,14 @@ export const Section = styled.div`
   line-height: 1.8;
   padding: 32px 24px;
   color: var(--color-gray);
-  text-align: justify;
+  & > p {
+    text-align: justify;
+  }
 
   @media (min-width: 768px) {
-    text-align: left;
+    & > p {
+      text-align: left;
+    }
   }
 `;
 
@@ -45,11 +49,13 @@ export const TextBlock = styled.div`
   }
 
   @media (min-width: 768px) {
+    flex: 1;
+    text-align: left;
+    align-items: flex-start;
+
     & > h2 {
       padding: 0;
     }
-    flex: 1;
-    text-align: left;
   }
 `;
 

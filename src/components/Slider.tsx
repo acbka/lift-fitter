@@ -16,8 +16,15 @@ const SliderWrapper = styled.div<{ $height?: string; $width?: string }>`
   width: ${({ $width }) => $width || "100vw"};
   height: ${({ $height }) => $height || "60vh"};
   min-height: 450px;
+  margin-top: 50px;
   overflow: hidden;
   position: relative;
+  touch-action: pan-y;
+  user-select: none;
+
+  @media (min-width: 768px) {
+    margin-top: 97px;
+  }
 `;
 
 const SlideItem = styled.div<{ $bg: string; $isActive: boolean }>`
@@ -74,6 +81,11 @@ const Arrow = styled.img<{ $direction: "left" | "right" }>`
   cursor: pointer;
   width: 50px;
   height: 50px;
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
 `;
 
 const Slider = ({
@@ -85,6 +97,11 @@ const Slider = ({
 }: SliderType) => {
   const [index, setIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const [touchEndX, setTouchEndX] = useState<number | null>(null);
+
+  const MIN_SWIPE_DISTANCE = 50;
 
   const { t } = useTranslation("slider");
 
@@ -103,12 +120,41 @@ const Slider = ({
     return () => clearInterval(timer);
   }, [autoplay, isPaused, index, interval, nextSlide]);
 
+  const onTouchStart = (e: React.TouchEvent) => {
+    setIsPaused(true);
+    setTouchEndX(null);
+    setTouchStartX(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEndX(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStartX || !touchEndX) return;
+
+    const distance = touchStartX - touchEndX;
+
+    if (Math.abs(distance) < MIN_SWIPE_DISTANCE) return;
+
+    if (distance > 0) {
+      nextSlide();
+    } else {
+      prevSlide();
+    }
+
+    setIsPaused(false);
+  };
+
   return (
     <SliderWrapper
       $height={height}
       $width={width}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
     >
       {slides.map((slide, i) => (
         <SlideItem key={slide.id} $bg={slide.image} $isActive={i === index}>

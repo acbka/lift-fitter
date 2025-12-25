@@ -8,6 +8,11 @@ export const Section = styled.div`
   line-height: 1.8;
   padding: 32px 24px;
   color: var(--color-gray);
+  text-align: justify;
+
+  @media (min-width: 768px) {
+    text-align: left;
+  }
 `;
 
 export const TextSection = styled(Section)`

@@ -9,7 +9,7 @@ import schmitt from "../assets/schmitt.png";
 import tke from "../assets/tke.png";
 import mp from "../assets/mp.png";
 
-export type Slide = {
+export type SlideType = {
   id: number;
   image: string;
   titleKey?: string;
@@ -51,7 +51,7 @@ export const LANGUAGES: LanguageType[] = [
   { code: "de", label: "DE" },
 ];
 
-export const sliders: Slide[] = [
+export const sliders: SlideType[] = [
   {
     id: 1,
     image: slide1,

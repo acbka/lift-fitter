@@ -3,7 +3,7 @@ import home from "../assets/home.jpeg";
 import homeIcon from "../assets/home.png";
 import { sliders } from "../common/constants";
 import { Section, StyledImage } from "../common/styles";
-import Slider from "../components/Slider";
+import Slider from "../components/Slider/Slider";
 import Title from "../components/Title";
 
 const Home = () => {

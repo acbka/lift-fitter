@@ -9,6 +9,11 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: "./src/test/setupTests.ts",
     css: true,
+    environmentOptions: {
+      jsdom: {
+        resources: "usable",
+      },
+    },
     coverage: {
       reporter: ["text", "html"],
     },

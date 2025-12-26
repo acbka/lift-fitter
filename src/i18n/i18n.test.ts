@@ -25,7 +25,7 @@ vi.mock("i18next-browser-languagedetector", () => ({
 import i18n, { LANGS } from "./i18n";
 
 describe("i18n Configuration", () => {
-  it("export the correct list of supported languages", () => {
+  it("should export the correct list of supported languages", () => {
     expect(LANGS).toContain("en");
     expect(LANGS).toContain("de");
     expect(LANGS).toContain("pl");
@@ -36,24 +36,24 @@ describe("i18n Configuration", () => {
     expect(i18n.options.fallbackLng).toContain("en");
   });
 
-  it("have disabled escaping (escapeValue: false) for React", () => {
+  it("should have disabled escaping (escapeValue: false) for React", () => {
     expect(i18n.options.interpolation?.escapeValue).toBe(false);
   });
 
-  it("have the correct load path for the backend", () => {
+  it("should have the correct load path for the backend", () => {
     const backendOptions = i18n.options.backend as
       | { loadPath?: string }
       | undefined;
     expect(backendOptions?.loadPath).toBe("/locales/{{lng}}/{{ns}}.json");
   });
 
-  it("use the correct language detection order", () => {
+  it("should use the correct language detection order", () => {
     const detectionOptions = i18n.options.detection;
     expect(detectionOptions?.order).toEqual(["localStorage", "navigator"]);
     expect(detectionOptions?.caches).toEqual(["localStorage"]);
   });
 
-  it("successfully change the language (on manual call)", async () => {
+  it("should successfully change the language (on manual call)", async () => {
     await i18n.changeLanguage("de");
     expect(i18n.language).toBe("de");
   });

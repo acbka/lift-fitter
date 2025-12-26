@@ -1,11 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
-import arrrow from "../assets/arrow-left.svg";
-import type { Slide } from "../common/constants";
+import arrrow from "../../assets/arrow-left.svg";
+import type { SlideType } from "../../common/constants";
 
-type SliderType = {
-  slides: Slide[];
+export type SliderType = {
+  slides: SlideType[];
   height?: string;
   width?: string;
   autoplay?: boolean;
@@ -26,29 +26,7 @@ const SliderWrapper = styled.div<{ $height?: string; $width?: string }>`
     margin-top: 97px;
   }
 `;
-const DotsContainer = styled.div`
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-`;
 
-const Dot = styled.button<{ $isActive: boolean }>`
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: none;
-  background-color: ${({ $isActive }) =>
-    $isActive ? "var(--color-white)" : "rgba(255, 255, 255, 0.5)"};
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: var(--color-white);
-  }
-`;
 const SlideItem = styled.div<{ $bg: string; $isActive: boolean }>`
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(${({ $bg }) => $bg}) no-repeat center/cover;
@@ -114,6 +92,30 @@ const Arrow = styled.img<{ $direction: "left" | "right" }>`
   }
 `;
 
+const DotsContainer = styled.div`
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+`;
+
+const Dot = styled.button<{ $isActive: boolean }>`
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: ${({ $isActive }) =>
+    $isActive ? "var(--color-white)" : "rgba(255, 255, 255, 0.5)"};
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: var(--color-white);
+  }
+`;
+
 const Slider = ({
   slides,
   height,
@@ -123,7 +125,6 @@ const Slider = ({
 }: SliderType) => {
   const [index, setIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const [touchEndX, setTouchEndX] = useState<number | null>(null);
 

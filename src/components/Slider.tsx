@@ -26,7 +26,29 @@ const SliderWrapper = styled.div<{ $height?: string; $width?: string }>`
     margin-top: 97px;
   }
 `;
+const DotsContainer = styled.div`
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+`;
 
+const Dot = styled.button<{ $isActive: boolean }>`
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: ${({ $isActive }) =>
+    $isActive ? "var(--color-white)" : "rgba(255, 255, 255, 0.5)"};
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: var(--color-white);
+  }
+`;
 const SlideItem = styled.div<{ $bg: string; $isActive: boolean }>`
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(${({ $bg }) => $bg}) no-repeat center/cover;
@@ -173,6 +195,16 @@ const Slider = ({
       ))}
       <Arrow $direction="left" onClick={prevSlide} src={arrrow} alt="arrrow" />
       <Arrow $direction="right" onClick={nextSlide} src={arrrow} alt="arrrow" />
+      <DotsContainer>
+        {slides.map((slide, i) => (
+          <Dot
+            key={slide.id}
+            $isActive={i === index}
+            onClick={() => setIndex(i)}
+            aria-label={`Go to slide ${i + 1}`}
+          />
+        ))}
+      </DotsContainer>
     </SliderWrapper>
   );
 };

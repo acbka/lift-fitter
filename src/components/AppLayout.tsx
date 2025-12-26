@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Outlet, useLocation, useNavigate, useParams } from "react-router";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
-import { LANGS, type Language } from "../i18n";
+import { LANGS, type Language } from "../i18n/i18n";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 

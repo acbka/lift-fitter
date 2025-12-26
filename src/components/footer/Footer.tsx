@@ -3,7 +3,7 @@ import styled from "styled-components";
 import email from "../../assets/email.svg";
 import logo from "../../assets/logo.svg";
 import phone from "../../assets/phone.svg";
-import { Brand } from "../../common/styles";
+import { Brand, LogoImage } from "../../common/styles";
 import FooterMenu from "./FooterMenu";
 
 const FooterWrapper = styled.footer`
@@ -36,11 +36,6 @@ const Container = styled.div`
 
 const BrandLogo = styled(Brand)`
   margin-bottom: 16px;
-`;
-
-const LogoImage = styled.img`
-  width: 207px;
-  height: auto;
 `;
 
 const IconBlock = styled.div`
@@ -78,7 +73,7 @@ const Footer = () => {
       <FooterContent>
         <Container>
           <BrandLogo to="" aria-label="Lift Fitter home">
-            <LogoImage src={logo} alt="logo" />
+            <LogoImage src={logo} $isScrolled={true} alt="logo" />
           </BrandLogo>
           <IconBlock>
             <StyledIcon src={phone} alt="phone" />

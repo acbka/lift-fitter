@@ -2,18 +2,18 @@ import { Link } from "react-router";
 import styled from "styled-components";
 
 export const Section = styled.div`
-  max-width: 1170px;
   width: 100%;
   margin: 0 auto;
   line-height: 1.8;
   padding: 32px 24px;
   color: var(--color-gray);
-  & > p {
+  p {
     text-align: justify;
   }
 
   @media (min-width: 768px) {
-    & > p {
+    max-width: 1170px;
+    p {
       text-align: left;
     }
   }
@@ -33,6 +33,22 @@ export const Brand = styled(Link)`
   font-weight: 700;
   font-size: 18px;
   z-index: 2;
+`;
+
+export const LogoImage = styled.img<{ $isScrolled?: boolean }>`
+  height: 32px;
+  width: auto;
+  transition: width 0.3s ease;
+  z-index: 20;
+
+  @media (min-width: 375px) {
+    height: 45px;
+    width: auto;
+  }
+
+  @media (min-width: 992px) {
+    height: ${({ $isScrolled }) => ($isScrolled ? "45px" : "65px")};
+  }
 `;
 
 export const TextBlock = styled.div`

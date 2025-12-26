@@ -11,9 +11,15 @@ export const LangButton = styled.button`
   background: var(--color-yellow);
   color: var(--color-dark);
   border: none;
-  padding: 12px 16px;
+  padding: 0 8px;
+  line-height: 32px;
   font-weight: 600;
   cursor: pointer;
+
+  @media (min-width: 375px) {
+    height: 45px;
+    padding: 0 16px;
+  }
 `;
 
 export const Dropdown = styled.div`

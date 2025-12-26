@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import logo from "../../assets/logo.svg";
-import { Brand } from "../../common/styles";
+import { Brand, LogoImage } from "../../common/styles";
 import NavBar from "./NavBar";
 
 const HeaderWrapper = styled.header<{ $isScrolled: boolean }>`
@@ -28,17 +28,6 @@ const HeaderContent = styled.div`
   width: 100%;
   max-width: 1170px;
   margin: 0 auto;
-`;
-
-const LogoImage = styled.img<{ $isScrolled: boolean }>`
-  width: 207px;
-  height: auto;
-  transition: width 0.3s ease;
-  z-index: 20;
-
-  @media (min-width: 992px) {
-    width: ${({ $isScrolled }) => ($isScrolled ? "207px" : "300px")};
-  }
 `;
 
 const Header = () => {

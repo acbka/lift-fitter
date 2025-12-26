@@ -49,12 +49,16 @@ const Section = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 40px;
-  font-weight: 700;
+  font-size: 30px;
+  font-weight: 600;
+
+  @media (min-width: 576px) {
+    font-size: 45px;
+    font-weight: 700;
+  }
 
   @media (min-width: 768px) {
     font-size: 60px;
-    font-weight: 700;
   }
 `;
 

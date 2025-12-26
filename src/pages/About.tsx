@@ -1,10 +1,9 @@
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
+import about from "../assets/about-bg.jpeg";
 import homeIcon from "../assets/home.png";
 import team from "../assets/team.jpeg";
-import about from "../assets/about-bg.jpeg";
 import { partners } from "../common/constants";
-
 import { StyledImage, CardsContainer, Section } from "../common/styles";
 import ContactSection from "../components/ContactSection";
 import PartnerCard from "../components/PartnerCard";

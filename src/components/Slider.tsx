@@ -58,7 +58,7 @@ const Title = styled.h2`
   }
 
   @media (min-width: 768px) {
-    font-size: 60px;
+    font-size: 58px;
   }
 `;
 

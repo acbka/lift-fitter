@@ -20,19 +20,19 @@ afterEach(() => {
 
 const slides = [
   {
-    id: 1,
+    id: "1",
     image: "img1.jpg",
     titleKey: "slide.title.1",
     captionKey: "slide.caption.1",
   },
   {
-    id: 2,
+    id: "2",
     image: "img2.jpg",
     titleKey: "slide.title.2",
     captionKey: "slide.caption.2",
   },
   {
-    id: 3,
+    id: "3",
     image: "img3.jpg",
     titleKey: "slide.title.3",
     captionKey: "slide.caption.3",
@@ -89,10 +89,10 @@ describe("Slider component", () => {
     renderSlider();
     const arrows = screen.getAllByAltText("arrrow");
 
-    fireEvent.click(arrows[1]); // next
+    fireEvent.click(arrows[1]);
     expect(screen.getByText("slide.title.2")).toBeInTheDocument();
 
-    fireEvent.click(arrows[0]); // prev
+    fireEvent.click(arrows[0]);
     expect(screen.getByText("slide.title.1")).toBeInTheDocument();
   });
 

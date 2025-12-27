@@ -3,25 +3,130 @@
     "title": "Nasze projekty",
     "szczecin": {
       "title": "Szczecin, Polska",
-      "shortDescription": "Schindler"
+      "shortDescription": "Schindler",
+      "details": {
+        "intro": "Investing in <strong>lift modernisation and repair</strong> is a cost-effective way to extend the life of your equipment while improving safety, performance, and energy efficiency. Our solutions are suitable for lifts of <u>any type, brand, or age</u>.",
+        "sections": [
+          {
+            "title": "Lift Modernisation",
+            "content": "We modernise lift systems by upgrading control units, drive systems, doors, and safety components. Modernisation improves ride comfort, reliability, and reduces energy consumption."
+          },
+          {
+            "title": "Repairs and Component Replacement",
+            "content": "Our engineers provide fast and reliable repair of mechanical and electrical components. We have access to spare parts from leading manufacturers, allowing us to resolve even complex faults without unnecessary delays."
+          },
+          {
+            "title": "Improved Safety and Compliance",
+            "content": "Modernisation and refurbishment help ensure compliance with the latest safety standards and regulations, reducing risk and improving user confidence."
+          },
+          {
+            "title": "Tailored Solutions",
+            "content": "We assess the condition of your existing equipment and recommend the most suitable solution — from targeted component upgrades to full lift replacement within the existing shaft."
+          }
+        ]
+      }
     },
 
     "wilhelmsdorf": {
       "title": "Wilhelmsdorf, Niemcy",
-      "shortDescription": "Kleemann ATLAS BASIC"
+      "shortDescription": "Kleemann ATLAS BASIC",
+      "details": {
+        "intro": "Investing in <strong>lift modernisation and repair</strong> is a cost-effective way to extend the life of your equipment while improving safety, performance, and energy efficiency. Our solutions are suitable for lifts of <u>any type, brand, or age</u>.",
+        "sections": [
+          {
+            "title": "Lift Modernisation",
+            "content": "We modernise lift systems by upgrading control units, drive systems, doors, and safety components. Modernisation improves ride comfort, reliability, and reduces energy consumption."
+          },
+          {
+            "title": "Repairs and Component Replacement",
+            "content": "Our engineers provide fast and reliable repair of mechanical and electrical components. We have access to spare parts from leading manufacturers, allowing us to resolve even complex faults without unnecessary delays."
+          },
+          {
+            "title": "Improved Safety and Compliance",
+            "content": "Modernisation and refurbishment help ensure compliance with the latest safety standards and regulations, reducing risk and improving user confidence."
+          },
+          {
+            "title": "Tailored Solutions",
+            "content": "We assess the condition of your existing equipment and recommend the most suitable solution — from targeted component upgrades to full lift replacement within the existing shaft."
+          }
+        ]
+      }
     },
 
     "kirchen": {
       "title": "Kirchen, Niemcy",
-      "shortDescription": "Klemann Maison100 H"
+      "shortDescription": "Klemann Maison100 H",
+      "details": {
+        "intro": "Investing in <strong>lift modernisation and repair</strong> is a cost-effective way to extend the life of your equipment while improving safety, performance, and energy efficiency. Our solutions are suitable for lifts of <u>any type, brand, or age</u>.",
+        "sections": [
+          {
+            "title": "Lift Modernisation",
+            "content": "We modernise lift systems by upgrading control units, drive systems, doors, and safety components. Modernisation improves ride comfort, reliability, and reduces energy consumption."
+          },
+          {
+            "title": "Repairs and Component Replacement",
+            "content": "Our engineers provide fast and reliable repair of mechanical and electrical components. We have access to spare parts from leading manufacturers, allowing us to resolve even complex faults without unnecessary delays."
+          },
+          {
+            "title": "Improved Safety and Compliance",
+            "content": "Modernisation and refurbishment help ensure compliance with the latest safety standards and regulations, reducing risk and improving user confidence."
+          },
+          {
+            "title": "Tailored Solutions",
+            "content": "We assess the condition of your existing equipment and recommend the most suitable solution — from targeted component upgrades to full lift replacement within the existing shaft."
+          }
+        ]
+      }
     },
     "haren": {
       "title": "Haren, Niemcy",
-      "shortDescription": "Kleemann City"
+      "shortDescription": "Kleemann City",
+      "details": {
+        "intro": "Investing in <strong>lift modernisation and repair</strong> is a cost-effective way to extend the life of your equipment while improving safety, performance, and energy efficiency. Our solutions are suitable for lifts of <u>any type, brand, or age</u>.",
+        "sections": [
+          {
+            "title": "Lift Modernisation",
+            "content": "We modernise lift systems by upgrading control units, drive systems, doors, and safety components. Modernisation improves ride comfort, reliability, and reduces energy consumption."
+          },
+          {
+            "title": "Repairs and Component Replacement",
+            "content": "Our engineers provide fast and reliable repair of mechanical and electrical components. We have access to spare parts from leading manufacturers, allowing us to resolve even complex faults without unnecessary delays."
+          },
+          {
+            "title": "Improved Safety and Compliance",
+            "content": "Modernisation and refurbishment help ensure compliance with the latest safety standards and regulations, reducing risk and improving user confidence."
+          },
+          {
+            "title": "Tailored Solutions",
+            "content": "We assess the condition of your existing equipment and recommend the most suitable solution — from targeted component upgrades to full lift replacement within the existing shaft."
+          }
+        ]
+      }
     },
     "zeewolde": {
       "title": "Zeewolde, Holandia",
-      "shortDescription": "Panoramic elevator in a single-family home."
+      "shortDescription": "Panoramic elevator in a single-family home.",
+      "details": {
+        "intro": "Investing in <strong>lift modernisation and repair</strong> is a cost-effective way to extend the life of your equipment while improving safety, performance, and energy efficiency. Our solutions are suitable for lifts of <u>any type, brand, or age</u>.",
+        "sections": [
+          {
+            "title": "Lift Modernisation",
+            "content": "We modernise lift systems by upgrading control units, drive systems, doors, and safety components. Modernisation improves ride comfort, reliability, and reduces energy consumption."
+          },
+          {
+            "title": "Repairs and Component Replacement",
+            "content": "Our engineers provide fast and reliable repair of mechanical and electrical components. We have access to spare parts from leading manufacturers, allowing us to resolve even complex faults without unnecessary delays."
+          },
+          {
+            "title": "Improved Safety and Compliance",
+            "content": "Modernisation and refurbishment help ensure compliance with the latest safety standards and regulations, reducing risk and improving user confidence."
+          },
+          {
+            "title": "Tailored Solutions",
+            "content": "We assess the condition of your existing equipment and recommend the most suitable solution — from targeted component upgrades to full lift replacement within the existing shaft."
+          }
+        ]
+      }
     }
   }
 }

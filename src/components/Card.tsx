@@ -1,12 +1,15 @@
 import styled from "styled-components";
 import Button from "./Button";
 import { useTranslation } from "react-i18next";
+import Slider from "./Slider/Slider";
+import type { SlideType } from "../common/constants";
 
 type CardPropsType = {
+  buttonName: string;
+  galleryImages?: SlideType[];
+  image?: string;
   itemId: string;
   pageKey: string;
-  image?: string;
-  buttonName: string;
   handleClick?: () => void;
 };
 
@@ -20,17 +23,11 @@ const StyledCard = styled.div`
   margin: 16px 8px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-
-  &:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
-  }
 `;
 
 const Image = styled.img`
   width: 100%;
-  height: 220px;
+  height: 270px;
   object-fit: cover;
 `;
 
@@ -55,6 +52,7 @@ const ShortDescription = styled.p`
 `;
 
 const Card = ({
+  galleryImages,
   itemId,
   pageKey,
   image,
@@ -65,7 +63,17 @@ const Card = ({
 
   return (
     <StyledCard>
-      <Image src={image} alt={t(`${pageKey}.${itemId}.title`)} />
+      {galleryImages ? (
+        <Slider
+          slides={galleryImages}
+          width="360px"
+          height="270px"
+          showArrows={false}
+          autoplay={false}
+        />
+      ) : (
+        <Image src={image} alt={t(`${pageKey}.${itemId}.title`)} />
+      )}
       <CardBody>
         <div>
           <Title>{t(`${pageKey}.${itemId}.title`)}</Title>

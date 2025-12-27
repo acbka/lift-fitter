@@ -22,7 +22,7 @@ const Paragraph = styled.div`
   }
 `;
 
-const ServiceInfo = () => {
+const Details = () => {
   const { id } = useParams<{ id: string }>();
 
   const { t } = useTranslation("services");
@@ -72,4 +72,4 @@ const ServiceInfo = () => {
   );
 };
 
-export default ServiceInfo;
+export default Details;

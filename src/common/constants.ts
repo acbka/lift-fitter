@@ -10,7 +10,7 @@ import tke from "../assets/tke.png";
 import mp from "../assets/mp.png";
 
 export type SlideType = {
-  id: number;
+  id: string;
   image: string;
   titleKey?: string;
   captionKey?: string;
@@ -22,16 +22,21 @@ type MenuItemType = {
   exact?: boolean;
 };
 
-export type ProjectAndServiceType = {
-  id?: string;
-  title: string;
-  shortDescription: string;
-  description?: {
-    paragraph1?: string;
-    paragraph2?: string;
-    paragraph3?: string;
-  };
+type Description = string[];
+
+type InfoType = {
+  id: string;
+  title?: string;
+  shortDescription?: string;
+  description?: Description;
+};
+
+export type ServiceType = InfoType & {
   image?: string;
+};
+
+export type ProjectType = InfoType & {
+  galleryImages?: SlideType[];
 };
 
 export type PartnerType = {
@@ -53,19 +58,19 @@ export const LANGUAGES: LanguageType[] = [
 
 export const sliders: SlideType[] = [
   {
-    id: 1,
+    id: "slide1",
     image: slide1,
     titleKey: "slider:slide1.title",
     captionKey: "slider:slide1.caption",
   },
   {
-    id: 2,
+    id: "slide2",
     image: slide2,
     titleKey: "slider:slide2.title",
     captionKey: "slider:slide2.caption",
   },
   {
-    id: 3,
+    id: "slide3",
     image: slide3,
     titleKey: "slider:slide3.title",
     captionKey: "slider:slide3.caption",

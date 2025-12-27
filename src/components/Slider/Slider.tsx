@@ -10,21 +10,17 @@ export type SliderType = {
   width?: string;
   autoplay?: boolean;
   interval?: number;
+  showArrows?: boolean;
 };
 
 const SliderWrapper = styled.div<{ $height?: string; $width?: string }>`
   width: ${({ $width }) => $width || "100vw"};
   height: ${({ $height }) => $height || "60vh"};
-  min-height: 450px;
-  margin-top: 50px;
+  min-height: ${({ $height }) => $height || "450px"};
   overflow: hidden;
   position: relative;
   touch-action: pan-y;
   user-select: none;
-
-  @media (min-width: 768px) {
-    margin-top: 97px;
-  }
 `;
 
 const SlideItem = styled.div<{ $bg: string; $isActive: boolean }>`
@@ -122,6 +118,7 @@ const Slider = ({
   width,
   autoplay = true,
   interval = 4000,
+  showArrows = true,
 }: SliderType) => {
   const [index, setIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -194,8 +191,22 @@ const Slider = ({
           ) : null}
         </SlideItem>
       ))}
-      <Arrow $direction="left" onClick={prevSlide} src={arrrow} alt="arrrow" />
-      <Arrow $direction="right" onClick={nextSlide} src={arrrow} alt="arrrow" />
+      {showArrows && (
+        <>
+          <Arrow
+            $direction="left"
+            onClick={prevSlide}
+            src={arrrow}
+            alt="arrrow"
+          />
+          <Arrow
+            $direction="right"
+            onClick={nextSlide}
+            src={arrrow}
+            alt="arrrow"
+          />
+        </>
+      )}
       <DotsContainer>
         {slides.map((slide, i) => (
           <Dot

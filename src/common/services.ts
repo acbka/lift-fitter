@@ -4,8 +4,9 @@ import modernization from "../assets/modernization.jpg";
 import montaznik from "../assets/montaznik.jpg";
 import projects from "../assets/service-1.png";
 import technik from "../assets/tehnik.jpg";
+import type { ServiceType } from "./constants";
 
-export const services = [
+export const services: ServiceType[] = [
   {
     id: "liftEmergency",
     image: technik,

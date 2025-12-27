@@ -58,16 +58,6 @@ export const projects: ProjectType[] = [
     ],
   },
   {
-    id: "haren",
-    galleryImages: [
-      { id: "haren", image: haren },
-      { id: "haren1", image: haren1 },
-      { id: "haren2", image: haren2 },
-      { id: "haren3", image: haren3 },
-      { id: "haren4", image: haren4 },
-    ],
-  },
-  {
     id: "zeewolde",
     galleryImages: [
       { id: "zeewolde", image: zeewolde },
@@ -76,6 +66,16 @@ export const projects: ProjectType[] = [
       { id: "zeewolde3", image: zeewolde3 },
       { id: "zeewolde4", image: zeewolde4 },
       { id: "zeewolde5", image: zeewolde5 },
+    ],
+  },
+  {
+    id: "haren",
+    galleryImages: [
+      { id: "haren", image: haren },
+      { id: "haren1", image: haren1 },
+      { id: "haren2", image: haren2 },
+      { id: "haren3", image: haren3 },
+      { id: "haren4", image: haren4 },
     ],
   },
 ] as const;

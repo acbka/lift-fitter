@@ -1,10 +1,14 @@
-import { Navigate, useParams } from "react-router";
+import { Navigate, useLocation, useParams } from "react-router";
 import { useTranslation, Trans } from "react-i18next";
 import styled from "styled-components";
 import { Section } from "../common/styles";
 import { services } from "../common/services";
 import ContactSection from "../components/ContactSection";
 import Title from "../components/Title";
+import type { ProjectType, ServiceType } from "../common/constants";
+import { projects } from "../common/projects";
+
+type DetailItem = ServiceType | ProjectType;
 
 const StyledImage = styled.img`
   padding: 24px 0;
@@ -13,6 +17,18 @@ const StyledImage = styled.img`
   @media (min-width: 576px) {
     max-width: 1170px;
   }
+`;
+
+const Gallery = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+`;
+
+const GalleryImage = styled.img`
+  width: 360px;
+  height: auto;
 `;
 
 const Paragraph = styled.div`
@@ -24,50 +40,68 @@ const Paragraph = styled.div`
 
 const Details = () => {
   const { id } = useParams<{ id: string }>();
+  const location = useLocation();
 
-  const { t } = useTranslation("services");
+  const isService = location.pathname.includes("/services");
+  const namespace = isService ? "services" : "projects";
 
-  if (!id) return null;
+  const { t } = useTranslation(namespace);
 
-  const service = services.find((item) => item.id === id);
+  if (!id) return <Navigate to={`../${namespace}`} replace />;
 
-  if (!service) return null;
+  const data: DetailItem[] = isService ? services : projects;
+  const item = data.find((item) => item.id === id);
 
-  const sections = t(`services.${id}.details.sections`, {
+  if (!item) {
+    return <Navigate to={`../${namespace}`} replace />;
+  }
+
+  const sections = t(`${namespace}.${id}.details.sections`, {
     returnObjects: true,
   }) as { title: string; content: string }[];
 
-  if (!services.find((s) => s.id === id)) {
-    return <Navigate to="../services" replace />;
-  }
+  const itemImage = isService
+    ? (item as ServiceType).image
+    : (item as ProjectType).galleryImages?.[0]?.image;
 
   return (
     <>
-      {service && (
-        <>
-          <Title pageTitle={t(`services.${service.id}.title`)} />
-          <Section>
-            <StyledImage
-              src={service.image}
-              alt={t(`services.${service.id}.title`)}
-            />
-            <Paragraph>
-              <Trans
-                ns="services"
-                i18nKey={`services.${service.id}.details.intro`}
-                components={{ strong: <strong />, u: <u /> }}
+      <Title pageTitle={t(`${namespace}.${id}.title`)} />
+      <Section>
+        {itemImage && (
+          <StyledImage src={itemImage} alt={t(`${namespace}.${id}.title`)} />
+        )}
+
+        <Paragraph>
+          <Trans
+            ns={namespace}
+            i18nKey={`${namespace}.${id}.details.intro`}
+            components={{ strong: <strong />, u: <u /> }}
+          />
+        </Paragraph>
+
+        {sections &&
+          sections.map((section, idx) => (
+            <section key={idx}>
+              <h3>{section.title}</h3>
+              <p>{section.content}</p>
+            </section>
+          ))}
+
+        {!isService && (item as ProjectType).galleryImages && (
+          <Gallery>
+            {(item as ProjectType).galleryImages?.map((slide, idx) => (
+              <GalleryImage
+                key={slide.id || idx}
+                src={slide.image}
+                alt={`${item.title} - ${idx + 1}`}
               />
-            </Paragraph>
-            {sections.map((section, idx) => (
-              <section key={idx}>
-                <h3>{section.title}</h3>
-                <p>{section.content}</p>
-              </section>
             ))}
-          </Section>
-          <ContactSection />
-        </>
-      )}
+          </Gallery>
+        )}
+      </Section>
+
+      <ContactSection />
     </>
   );
 };

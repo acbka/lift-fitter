@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import arrrow from "../../assets/arrow-left.svg";
 import type { SlideType } from "../../common/constants";
+import { useSwipe } from "../../hooks/useSwipe";
 
 export type SliderType = {
   slides: SlideType[];
@@ -123,10 +124,6 @@ const Slider = ({
 }: SliderType) => {
   const [index, setIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const [touchStartX, setTouchStartX] = useState<number | null>(null);
-  const [touchEndX, setTouchEndX] = useState<number | null>(null);
-
-  const MIN_SWIPE_DISTANCE = 50;
 
   const { t } = useTranslation("slider");
 
@@ -145,31 +142,12 @@ const Slider = ({
     return () => clearInterval(timer);
   }, [autoplay, isPaused, index, interval, nextSlide]);
 
-  const onTouchStart = (e: React.TouchEvent) => {
-    setIsPaused(true);
-    setTouchEndX(null);
-    setTouchStartX(e.targetTouches[0].clientX);
-  };
-
-  const onTouchMove = (e: React.TouchEvent) => {
-    setTouchEndX(e.targetTouches[0].clientX);
-  };
-
-  const onTouchEnd = () => {
-    if (!touchStartX || !touchEndX) return;
-
-    const distance = touchStartX - touchEndX;
-
-    if (Math.abs(distance) < MIN_SWIPE_DISTANCE) return;
-
-    if (distance > 0) {
-      nextSlide();
-    } else {
-      prevSlide();
-    }
-
-    setIsPaused(false);
-  };
+  const swipeHandlers = useSwipe({
+    onSwipeLeft: nextSlide,
+    onSwipeRight: prevSlide,
+    onSwipeStart: () => setIsPaused(true),
+    onSwipeEnd: () => setIsPaused(false),
+  });
 
   return (
     <SliderWrapper
@@ -177,9 +155,7 @@ const Slider = ({
       $width={width}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
-      onTouchStart={onTouchStart}
-      onTouchMove={onTouchMove}
-      onTouchEnd={onTouchEnd}
+      {...swipeHandlers}
     >
       {slides.map((slide, i) => (
         <SlideItem key={slide.id} $bg={slide.image} $isActive={i === index}>

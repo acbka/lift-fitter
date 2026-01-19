@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useIsDesktop } from "../hooks/useIsDesktop";
+import { useSwipe } from "../hooks/useSwipe";
 
 type GalleryType = {
   images: { image: string }[];
@@ -35,7 +37,7 @@ const NavButton = styled.button<{ $left?: boolean }>`
   cursor: pointer;
 `;
 
-const Close = styled.button`
+const CloseButton = styled.button`
   position: absolute;
   top: 24px;
   right: 24px;
@@ -47,34 +49,43 @@ const Close = styled.button`
 `;
 
 const GalleryModal = ({ images, index, onClose, onChange }: GalleryType) => {
+  const isDesktop = useIsDesktop();
   const prev = () => onChange(index === 0 ? images.length - 1 : index - 1);
-
   const next = () => onChange(index === images.length - 1 ? 0 : index + 1);
 
+  const swipeHandlers = useSwipe({
+    onSwipeLeft: next,
+    onSwipeRight: prev,
+  });
+
   return (
-    <Overlay onClick={onClose}>
+    <Overlay onClick={onClose} {...swipeHandlers}>
       <Image src={images[index].image} onClick={(e) => e.stopPropagation()} />
 
-      <NavButton
-        $left
-        onClick={(e) => {
-          e.stopPropagation();
-          prev();
-        }}
-      >
-        ‹
-      </NavButton>
+      {isDesktop ? (
+        <>
+          <NavButton
+            $left
+            onClick={(e) => {
+              e.stopPropagation();
+              prev();
+            }}
+          >
+            ‹
+          </NavButton>
 
-      <NavButton
-        onClick={(e) => {
-          e.stopPropagation();
-          next();
-        }}
-      >
-        ›
-      </NavButton>
+          <NavButton
+            onClick={(e) => {
+              e.stopPropagation();
+              next();
+            }}
+          >
+            ›
+          </NavButton>
+        </>
+      ) : null}
 
-      <Close onClick={onClose}>✕</Close>
+      <CloseButton onClick={onClose}>✕</CloseButton>
     </Overlay>
   );
 };

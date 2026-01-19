@@ -24,7 +24,8 @@ const SliderWrapper = styled.div<{ $height?: string; $width?: string }>`
 `;
 
 const SlideItem = styled.div<{ $bg: string; $isActive: boolean }>`
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(${({ $bg }) => $bg}) no-repeat center/cover;
   width: 100%;
   height: 100%;

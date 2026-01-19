@@ -1,12 +1,14 @@
+import { useState } from "react";
 import { Navigate, useLocation, useParams } from "react-router";
 import { useTranslation, Trans } from "react-i18next";
 import styled from "styled-components";
 import { Section } from "../common/styles";
 import { services } from "../common/services";
 import ContactSection from "../components/ContactSection";
-import Title from "../components/Title";
 import type { ProjectType, ServiceType } from "../common/constants";
 import { projects } from "../common/projects";
+import GalleryModal from "../components/GalleryModal";
+import Title from "../components/Title";
 
 type DetailItem = ServiceType | ProjectType;
 
@@ -47,10 +49,14 @@ const Details = () => {
 
   const { t } = useTranslation(namespace);
 
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
   if (!id) return <Navigate to={`../${namespace}`} replace />;
 
   const data: DetailItem[] = isService ? services : projects;
   const item = data.find((item) => item.id === id);
+
+  const images = (item as ProjectType).galleryImages ?? [];
 
   if (!item) {
     return <Navigate to={`../${namespace}`} replace />;
@@ -90,14 +96,24 @@ const Details = () => {
 
         {!isService && (item as ProjectType).galleryImages && (
           <Gallery>
-            {(item as ProjectType).galleryImages?.map((slide, idx) => (
+            {images.map((slide, idx) => (
               <GalleryImage
                 key={slide.id || idx}
                 src={slide.image}
                 alt={`${item.title} - ${idx + 1}`}
+                onClick={() => setActiveIndex(idx)}
               />
             ))}
           </Gallery>
+        )}
+
+        {activeIndex !== null && (
+          <GalleryModal
+            images={images}
+            index={activeIndex}
+            onClose={() => setActiveIndex(null)}
+            onChange={setActiveIndex}
+          />
         )}
       </Section>
 

@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Navigate, useLocation, useParams } from "react-router";
 import { useTranslation, Trans } from "react-i18next";
 import styled from "styled-components";
-import { Section } from "../common/styles";
-import { services } from "../common/services";
-import ContactSection from "../components/ContactSection";
 import type { ProjectType, ServiceType } from "../common/constants";
 import { projects } from "../common/projects";
+import { services } from "../common/services";
+import { Section } from "../common/styles";
+import ContactSection from "../components/ContactSection";
 import GalleryModal from "../components/GalleryModal";
 import Title from "../components/Title";
 

@@ -4,6 +4,7 @@ import styled from "styled-components";
 import arrrow from "../../assets/arrow-left.svg";
 import type { SlideType } from "../../common/constants";
 import { useSwipe } from "../../hooks/useSwipe";
+import Dots from "../Dots";
 
 export type SliderType = {
   slides: SlideType[];
@@ -31,7 +32,15 @@ const SlideItem = styled.div<{ $bg: string; $isActive: boolean }>`
   width: 100%;
   height: 100%;
   padding: 0 48px;
-  display: ${({ $isActive }) => ($isActive ? "flex" : "none")};
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: ${({ $isActive }) => ($isActive ? 1 : 0)};
+  visibility: ${({ $isActive }) => ($isActive ? "visible" : "hidden")};
+  transition:
+    opacity 0.5s ease-in-out,
+    visibility 0.5s ease-in-out;
+  display: flex;
 `;
 
 const Section = styled.div`
@@ -87,30 +96,6 @@ const Arrow = styled.img<{ $direction: "left" | "right" }>`
 
   @media (min-width: 768px) {
     display: block;
-  }
-`;
-
-const DotsContainer = styled.div`
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-`;
-
-const Dot = styled.button<{ $isActive: boolean }>`
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: none;
-  background-color: ${({ $isActive }) =>
-    $isActive ? "var(--color-white)" : "rgba(255, 255, 255, 0.5)"};
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: var(--color-white);
   }
 `;
 
@@ -184,16 +169,7 @@ const Slider = ({
           />
         </>
       )}
-      <DotsContainer>
-        {slides.map((slide, i) => (
-          <Dot
-            key={slide.id}
-            $isActive={i === index}
-            onClick={() => setIndex(i)}
-            aria-label={`Go to slide ${i + 1}`}
-          />
-        ))}
-      </DotsContainer>
+      <Dots total={slides.length} activeIndex={index} onDotClick={setIndex} />
     </SliderWrapper>
   );
 };

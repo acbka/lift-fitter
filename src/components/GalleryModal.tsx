@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useIsDesktop } from "../hooks/useIsDesktop";
 import { useSwipe } from "../hooks/useSwipe";
+import Dots from "./Dots";
 
 type GalleryType = {
   images: { image: string }[];
@@ -83,7 +84,9 @@ const GalleryModal = ({ images, index, onClose, onChange }: GalleryType) => {
             ›
           </NavButton>
         </>
-      ) : null}
+      ) : (
+        <Dots total={images.length} activeIndex={index} onDotClick={onChange} />
+      )}
 
       <CloseButton onClick={onClose}>✕</CloseButton>
     </Overlay>

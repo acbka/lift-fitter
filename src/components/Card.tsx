@@ -69,7 +69,7 @@ const Card = ({
           width="360px"
           height="270px"
           showArrows={false}
-          autoplay={false}
+          autoplay={true}
         />
       ) : (
         <Image src={image} alt={t(`${pageKey}.${itemId}.title`)} />

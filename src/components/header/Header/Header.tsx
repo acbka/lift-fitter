@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import logo from "../../assets/logo.svg";
-import { Brand, LogoImage } from "../../common/styles";
-import NavBar from "./NavBar";
+import logo from "../../../assets/logo.svg";
+import { Brand, LogoImage } from "../../../common/styles";
+import NavBar from "../NavBar/NavBar";
 
 const HeaderWrapper = styled.header<{ $isScrolled: boolean }>`
   position: fixed;

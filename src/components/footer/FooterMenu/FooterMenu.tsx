@@ -3,7 +3,7 @@ import { useLocation } from "react-router";
 import styled from "styled-components";
 import { getIsActive } from "../../../utils/getIsActive";
 import { menuItems } from "../../../common/constants";
-import { StyledLink } from "../../header/NavBar";
+import { StyledLink } from "../../header/NavBar/NavBar";
 
 const Menu = styled.div`
   display: grid;
@@ -43,7 +43,12 @@ const FooterMenu = () => {
           key={item.link}
           to={item.link}
           $isActive={Boolean(
-            getIsActive(location.pathname, i18n.language, item.link, item.exact)
+            getIsActive(
+              location.pathname,
+              i18n.language,
+              item.link,
+              item.exact,
+            ),
           )}
         >
           {t(item.labelKey)}

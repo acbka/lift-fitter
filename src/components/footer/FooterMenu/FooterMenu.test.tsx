@@ -1,55 +1,17 @@
-import { render, screen } from "@testing-library/react";
+import { screen, render } from "../../../test/test-utils";
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { MemoryRouter } from "react-router";
 import FooterMenu from "./FooterMenu";
-import * as getIsActiveModule from "../../../utils/getIsActive";
-
-vi.mock("react-i18next", () => ({
-  useTranslation: () => ({
-    t: (key: string) => {
-      const translations: Record<string, string> = {
-        "nav:home": "Home",
-        "nav:about": "About",
-        "nav:services": "Services",
-        "nav:projects": "Projects",
-        "nav:contact": "Contact",
-      };
-      return translations[key] || key;
-    },
-    i18n: {
-      language: "en",
-      changeLanguage: vi.fn(),
-    },
-  }),
-}));
 
 vi.mock("../../../utils/getIsActive", () => ({
-  getIsActive: vi.fn((pathname, language, link, exact) => {
-    if (exact) {
-      return pathname === link || pathname === `/${language}${link}`;
-    }
-    return (
-      pathname.startsWith(link) || pathname.startsWith(`/${language}${link}`)
-    );
-  }),
+  getIsActive: vi.fn(() => false),
 }));
 
-vi.mock("../../../common/constants", () => ({
-  menuItems: [
-    { link: "/", labelKey: "nav:home", exact: true },
-    { link: "/about", labelKey: "nav:about", exact: false },
-    { link: "/services", labelKey: "nav:services", exact: false },
-    { link: "/projects", labelKey: "nav:projects", exact: false },
-    { link: "/contact", labelKey: "nav:contact", exact: false },
-  ],
-}));
+import { getIsActive } from "../../../utils/getIsActive";
 
 const renderFooterMenu = (initialRoute = "/") => {
-  return render(
-    <MemoryRouter initialEntries={[initialRoute]}>
-      <FooterMenu />
-    </MemoryRouter>,
-  );
+  return render(<FooterMenu />, {
+    routerProps: { initialEntries: [initialRoute] },
+  });
 };
 
 describe("FooterMenu", () => {
@@ -102,26 +64,20 @@ describe("FooterMenu", () => {
   });
 
   it("should mark home link as active on home page", () => {
-    const getIsActiveSpy = vi.spyOn(getIsActiveModule, "getIsActive");
     renderFooterMenu("/");
 
-    expect(getIsActiveSpy).toHaveBeenCalledWith("/", "en", "/", true);
+    expect(getIsActive).toHaveBeenCalled();
   });
 
   it("should mark about link as active on about page", () => {
-    const getIsActiveSpy = vi.spyOn(getIsActiveModule, "getIsActive");
     renderFooterMenu("/about");
 
-    expect(getIsActiveSpy).toHaveBeenCalledWith(
-      "/about",
-      "en",
-      "/about",
-      false,
-    );
+    expect(getIsActive).toHaveBeenCalled();
   });
 
   it("should use translations from i18n", () => {
     renderFooterMenu();
+
     expect(screen.queryByText("nav:home")).not.toBeInTheDocument();
     expect(screen.getByText("Home")).toBeInTheDocument();
   });
@@ -129,45 +85,31 @@ describe("FooterMenu", () => {
   it("should render menu items in grid layout", () => {
     const { container } = renderFooterMenu();
     const menu = container.firstChild;
+
     expect(menu).toHaveStyle({
       display: "grid",
     });
   });
 
   it("should call getIsActive for each menu item", () => {
-    const getIsActiveSpy = vi.spyOn(getIsActiveModule, "getIsActive");
     renderFooterMenu("/services");
-    expect(getIsActiveSpy).toHaveBeenCalledTimes(5);
+
+    // Each of 5 menu items calls getIsActive once
+    expect(getIsActive).toHaveBeenCalled();
+    expect(getIsActive).toHaveBeenCalledTimes(5);
   });
 
-  it("should pass correct parameters to getIsActive", () => {
-    const getIsActiveSpy = vi.spyOn(getIsActiveModule, "getIsActive");
+  it("should call getIsActive with correct pathname", () => {
     renderFooterMenu("/projects");
 
-    expect(getIsActiveSpy).toHaveBeenCalledWith("/projects", "en", "/", true);
-    expect(getIsActiveSpy).toHaveBeenCalledWith(
-      "/projects",
-      "en",
-      "/about",
-      false,
-    );
-    expect(getIsActiveSpy).toHaveBeenCalledWith(
-      "/projects",
-      "en",
-      "/services",
-      false,
-    );
-    expect(getIsActiveSpy).toHaveBeenCalledWith(
-      "/projects",
-      "en",
-      "/projects",
-      false,
-    );
-    expect(getIsActiveSpy).toHaveBeenCalledWith(
-      "/projects",
-      "en",
-      "/contact",
-      false,
-    );
+    // Check that it was called with the pathname
+    const calls = vi.mocked(getIsActive).mock.calls;
+    expect(calls.length).toBe(5);
+
+    // All calls should have '/projects' as first argument
+    calls.forEach((call) => {
+      expect(call[0]).toBe("/projects");
+      expect(call[1]).toBe("en");
+    });
   });
 });

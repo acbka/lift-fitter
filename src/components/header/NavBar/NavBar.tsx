@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
-import { menuItems } from "../../common/constants";
-import MobileMenu from "./MobileMenu";
-import LanguageSwitcher from "../LanguageSwitcher";
-import { getIsActive } from "../../utils/getIsActive";
+import { menuItems } from "../../../common/constants";
+import MobileMenu from "../MobileMenu/MobileMenu";
+import LanguageSwitcher from "../../LanguageSwitcher";
+import { getIsActive } from "../../../utils/getIsActive";
 
 const NavBarContent = styled.div`
   display: flex;
@@ -64,8 +64,8 @@ const NavBar = () => {
                     location.pathname,
                     i18n.language,
                     item.link,
-                    item.exact
-                  )
+                    item.exact,
+                  ),
                 )}
               >
                 {t(item.labelKey)}

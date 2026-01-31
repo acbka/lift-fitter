@@ -6,7 +6,6 @@ import phone from "../../../assets/phone.svg";
 import { Brand, LogoImage } from "../../../common/styles";
 import FooterMenu from "../FooterMenu/FooterMenu";
 
-
 const FooterWrapper = styled.footer`
   background-color: var(--color-dark);
   color: var(--color-white);

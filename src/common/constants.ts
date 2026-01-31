@@ -82,7 +82,7 @@ export const menuItems: MenuItemType[] = [
   { link: "services", labelKey: "nav:services" },
   { link: "projects", labelKey: "nav:projects" },
   { link: "about", labelKey: "nav:about" },
-  { link: "contacts", labelKey: "nav:contacts" },
+  { link: "contact", labelKey: "nav:contact" },
 ];
 
 export const partners: PartnerType[] = [

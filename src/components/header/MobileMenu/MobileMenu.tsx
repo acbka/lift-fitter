@@ -2,10 +2,10 @@ import { useState } from "react";
 import { useLocation } from "react-router";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
-import { menuItems } from "../../common/constants";
-import { getIsActive } from "../../utils/getIsActive";
-import LanguageSwitcher from "../LanguageSwitcher";
-import { StyledLink } from "./NavBar";
+import { menuItems } from "../../../common/constants";
+import { getIsActive } from "../../../utils/getIsActive";
+import LanguageSwitcher from "../../LanguageSwitcher";
+import { StyledLink } from "../NavBar/NavBar";
 
 const NavBarContent = styled.div<{ $isOpen: boolean }>`
   display: flex;
@@ -100,8 +100,8 @@ const MobileMenu = () => {
                   location.pathname,
                   i18n.language,
                   item.link,
-                  item.exact
-                )
+                  item.exact,
+                ),
               )}
             >
               {t(item.labelKey)}

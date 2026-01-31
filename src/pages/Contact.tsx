@@ -62,12 +62,12 @@ const InfoItem = styled.div`
   }
 `;
 
-const Contacts = () => {
-  const { t } = useTranslation("contacts");
+const Contact = () => {
+  const { t } = useTranslation("contact");
 
   return (
     <>
-      <Title pageTitle="Contacts" icon={contactsIcon} bgImage={contactsBg} />
+      <Title pageTitle="Contact" icon={contactsIcon} bgImage={contactsBg} />
       <ContactsWrap>
         <InfoBlock>
           <h2>{t("subtitle")}</h2>
@@ -117,4 +117,4 @@ const Contacts = () => {
   );
 };
 
-export default Contacts;
+export default Contact;

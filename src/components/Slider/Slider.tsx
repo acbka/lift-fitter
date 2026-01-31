@@ -123,9 +123,9 @@ const Slider = ({
   useEffect(() => {
     if (!autoplay || isPaused) return;
 
-    const timer = setInterval(() => nextSlide(), interval);
+    const timer = setInterval(nextSlide, interval);
     return () => clearInterval(timer);
-  }, [autoplay, isPaused, index, interval, nextSlide]);
+  }, [autoplay, isPaused, interval, nextSlide]);
 
   const swipeHandlers = useSwipe({
     onSwipeLeft: nextSlide,

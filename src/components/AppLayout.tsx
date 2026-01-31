@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { LANGS, type Language } from "../i18n/i18n";
 import Header from "./header/Header";
-import Footer from "./footer/Footer";
+import Footer from "./footer/Footer/Footer";
 
 const Container = styled.div`
   background: var(--color-dark);

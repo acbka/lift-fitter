@@ -1,10 +1,11 @@
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
-import email from "../../assets/email.svg";
-import logo from "../../assets/logo.svg";
-import phone from "../../assets/phone.svg";
-import { Brand, LogoImage } from "../../common/styles";
-import FooterMenu from "./FooterMenu";
+import email from "../../../assets/email.svg";
+import logo from "../../../assets/logo.svg";
+import phone from "../../../assets/phone.svg";
+import { Brand, LogoImage } from "../../../common/styles";
+import FooterMenu from "../FooterMenu/FooterMenu";
+
 
 const FooterWrapper = styled.footer`
   background-color: var(--color-dark);

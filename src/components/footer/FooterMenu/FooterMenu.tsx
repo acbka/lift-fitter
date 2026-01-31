@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router";
 import styled from "styled-components";
-import { getIsActive } from "../../utils/getIsActive";
-import { menuItems } from "../../common/constants";
-import { StyledLink } from "../header/NavBar";
+import { getIsActive } from "../../../utils/getIsActive";
+import { menuItems } from "../../../common/constants";
+import { StyledLink } from "../../header/NavBar";
 
 const Menu = styled.div`
   display: grid;

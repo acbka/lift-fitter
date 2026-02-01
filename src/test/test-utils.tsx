@@ -22,6 +22,12 @@ export const renderWithRouter = (
   );
 };
 
-export { screen, waitFor, within, fireEvent } from "@testing-library/react";
+export {
+  act,
+  screen,
+  waitFor,
+  within,
+  fireEvent,
+} from "@testing-library/react";
 export { default as userEvent } from "@testing-library/user-event";
 export { renderWithRouter as render };

@@ -2,12 +2,10 @@ import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "../../../test/test-utils";
 import Footer from "./Footer";
 
-// mock FooterMenu
 vi.mock("../FooterMenu/FooterMenu", () => ({
   default: () => <nav data-testid="footer-menu">Footer menu</nav>,
 }));
 
-// mock i18n
 vi.mock("react-i18next", () => ({
   useTranslation: () => ({
     t: (key: string) => {

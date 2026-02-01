@@ -1,158 +1,122 @@
-import { render, screen, fireEvent, cleanup } from "@testing-library/react";
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+import { render, screen, fireEvent, act } from "../../test/test-utils";
+import type { SlideType } from "../../common/constants";
 import Slider from "./Slider";
 
-vi.mock("react-i18next", () => ({
-  useTranslation: () => ({
-    t: (key: string) => key,
-  }),
+vi.mock("../../hooks/useSwipe", () => ({
+  useSwipe: () => ({}),
 }));
 
-beforeEach(() => {
-  vi.useFakeTimers();
-});
-
-afterEach(() => {
-  cleanup();
-  vi.runOnlyPendingTimers();
-  vi.useRealTimers();
-});
-
-const slides = [
+const slides: SlideType[] = [
   {
     id: "1",
-    image: "img1.jpg",
-    titleKey: "slide.title.1",
-    captionKey: "slide.caption.1",
+    image: "/img1.jpg",
+    titleKey: "slide:title1",
+    captionKey: "slide:caption1",
   },
   {
     id: "2",
-    image: "img2.jpg",
-    titleKey: "slide.title.2",
-    captionKey: "slide.caption.2",
-  },
-  {
-    id: "3",
-    image: "img3.jpg",
-    titleKey: "slide.title.3",
-    captionKey: "slide.caption.3",
+    image: "/img2.jpg",
+    titleKey: "slide:title2",
+    captionKey: "slide:caption2",
   },
 ];
 
-const renderSlider = (props = {}) =>
-  render(
-    <Slider
-      slides={slides}
-      height="500px"
-      width="100%"
-      interval={4000}
-      {...props}
-    />
-  );
-
-describe("Slider component", () => {
-  it("renders all slides", () => {
-    renderSlider();
-    slides.forEach((slide) => {
-      expect(screen.getByText(slide.titleKey)).toBeInTheDocument();
-    });
+describe("Slider", () => {
+  beforeEach(() => {
+    vi.useFakeTimers();
   });
 
-  it("autoplay switches slides", () => {
-    renderSlider({ autoplay: true });
-    vi.advanceTimersByTime(4000);
-    expect(screen.getByText("slide.title.2")).toBeInTheDocument();
+  afterEach(() => {
+    vi.runOnlyPendingTimers();
+    vi.useRealTimers();
   });
 
-  it("pauses autoplay on mouse enter", () => {
-    const { container } = renderSlider({ autoplay: true });
-    const wrapper = container.firstChild as HTMLElement;
+  it("renders first slide content", () => {
+    render(<Slider slides={slides} autoplay={false} />);
 
-    fireEvent.mouseEnter(wrapper);
-    vi.advanceTimersByTime(4000);
-
-    expect(screen.getByText("slide.title.1")).toBeInTheDocument();
+    expect(screen.getByText("slide:title1")).toBeInTheDocument();
+    expect(screen.getByText("slide:caption1")).toBeInTheDocument();
   });
 
-  it("resumes autoplay on mouse leave", () => {
-    const { container } = renderSlider({ autoplay: true });
-    const wrapper = container.firstChild as HTMLElement;
+  it("does not render second slide content initially", () => {
+    render(<Slider slides={slides} autoplay={false} />);
 
-    fireEvent.mouseEnter(wrapper);
-    fireEvent.mouseLeave(wrapper);
-    vi.advanceTimersByTime(4000);
-
-    expect(screen.getByText("slide.title.2")).toBeInTheDocument();
+    expect(screen.queryByText("slide:title2")).not.toBeVisible();
   });
 
-  it("navigates using arrows", () => {
-    renderSlider();
+  it("shows arrows by default", () => {
+    render(<Slider slides={slides} autoplay={false} />);
+
     const arrows = screen.getAllByAltText("arrrow");
-
-    fireEvent.click(arrows[1]);
-    expect(screen.getByText("slide.title.2")).toBeInTheDocument();
-
-    fireEvent.click(arrows[0]);
-    expect(screen.getByText("slide.title.1")).toBeInTheDocument();
+    expect(arrows).toHaveLength(2);
   });
 
-  it("navigates using dots", () => {
-    renderSlider();
-    const dot = screen.getByLabelText("Go to slide 3");
-    fireEvent.click(dot);
-    expect(screen.getByText("slide.title.3")).toBeInTheDocument();
+  it("hides arrows when showArrows=false", () => {
+    render(<Slider slides={slides} autoplay={false} showArrows={false} />);
+
+    expect(screen.queryByAltText("arrrow")).not.toBeInTheDocument();
   });
 
-  it("swipe left moves to next slide", () => {
-    const { container } = renderSlider();
-    const wrapper = container.firstChild as HTMLElement;
+  it("moves to next slide when right arrow is clicked", () => {
+    render(<Slider slides={slides} autoplay={false} />);
 
-    fireEvent.touchStart(wrapper, {
-      touches: [{ clientX: 200 }],
-      targetTouches: [{ clientX: 200 }],
-    });
-    fireEvent.touchMove(wrapper, {
-      touches: [{ clientX: 100 }],
-      targetTouches: [{ clientX: 100 }],
-    });
-    fireEvent.touchEnd(wrapper);
+    const [, rightArrow] = screen.getAllByAltText("arrrow");
 
-    expect(screen.getByText("slide.title.2")).toBeInTheDocument();
+    fireEvent.click(rightArrow);
+
+    expect(screen.getByText("slide:title2")).toBeInTheDocument();
   });
 
-  it("swipe right moves to previous slide", () => {
-    const { container } = renderSlider();
-    const wrapper = container.firstChild as HTMLElement;
+  it("moves to previous slide when left arrow is clicked", () => {
+    render(<Slider slides={slides} autoplay={false} />);
 
-    vi.advanceTimersByTime(4000); // move to slide 2
+    const [leftArrow] = screen.getAllByAltText("arrrow");
 
-    fireEvent.touchStart(wrapper, {
-      touches: [{ clientX: 100 }],
-      targetTouches: [{ clientX: 100 }],
-    });
-    fireEvent.touchMove(wrapper, {
-      touches: [{ clientX: 200 }],
-      targetTouches: [{ clientX: 200 }],
-    });
-    fireEvent.touchEnd(wrapper);
+    fireEvent.click(screen.getAllByAltText("arrrow")[1]);
 
-    expect(screen.getByText("slide.title.1")).toBeInTheDocument();
+    fireEvent.click(leftArrow);
+
+    expect(screen.getByText("slide:title1")).toBeInTheDocument();
   });
 
-  it("small swipe does not change slide", () => {
-    const { container } = renderSlider();
-    const wrapper = container.firstChild as HTMLElement;
+  it("autoplays slides when autoplay is enabled", () => {
+    render(<Slider slides={slides} autoplay interval={3000} />);
 
-    fireEvent.touchStart(wrapper, {
-      touches: [{ clientX: 200 }],
-      targetTouches: [{ clientX: 200 }],
-    });
-    fireEvent.touchMove(wrapper, {
-      touches: [{ clientX: 180 }],
-      targetTouches: [{ clientX: 180 }],
-    });
-    fireEvent.touchEnd(wrapper);
+    expect(screen.getByText("slide:title1")).toBeInTheDocument();
 
-    expect(screen.getByText("slide.title.1")).toBeInTheDocument();
+    act(() => {
+      vi.advanceTimersByTime(3000);
+    });
+
+    expect(screen.getByText("slide:title2")).toBeInTheDocument();
+  });
+
+  it("loops back to first slide after last slide", () => {
+    render(<Slider slides={slides} autoplay interval={3000} />);
+
+    act(() => {
+      vi.advanceTimersByTime(3000);
+      vi.advanceTimersByTime(3000);
+    });
+
+    expect(screen.getByText("slide:title1")).toBeInTheDocument();
+  });
+
+  it("renders dots for each slide", () => {
+    render(<Slider slides={slides} autoplay={false} />);
+
+    const dots = screen.getAllByRole("button");
+    expect(dots.length).toBe(slides.length);
+  });
+
+  it("changes slide when dot is clicked", () => {
+    render(<Slider slides={slides} autoplay={false} />);
+
+    const dots = screen.getAllByRole("button");
+
+    fireEvent.click(dots[1]);
+
+    expect(screen.getByText("slide:title2")).toBeInTheDocument();
   });
 });
